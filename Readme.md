@@ -1,5 +1,5 @@
 # Polaris22A: RISC-V SIMD Superscalar Dual-Issue Processor
-## Polaris is a sequential superscalar dual-issue RISC-V processor supporting RISC-V P instruction set extension（Packed-SIMD Instructions）
+Polaris is a sequential superscalar dual-issue RISC-V processor supporting RISC-V P instruction set extension（Packed-SIMD Instructions）
 
 <br/>
 
@@ -18,9 +18,13 @@
 
 ## 1. Processor Features
  Instruction Sets: RV64IMACP
+
  Privileged Mode: U/S/M
+
  Virtual Memmory: SV39
+
  Issue Num: 2(single-issue supported as well)
+
  Cache: 32KB DCache + 32KB ICache + 128KB L2 Cache
 <br/>
 
@@ -59,7 +63,8 @@
     ./build/emu -help
   ```
 -  If you want to compile the RVP program for simulation and fpga, you need to use a special compilation platform: [Nexus-AM](https://github.com/ByeBeihai/nexus-am)
- Polaris has implemented the [fpga verification environment](https://github.com/ssdfghhhhhhh/NutShell_U250) on the U250 accelerator card. It can lauch linux with image: linuxshell.bin (in directory :ready-to-run) on U250.
+ 
+Polaris has implemented the [fpga verification environment](https://github.com/ssdfghhhhhhh/NutShell_U250) on the U250 accelerator card. It can lauch linux with image: linuxshell.bin (in directory :ready-to-run) on U250.
 
 <img src=./doc/linux.png width="80%">
 
@@ -82,4 +87,4 @@
 
 ## 5. About
  Polaris is an open source RISC-V processor aiming to perform high energy efficiency. In the early stage of design, it was hoped to be the basic computing unit of an open source muulti-core chip.
- The development environment of Polaris relies on the NutShell project, so you can see some codes of NutShell in this project. Specifically, currently the scalar ALU for RVI, the atomic part of the pipeline LSU and the divider still multiplex the uints of the NutShell.
+ The development environment of Polaris relies on the [NutShell](https://github.com/OSCPU/NutShell) project, so you can see some codes of NutShell in this project. Specifically, currently the scalar ALU for RVI, the atomic part of the pipeline LSU and the divider still multiplex the uints of the NutShell.
