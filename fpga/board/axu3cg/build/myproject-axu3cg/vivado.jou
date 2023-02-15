@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Aug 17 01:43:32 2022
+# Process ID: 6880
+# Current directory: /home/stu/NutShell/fpga/board/axu3cg/build/myproject-axu3cg
+# Command line: vivado
+# Log file: /home/stu/NutShell/fpga/board/axu3cg/build/myproject-axu3cg/vivado.log
+# Journal file: /home/stu/NutShell/fpga/board/axu3cg/build/myproject-axu3cg/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.xpr
+update_compile_order -fileset sources_1
+add_files -norecurse /home/stu/NutShell/build/build/array_ext.v
+update_compile_order -fileset sources_1
+update_module_reference nutshell_NutShell_0_0
+open_hw
+reset_run nutshell_util_vector_logic_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 5
+wait_on_run impl_1

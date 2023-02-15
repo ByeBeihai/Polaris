@@ -1,0 +1,549 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Aug 16 11:29:09 2022
+# Process ID: 16942
+# Current directory: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_AXI4VGA_0_0_synth_1
+# Command line: vivado -log zynq_soc_AXI4VGA_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_soc_AXI4VGA_0_0.tcl
+# Log file: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_AXI4VGA_0_0_synth_1/zynq_soc_AXI4VGA_0_0.vds
+# Journal file: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_AXI4VGA_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source zynq_soc_AXI4VGA_0_0.tcl -notrace
+Command: synth_design -top zynq_soc_AXI4VGA_0_0 -part xczu3cg-sfvc784-1-e -mode out_of_context
+Starting synth_design
+WARNING: [IP_Flow 19-3571] IP 'zynq_soc_AXI4VGA_0_0' is restricted:
+* Module reference is stale and needs refreshing.
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu3cg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu3cg'
+INFO: [Device 21-403] Loading part xczu3cg-sfvc784-1-e
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 17027 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 2135.992 ; gain = 0.000 ; free physical = 122 ; free virtual = 3136
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_AXI4VGA_0_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_AXI4VGA_0_0/synth/zynq_soc_AXI4VGA_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'AXI4VGA' [/home/stu/NutShell/build/TopMain.v:23933]
+INFO: [Synth 8-6157] synthesizing module 'VGACtrl' [/home/stu/NutShell/build/TopMain.v:23419]
+INFO: [Synth 8-6155] done synthesizing module 'VGACtrl' (1#1) [/home/stu/NutShell/build/TopMain.v:23419]
+INFO: [Synth 8-6157] synthesizing module 'AXI4RAM' [/home/stu/NutShell/build/TopMain.v:23554]
+INFO: [Synth 8-6155] done synthesizing module 'AXI4RAM' (2#1) [/home/stu/NutShell/build/TopMain.v:23554]
+INFO: [Synth 8-6155] done synthesizing module 'AXI4VGA' (3#1) [/home/stu/NutShell/build/TopMain.v:23933]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_AXI4VGA_0_0' (4#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_AXI4VGA_0_0/synth/zynq_soc_AXI4VGA_0_0.v:58]
+WARNING: [Synth 8-3331] design AXI4RAM has unconnected port io_in_rready
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[31]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[30]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[29]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[28]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[27]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[26]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[25]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[24]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[23]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[22]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[21]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[20]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[19]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[18]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[17]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[16]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[15]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[14]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[13]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[12]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[11]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[10]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[9]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[8]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[7]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[6]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[5]
+WARNING: [Synth 8-3331] design VGACtrl has unconnected port io_in_araddr[4]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_awprot[2]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_awprot[1]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_awprot[0]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[31]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[30]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[29]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[28]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[27]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[26]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[25]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[24]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[23]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[22]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[21]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[20]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[19]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[18]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[17]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[16]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[15]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[14]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[13]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[12]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[11]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[10]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[9]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[8]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[7]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[6]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[5]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[4]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[3]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[2]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[1]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_araddr[0]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_arprot[2]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_arprot[1]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_fb_arprot[0]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[31]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[30]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[29]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[28]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[27]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[26]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[25]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[24]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[23]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[22]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[21]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[20]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[19]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[18]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[17]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[16]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[15]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[14]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[13]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[12]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[11]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[10]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[9]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[8]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[7]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[6]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[5]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[4]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[3]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[2]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[1]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awaddr[0]
+WARNING: [Synth 8-3331] design AXI4VGA has unconnected port io_in_ctrl_awprot[2]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 2135.992 ; gain = 0.000 ; free physical = 253 ; free virtual = 3162
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 2135.992 ; gain = 0.000 ; free physical = 243 ; free virtual = 3152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 2135.992 ; gain = 0.000 ; free physical = 243 ; free virtual = 3152
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2257.984 ; gain = 0.000 ; free physical = 120 ; free virtual = 2778
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:02 . Memory (MB): peak = 2278.797 ; gain = 20.812 ; free physical = 118 ; free virtual = 2752
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:48 . Memory (MB): peak = 2278.797 ; gain = 142.805 ; free physical = 126 ; free virtual = 2492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu3cg-sfvc784-1-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:49 . Memory (MB): peak = 2278.797 ; gain = 142.805 ; free physical = 124 ; free virtual = 2465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:49 . Memory (MB): peak = 2278.797 ; gain = 142.805 ; free physical = 119 ; free virtual = 2462
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"AXI4RAM:/MEM_0_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "AXI4RAM:/MEM_0_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "AXI4RAM:/MEM_0_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "AXI4RAM:/MEM_0_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"AXI4RAM:/MEM_1_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "AXI4RAM:/MEM_1_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "AXI4RAM:/MEM_1_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "AXI4RAM:/MEM_1_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"AXI4RAM:/MEM_2_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "AXI4RAM:/MEM_2_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "AXI4RAM:/MEM_2_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "AXI4RAM:/MEM_2_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"AXI4RAM:/MEM_3_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "AXI4RAM:/MEM_3_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "AXI4RAM:/MEM_3_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "AXI4RAM:/MEM_3_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"AXI4RAM:/MEM_4_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "AXI4RAM:/MEM_4_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "AXI4RAM:/MEM_4_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "AXI4RAM:/MEM_4_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"AXI4RAM:/MEM_5_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "AXI4RAM:/MEM_5_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "AXI4RAM:/MEM_5_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "AXI4RAM:/MEM_5_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"AXI4RAM:/MEM_6_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "AXI4RAM:/MEM_6_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "AXI4RAM:/MEM_6_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "AXI4RAM:/MEM_6_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"AXI4RAM:/MEM_7_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "AXI4RAM:/MEM_7_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "AXI4RAM:/MEM_7_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "AXI4RAM:/MEM_7_reg"
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:51 . Memory (MB): peak = 2278.797 ; gain = 142.805 ; free physical = 125 ; free virtual = 2433
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 8     
+	                1 Bit    Registers := 12    
++---RAMs : 
+	             468K Bit         RAMs := 8     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 2     
+	   2 Input     24 Bit        Muxes := 2     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module VGACtrl 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 5     
+Module AXI4RAM 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 8     
+	                1 Bit    Registers := 5     
++---RAMs : 
+	             468K Bit         RAMs := 8     
+Module AXI4VGA 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 2     
+	   2 Input     24 Bit        Muxes := 2     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 360 (col length:72)
+BRAMs: 432 (col length: RAMB18 72 RAMB36 36)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"zynq_soc_AXI4VGA_0_0/inst/fb/MEM_0_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_0_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_0_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_0_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"zynq_soc_AXI4VGA_0_0/inst/fb/MEM_1_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_1_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_1_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_1_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"zynq_soc_AXI4VGA_0_0/inst/fb/MEM_2_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_2_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_2_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_2_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"zynq_soc_AXI4VGA_0_0/inst/fb/MEM_3_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_3_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_3_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_3_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"zynq_soc_AXI4VGA_0_0/inst/fb/MEM_4_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_4_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_4_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_4_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"zynq_soc_AXI4VGA_0_0/inst/fb/MEM_5_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_5_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_5_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_5_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"zynq_soc_AXI4VGA_0_0/inst/fb/MEM_6_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_6_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_6_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_6_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"zynq_soc_AXI4VGA_0_0/inst/fb/MEM_7_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_7_reg"
+INFO: [Synth 8-5800] Cascade chain of height 8 reduced to 7 because memory depth for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_7_reg" is not power of 2. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 7 and width 8 for RAM "zynq_soc_AXI4VGA_0_0/inst/fb/MEM_7_reg"
+INFO: [Synth 8-3332] Sequential element (inst/fb/MEM_3_reg_mux_sel_reg_0) is unused and will be removed from module zynq_soc_AXI4VGA_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/fb/MEM_7_reg_mux_sel_reg_0) is unused and will be removed from module zynq_soc_AXI4VGA_0_0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:55 . Memory (MB): peak = 2278.797 ; gain = 142.805 ; free physical = 219 ; free virtual = 2577
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|AXI4RAM:    | MEM_0_reg  | 64 K x 8(WRITE_FIRST)  |   | R | 64 K x 8(READ_FIRST)   | W |   | Port A and B     | 0      | 15     | 8,7             | 
+|AXI4RAM:    | MEM_1_reg  | 64 K x 8(WRITE_FIRST)  |   | R | 64 K x 8(READ_FIRST)   | W |   | Port A and B     | 0      | 15     | 8,7             | 
+|AXI4RAM:    | MEM_2_reg  | 64 K x 8(WRITE_FIRST)  |   | R | 64 K x 8(READ_FIRST)   | W |   | Port A and B     | 0      | 15     | 8,7             | 
+|AXI4RAM:    | MEM_4_reg  | 64 K x 8(WRITE_FIRST)  |   | R | 64 K x 8(READ_FIRST)   | W |   | Port A and B     | 0      | 15     | 8,7             | 
+|AXI4RAM:    | MEM_5_reg  | 64 K x 8(WRITE_FIRST)  |   | R | 64 K x 8(READ_FIRST)   | W |   | Port A and B     | 0      | 15     | 8,7             | 
+|AXI4RAM:    | MEM_6_reg  | 64 K x 8(WRITE_FIRST)  |   | R | 64 K x 8(READ_FIRST)   | W |   | Port A and B     | 0      | 15     | 8,7             | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:58 ; elapsed = 00:02:07 . Memory (MB): peak = 2681.250 ; gain = 545.258 ; free physical = 123 ; free virtual = 1594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:02:08 . Memory (MB): peak = 2682.250 ; gain = 546.258 ; free physical = 122 ; free virtual = 1569
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|AXI4RAM:    | MEM_0_reg  | 64 K x 8(WRITE_FIRST)  |   | R | 64 K x 8(READ_FIRST)   | W |   | Port A and B     | 0      | 15     | 8,7             | 
+|AXI4RAM:    | MEM_1_reg  | 64 K x 8(WRITE_FIRST)  |   | R | 64 K x 8(READ_FIRST)   | W |   | Port A and B     | 0      | 15     | 8,7             | 
+|AXI4RAM:    | MEM_2_reg  | 64 K x 8(WRITE_FIRST)  |   | R | 64 K x 8(READ_FIRST)   | W |   | Port A and B     | 0      | 15     | 8,7             | 
+|AXI4RAM:    | MEM_4_reg  | 64 K x 8(WRITE_FIRST)  |   | R | 64 K x 8(READ_FIRST)   | W |   | Port A and B     | 0      | 15     | 8,7             | 
+|AXI4RAM:    | MEM_5_reg  | 64 K x 8(WRITE_FIRST)  |   | R | 64 K x 8(READ_FIRST)   | W |   | Port A and B     | 0      | 15     | 8,7             | 
+|AXI4RAM:    | MEM_6_reg  | 64 K x 8(WRITE_FIRST)  |   | R | 64 K x 8(READ_FIRST)   | W |   | Port A and B     | 0      | 15     | 8,7             | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'inst/fb/MEM_4_reg_mux_sel_reg_0' (FDE) to 'inst/fb/MEM_6_reg_mux_sel_reg_0'
+INFO: [Synth 8-3886] merging instance 'inst/fb/MEM_0_reg_mux_sel_reg_0' (FDE) to 'inst/fb/MEM_6_reg_mux_sel_reg_0'
+INFO: [Synth 8-3886] merging instance 'inst/fb/MEM_5_reg_mux_sel_reg_0' (FDE) to 'inst/fb/MEM_6_reg_mux_sel_reg_0'
+INFO: [Synth 8-3886] merging instance 'inst/fb/MEM_1_reg_mux_sel_reg_0' (FDE) to 'inst/fb/MEM_6_reg_mux_sel_reg_0'
+INFO: [Synth 8-3886] merging instance 'inst/fb/MEM_6_reg_mux_sel_reg_0' (FDE) to 'inst/fb/MEM_2_reg_mux_sel_reg_0'
+INFO: [Synth 8-6837] The timing for the instance inst/fb/MEM_0_reg_bram_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/fb/MEM_0_reg_bram_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/fb/MEM_1_reg_bram_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/fb/MEM_1_reg_bram_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/fb/MEM_2_reg_bram_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/fb/MEM_2_reg_bram_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/fb/MEM_4_reg_bram_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/fb/MEM_4_reg_bram_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/fb/MEM_5_reg_bram_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/fb/MEM_5_reg_bram_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/fb/MEM_6_reg_bram_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/fb/MEM_6_reg_bram_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:58 ; elapsed = 00:02:08 . Memory (MB): peak = 2712.594 ; gain = 576.602 ; free physical = 129 ; free virtual = 1545
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:02 ; elapsed = 00:02:13 . Memory (MB): peak = 2715.562 ; gain = 579.570 ; free physical = 121 ; free virtual = 1464
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:02 ; elapsed = 00:02:14 . Memory (MB): peak = 2715.562 ; gain = 579.570 ; free physical = 124 ; free virtual = 1457
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:02 ; elapsed = 00:02:14 . Memory (MB): peak = 2715.562 ; gain = 579.570 ; free physical = 120 ; free virtual = 1429
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:02 ; elapsed = 00:02:14 . Memory (MB): peak = 2715.562 ; gain = 579.570 ; free physical = 120 ; free virtual = 1429
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:02 ; elapsed = 00:02:14 . Memory (MB): peak = 2715.562 ; gain = 579.570 ; free physical = 119 ; free virtual = 1424
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:02 ; elapsed = 00:02:14 . Memory (MB): peak = 2715.562 ; gain = 579.570 ; free physical = 124 ; free virtual = 1418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |CARRY8     |     6|
+|2     |LUT1       |     6|
+|3     |LUT2       |    12|
+|4     |LUT3       |   134|
+|5     |LUT4       |    15|
+|6     |LUT5       |   156|
+|7     |LUT6       |    62|
+|8     |RAMB36E2   |    12|
+|9     |RAMB36E2_1 |    66|
+|10    |RAMB36E2_2 |    12|
+|11    |FDRE       |   116|
++------+-----------+------+
+
+Report Instance Areas: 
++------+---------+--------+------+
+|      |Instance |Module  |Cells |
++------+---------+--------+------+
+|1     |top      |        |   597|
+|2     |  inst   |AXI4VGA |   597|
+|3     |    ctrl |VGACtrl |    15|
+|4     |    fb   |AXI4RAM |   408|
++------+---------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:02 ; elapsed = 00:02:14 . Memory (MB): peak = 2715.562 ; gain = 579.570 ; free physical = 123 ; free virtual = 1417
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 209 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:58 ; elapsed = 00:01:57 . Memory (MB): peak = 2715.562 ; gain = 436.766 ; free physical = 170 ; free virtual = 1423
+Synthesis Optimization Complete : Time (s): cpu = 00:01:02 ; elapsed = 00:02:15 . Memory (MB): peak = 2715.570 ; gain = 579.570 ; free physical = 145 ; free virtual = 1409
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2750.383 ; gain = 0.000 ; free physical = 119 ; free virtual = 1226
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+104 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:20 ; elapsed = 00:02:54 . Memory (MB): peak = 2750.383 ; gain = 1391.383 ; free physical = 314 ; free virtual = 1425
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2750.383 ; gain = 0.000 ; free physical = 309 ; free virtual = 1425
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_AXI4VGA_0_0_synth_1/zynq_soc_AXI4VGA_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2774.395 ; gain = 0.000 ; free physical = 263 ; free virtual = 1418
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_AXI4VGA_0_0_synth_1/zynq_soc_AXI4VGA_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file zynq_soc_AXI4VGA_0_0_utilization_synth.rpt -pb zynq_soc_AXI4VGA_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 16 11:32:28 2022...

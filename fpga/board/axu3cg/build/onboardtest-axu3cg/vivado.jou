@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Aug 16 11:25:52 2022
+# Process ID: 16047
+# Current directory: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg
+# Command line: vivado
+# Log file: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/vivado.log
+# Journal file: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.xpr
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+reset_run synth_1
+reset_run zynq_soc_auto_pc_1_synth_1
+reset_run zynq_soc_axi_uartlite_0_1_synth_1
+reset_run zynq_soc_corerst_0_synth_1
+reset_run zynq_soc_zynq_ultra_ps_e_0_0_synth_1
+reset_run zynq_soc_axi_dma_arm_0_synth_1
+reset_run zynq_soc_auto_us_4_synth_1
+reset_run zynq_soc_auto_us_5_synth_1
+reset_run zynq_soc_s02_mmu_0_synth_1
+reset_run zynq_soc_s03_mmu_0_synth_1
+reset_run zynq_soc_xbar_3_synth_1
+add_files -norecurse {/home/stu/NutShell/build/DifftestRunaheadEvent.v /home/stu/NutShell/build/DifftestRunaheadRedirectEvent.v}
+add_files -norecurse {/home/stu/NutShell/build/DifftestRunaheadEvent.v /home/stu/NutShell/build/DifftestRunaheadRedirectEvent.v}
+add_files -norecurse /home/stu/NutShell/build/build/TopMain.v.conf

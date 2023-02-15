@@ -1,0 +1,2208 @@
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Average-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Average-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x800010d4
+total guest instructions = 116,128
+instrCnt = 116,128, cycleCnt = 307,822, IPC = 0.377257
+Seed=0 Guest cycle spent: 307,824 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 4,974ms
+======== PerfCnt =========
+              307822 <- Mcycle
+              116128 <- Minstret
+              106525 <- MultiCommit
+                7107 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+               51200 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                3208 <- MifuFlush
+                 199 <- MbpBRight
+                3101 <- MbpBWrong
+                   0 <- MbpJRight
+                 105 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                3201 <- MultiCommit2
+                3201 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              232653 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              103668 <- MloadStall
+               52182 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              307822,               116128,               106525,                 7107,                    0,                    0,                    0,                    0,                    0,                51200,                    1,                    0,                    0,                    0,                 3208,                  199,                 3101,                    0,                  105,                    0,                    0,                    0,                    2,                    0,                 3201,                 3201,                    0,                    0,                    0,                    0,                    0,                    0,               232653,                    0,                    0,               103668,                52182,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Average16-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Average16-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x80001094
+total guest instructions = 128,928
+instrCnt = 128,928, cycleCnt = 330,214, IPC = 0.390438
+Seed=0 Guest cycle spent: 330,216 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 5,336ms
+======== PerfCnt =========
+              330214 <- Mcycle
+              128928 <- Minstret
+              109725 <- MultiCommit
+               13474 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+               51200 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                6408 <- MifuFlush
+                 199 <- MbpBRight
+                6301 <- MbpBWrong
+                   0 <- MbpJRight
+                 105 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                6401 <- MultiCommit2
+                6401 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              232651 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              103666 <- MloadStall
+               52182 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              330214,               128928,               109725,                13474,                    0,                    0,                    0,                    0,                    0,                51200,                    1,                    0,                    0,                    0,                 6408,                  199,                 6301,                    0,                  105,                    0,                    0,                    0,                    2,                    0,                 6401,                 6401,                    0,                    0,                    0,                    0,                    0,                    0,               232651,                    0,                    0,               103666,                52182,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Average32-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Average32-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x80001094
+total guest instructions = 128,928
+instrCnt = 128,928, cycleCnt = 330,214, IPC = 0.390438
+Seed=0 Guest cycle spent: 330,216 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 5,363ms
+======== PerfCnt =========
+              330214 <- Mcycle
+              128928 <- Minstret
+              109725 <- MultiCommit
+               13474 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+               51200 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                6408 <- MifuFlush
+                 199 <- MbpBRight
+                6301 <- MbpBWrong
+                   0 <- MbpJRight
+                 105 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                6401 <- MultiCommit2
+                6401 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              232651 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              103666 <- MloadStall
+               52182 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              330214,               128928,               109725,                13474,                    0,                    0,                    0,                    0,                    0,                51200,                    1,                    0,                    0,                    0,                 6408,                  199,                 6301,                    0,                  105,                    0,                    0,                    0,                    2,                    0,                 6401,                 6401,                    0,                    0,                    0,                    0,                    0,                    0,               232651,                    0,                    0,               103666,                52182,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Average-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Average-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x800010ec
+total guest instructions = 1,127,227
+instrCnt = 1,127,227, cycleCnt = 2,435,754, IPC = 0.462784
+Seed=0 Guest cycle spent: 2,435,756 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 40,059ms
+======== PerfCnt =========
+             2435754 <- Mcycle
+             1127227 <- Minstret
+             1050421 <- MultiCommit
+               51934 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              409600 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+               25605 <- MifuFlush
+                 101 <- MbpBRight
+               25599 <- MbpBWrong
+                   0 <- MbpJRight
+                   4 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+               25602 <- MultiCommit2
+               25602 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+             1845459 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              820474 <- MloadStall
+              410582 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+             2435754,              1127227,              1050421,                51934,                    0,                    0,                    0,                    0,                    0,               409600,                    1,                    0,                    0,                    0,                25605,                  101,                25599,                    0,                    4,                    0,                    0,                    0,                    2,                    0,                25602,                25602,                    0,                    0,                    0,                    0,                    0,                    0,              1845459,                    0,                    0,               820474,               410582,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Average16-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Average16-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x8000109c
+total guest instructions = 615,227
+instrCnt = 615,227, cycleCnt = 1,309,330, IPC = 0.469879
+Seed=0 Guest cycle spent: 1,309,332 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 21,400ms
+======== PerfCnt =========
+             1309330 <- Mcycle
+              615227 <- Minstret
+              538424 <- MultiCommit
+               51875 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              204800 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+               25605 <- MifuFlush
+                 101 <- MbpBRight
+               25599 <- MbpBWrong
+                   0 <- MbpJRight
+                   4 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+               25601 <- MultiCommit2
+               25601 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              923895 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              410874 <- MloadStall
+              205818 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+             1309330,               615227,               538424,                51875,                    0,                    0,                    0,                    0,                    0,               204800,                    1,                    0,                    0,                    0,                25605,                  101,                25599,                    0,                    4,                    0,                    0,                    0,                    2,                    0,                25601,                25601,                    0,                    0,                    0,                    0,                    0,                    0,               923895,                    0,                    0,               410874,               205818,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Average32-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Average32-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x8000109c
+total guest instructions = 308,027
+instrCnt = 308,027, cycleCnt = 656,530, IPC = 0.469174
+Seed=0 Guest cycle spent: 656,532 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 10,398ms
+======== PerfCnt =========
+              656530 <- Mcycle
+              308027 <- Minstret
+              269624 <- MultiCommit
+               26275 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              102400 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+               12805 <- MifuFlush
+                 101 <- MbpBRight
+               12799 <- MbpBWrong
+                   0 <- MbpJRight
+                   4 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+               12801 <- MultiCommit2
+               12801 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              463095 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              206074 <- MloadStall
+              103418 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              656530,               308027,               269624,                26275,                    0,                    0,                    0,                    0,                    0,               102400,                    1,                    0,                    0,                    0,                12805,                  101,                12799,                    0,                    4,                    0,                    0,                    0,                    2,                    0,                12801,                12801,                    0,                    0,                    0,                    0,                    0,                    0,               463095,                    0,                    0,               206074,               103418,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/axpy-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/axpy-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x8000106c
+total guest instructions = 282,725
+instrCnt = 282,725, cycleCnt = 389,325, IPC = 0.726193
+Seed=0 Guest cycle spent: 389,327 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 6,364ms
+======== PerfCnt =========
+              389325 <- Mcycle
+              282725 <- Minstret
+              205920 <- MultiCommit
+                 989 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+               76800 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                 172 <- MifuFlush
+               25534 <- MbpBRight
+                 166 <- MbpBWrong
+                   0 <- MbpJRight
+                   4 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+               25601 <- MultiCommit2
+               25602 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              309709 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              154592 <- MloadStall
+               52614 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              389325,               282725,               205920,                  989,                    0,                    0,                    0,                    0,                    0,                76800,                    1,                    0,                    0,                    0,                  172,                25534,                  166,                    0,                    4,                    0,                    0,                    0,                    2,                    0,                25601,                25602,                    0,                    0,                    0,                    0,                    0,                    0,               309709,                    0,                    0,               154592,                52614,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/axpy16-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/axpy16-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x8000111c
+total guest instructions = 170,826
+instrCnt = 170,826, cycleCnt = 367,120, IPC = 0.465314
+Seed=0 Guest cycle spent: 367,122 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 6,125ms
+======== PerfCnt =========
+              367120 <- Mcycle
+              170826 <- Minstret
+              161221 <- MultiCommit
+                1109 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+               76800 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                 209 <- MifuFlush
+                3198 <- MbpBRight
+                 102 <- MbpBWrong
+                   0 <- MbpJRight
+                 105 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                3201 <- MultiCommit2
+                3202 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              309643 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              154511 <- MloadStall
+               52629 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              367120,               170826,               161221,                 1109,                    0,                    0,                    0,                    0,                    0,                76800,                    1,                    0,                    0,                    0,                  209,                 3198,                  102,                    0,                  105,                    0,                    0,                    0,                    2,                    0,                 3201,                 3202,                    0,                    0,                    0,                    0,                    0,                    0,               309643,                    0,                    0,               154511,                52629,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/axpy32-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/axpy32-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x8000111c
+total guest instructions = 170,826
+instrCnt = 170,826, cycleCnt = 341,554, IPC = 0.500143
+Seed=0 Guest cycle spent: 341,556 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 5,612ms
+======== PerfCnt =========
+              341554 <- Mcycle
+              170826 <- Minstret
+              161221 <- MultiCommit
+                1109 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+               76800 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                 209 <- MifuFlush
+                3198 <- MbpBRight
+                 102 <- MbpBWrong
+                   0 <- MbpJRight
+                 105 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                3201 <- MultiCommit2
+                3202 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              309677 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              154512 <- MloadStall
+               52662 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              341554,               170826,               161221,                 1109,                    0,                    0,                    0,                    0,                    0,                76800,                    1,                    0,                    0,                    0,                  209,                 3198,                  102,                    0,                  105,                    0,                    0,                    0,                    2,                    0,                 3201,                 3202,                    0,                    0,                    0,                    0,                    0,                    0,               309677,                    0,                    0,               154512,                52662,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/axpy-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/axpy-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x8000106c
+total guest instructions = 1,127,525
+instrCnt = 1,127,525, cycleCnt = 1,438,852, IPC = 0.783628
+Seed=0 Guest cycle spent: 1,438,854 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 25,976ms
+======== PerfCnt =========
+             1438852 <- Mcycle
+             1127525 <- Minstret
+              820320 <- MultiCommit
+                 990 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              307200 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+              102400 <- MmulInstr
+                 172 <- MifuFlush
+              102334 <- MbpBRight
+                 166 <- MbpBWrong
+                   0 <- MbpJRight
+                   4 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+              102401 <- MultiCommit2
+              102402 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+             1231236 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              615287 <- MloadStall
+              206246 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+             1438852,              1127525,               820320,                  990,                    0,                    0,                    0,                    0,                    0,               307200,                    1,                    0,                    0,               102400,                  172,               102334,                  166,                    0,                    4,                    0,                    0,                    0,                    2,                    0,               102401,               102402,                    0,                    0,                    0,                    0,                    0,                    0,              1231236,                    0,                    0,               615287,               206246,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/axpy16-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/axpy16-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x8000111c
+total guest instructions = 340,426
+instrCnt = 340,426, cycleCnt = 677,554, IPC = 0.502434
+Seed=0 Guest cycle spent: 677,556 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 11,509ms
+======== PerfCnt =========
+              677554 <- Mcycle
+              340426 <- Minstret
+              321221 <- MultiCommit
+                1111 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              153600 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+               51200 <- MmulInstr
+                 209 <- MifuFlush
+                6398 <- MbpBRight
+                 102 <- MbpBWrong
+                   0 <- MbpJRight
+                 105 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                6401 <- MultiCommit2
+                6402 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              616871 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              308092 <- MloadStall
+              103876 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              677554,               340426,               321221,                 1111,                    0,                    0,                    0,                    0,                    0,               153600,                    1,                    0,                    0,                51200,                  209,                 6398,                  102,                    0,                  105,                    0,                    0,                    0,                    2,                    0,                 6401,                 6402,                    0,                    0,                    0,                    0,                    0,                    0,               616871,                    0,                    0,               308092,               103876,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/axpy32-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/axpy32-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x8000115c
+total guest instructions = 222,026
+instrCnt = 222,026, cycleCnt = 392,730, IPC = 0.565340
+Seed=0 Guest cycle spent: 392,732 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 6,478ms
+======== PerfCnt =========
+              392730 <- Mcycle
+              222026 <- Minstret
+              212421 <- MultiCommit
+                1172 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+               76800 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+               25600 <- MmulInstr
+                 209 <- MifuFlush
+                3198 <- MbpBRight
+                 102 <- MbpBWrong
+                   0 <- MbpJRight
+                 105 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                3201 <- MultiCommit2
+                3202 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              309640 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              154484 <- MloadStall
+               52653 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              392730,               222026,               212421,                 1172,                    0,                    0,                    0,                    0,                    0,                76800,                    1,                    0,                    0,                25600,                  209,                 3198,                  102,                    0,                  105,                    0,                    0,                    0,                    2,                    0,                 3201,                 3202,                    0,                    0,                    0,                    0,                    0,                    0,               309640,                    0,                    0,               154484,                52653,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Distance-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Distance-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+2814080000 1219840000 1594240000
+Core 0: HIT GOOD TRAP at pc = 0x80001080
+total guest instructions = 182,177
+instrCnt = 182,177, cycleCnt = 265,024, IPC = 0.687398
+Seed=0 Guest cycle spent: 265,026 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 4,286ms
+======== PerfCnt =========
+              265024 <- Mcycle
+              182177 <- Minstret
+              104644 <- MultiCommit
+                2348 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+               51497 <- MloadInstr
+                  69 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                 225 <- MifuFlush
+               25879 <- MbpBRight
+                 149 <- MbpBWrong
+                 107 <- MbpJRight
+                  27 <- MbpJWrong
+                   2 <- MbpIRight
+                   2 <- MbpIWrong
+                  67 <- MbpRRight
+                  47 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                 376 <- MultiCommit2
+                 126 <- MultiCommit3
+               25635 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              157212 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              104535 <- MloadStall
+                 862 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              265024,               182177,               104644,                 2348,                    0,                    0,                    0,                    0,                    0,                51497,                   69,                    0,                    0,                    0,                  225,                25879,                  149,                  107,                   27,                    2,                    2,                   67,                   47,                    0,                  376,                  126,                25635,                    0,                    0,                    0,                    0,                    0,               157212,                    0,                    0,               104535,                  862,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Distance16-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Distance16-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+1206937600 413312000 793625600
+Core 0: HIT GOOD TRAP at pc = 0x800010fc
+total guest instructions = 114,977
+instrCnt = 114,977, cycleCnt = 238,820, IPC = 0.481438
+Seed=0 Guest cycle spent: 238,822 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 3,943ms
+======== PerfCnt =========
+              238820 <- Mcycle
+              114977 <- Minstret
+              104686 <- MultiCommit
+                8559 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+               51485 <- MloadInstr
+                  65 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                3322 <- MifuFlush
+                 467 <- MbpBRight
+                3147 <- MbpBWrong
+                 101 <- MbpJRight
+                 128 <- MbpJWrong
+                   2 <- MbpIRight
+                   2 <- MbpIWrong
+                  63 <- MbpRRight
+                  45 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                 357 <- MultiCommit2
+                 119 <- MultiCommit3
+                3232 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              157243 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              104625 <- MloadStall
+                 829 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              238820,               114977,               104686,                 8559,                    0,                    0,                    0,                    0,                    0,                51485,                   65,                    0,                    0,                    0,                 3322,                  467,                 3147,                  101,                  128,                    2,                    2,                   63,                   45,                    0,                  357,                  119,                 3232,                    0,                    0,                    0,                    0,                    0,               157243,                    0,                    0,               104625,                  829,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Distance32-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Distance32-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+825804800
+Core 0: HIT GOOD TRAP at pc = 0x800010ec
+total guest instructions = 113,534
+instrCnt = 113,534, cycleCnt = 236,064, IPC = 0.480946
+Seed=0 Guest cycle spent: 236,066 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 3,754ms
+======== PerfCnt =========
+              236064 <- Mcycle
+              113534 <- Minstret
+              103702 <- MultiCommit
+                8314 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+               51307 <- MloadInstr
+                  23 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                3275 <- MifuFlush
+                 277 <- MbpBRight
+                3128 <- MbpBWrong
+                  26 <- MbpJRight
+                 124 <- MbpJWrong
+                   0 <- MbpIRight
+                   2 <- MbpIWrong
+                  18 <- MbpRRight
+                  21 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                 111 <- MultiCommit2
+                  44 <- MultiCommit3
+                3211 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              156025 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              104143 <- MloadStall
+                 456 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              236064,               113534,               103702,                 8314,                    0,                    0,                    0,                    0,                    0,                51307,                   23,                    0,                    0,                    0,                 3275,                  277,                 3128,                   26,                  124,                    0,                    2,                   18,                   21,                    0,                  111,                   44,                 3211,                    0,                    0,                    0,                    0,                    0,               156025,                    0,                    0,               104143,                  456,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Distance-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Distance-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+2814080000
+Core 0: HIT GOOD TRAP at pc = 0x80001078
+total guest instructions = 1,639,884
+instrCnt = 1,639,884, cycleCnt = 2,360,618, IPC = 0.694684
+Seed=0 Guest cycle spent: 2,360,620 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 38,429ms
+======== PerfCnt =========
+             2360618 <- Mcycle
+             1639884 <- Minstret
+             1229932 <- MultiCommit
+              104240 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              409713 <- MloadInstr
+                  25 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+              204800 <- MmulInstr
+               51277 <- MifuFlush
+              153782 <- MbpBRight
+               51230 <- MbpBWrong
+                  29 <- MbpJRight
+                  23 <- MbpJWrong
+                   0 <- MbpIRight
+                   2 <- MbpIWrong
+                  20 <- MbpRRight
+                  22 <- MbpRWrong
+                   0 <- Ml2cacheHit
+              409819 <- MultiCommit2
+                  47 <- MultiCommit3
+                  13 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+             1231233 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              820932 <- MloadStall
+                 462 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+             2360618,              1639884,              1229932,               104240,                    0,                    0,                    0,                    0,                    0,               409713,                   25,                    0,                    0,               204800,                51277,               153782,                51230,                   29,                   23,                    0,                    2,                   20,                   22,                    0,               409819,                   47,                   13,                    0,                    0,                    0,                    0,                    0,              1231233,                    0,                    0,               820932,                  462,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Distance16-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Distance16-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+1206937600
+Core 0: HIT GOOD TRAP at pc = 0x80001104
+total guest instructions = 551,884
+instrCnt = 551,884, cycleCnt = 851,007, IPC = 0.648507
+Seed=0 Guest cycle spent: 851,009 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 14,692ms
+======== PerfCnt =========
+              851007 <- Mcycle
+              551884 <- Minstret
+              526031 <- MultiCommit
+                2123 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              204913 <- MloadInstr
+                  25 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+              102400 <- MmulInstr
+                 177 <- MifuFlush
+               12882 <- MbpBRight
+                 130 <- MbpBWrong
+                  29 <- MbpJRight
+                  23 <- MbpJWrong
+                   0 <- MbpIRight
+                   2 <- MbpIWrong
+                  20 <- MbpRRight
+                  22 <- MbpRWrong
+                   0 <- Ml2cacheHit
+               25722 <- MultiCommit2
+                  46 <- MultiCommit3
+                  13 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              616844 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              411366 <- MloadStall
+                 440 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              851007,               551884,               526031,                 2123,                    0,                    0,                    0,                    0,                    0,               204913,                   25,                    0,                    0,               102400,                  177,                12882,                  130,                   29,                   23,                    0,                    2,                   20,                   22,                    0,                25722,                   46,                   13,                    0,                    0,                    0,                    0,                    0,               616844,                    0,                    0,               411366,                  440,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Distance32-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Distance32-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+825804800
+Core 0: HIT GOOD TRAP at pc = 0x8000110c
+total guest instructions = 276,734
+instrCnt = 276,734, cycleCnt = 429,309, IPC = 0.644603
+Seed=0 Guest cycle spent: 429,311 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 7,251ms
+======== PerfCnt =========
+              429309 <- Mcycle
+              276734 <- Minstret
+              263702 <- MultiCommit
+                2344 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              102507 <- MloadInstr
+                  23 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+               51200 <- MmulInstr
+                 276 <- MifuFlush
+                6476 <- MbpBRight
+                 129 <- MbpBWrong
+                  26 <- MbpJRight
+                 124 <- MbpJWrong
+                   0 <- MbpIRight
+                   2 <- MbpIWrong
+                  18 <- MbpRRight
+                  21 <- MbpRWrong
+                   0 <- Ml2cacheHit
+               12910 <- MultiCommit2
+                  43 <- MultiCommit3
+                  12 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              309636 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              206487 <- MloadStall
+                 524 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              429309,               276734,               263702,                 2344,                    0,                    0,                    0,                    0,                    0,               102507,                   23,                    0,                    0,                51200,                  276,                 6476,                  129,                   26,                  124,                    0,                    2,                   18,                   21,                    0,                12910,                   43,                   12,                    0,                    0,                    0,                    0,                    0,               309636,                    0,                    0,               206487,                  524,                    0, 
+
+
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/DotProduct16-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/DotProduct16-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+res bb800 res0 1f400 res1 9c400
+Core 0: HIT GOOD TRAP at pc = 0x800010e8
+total guest instructions = 89,301
+instrCnt = 89,301, cycleCnt = 186,935, IPC = 0.477712
+Seed=0 Guest cycle spent: 186,937 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 3,004ms
+======== PerfCnt =========
+              186935 <- Mcycle
+               89301 <- Minstret
+               79033 <- MultiCommit
+                8351 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+               51493 <- MloadInstr
+                  67 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                3316 <- MifuFlush
+                 438 <- MbpBRight
+                3142 <- MbpBWrong
+                 129 <- MbpJRight
+                 126 <- MbpJWrong
+                   4 <- MbpIRight
+                   2 <- MbpIWrong
+                  65 <- MbpRRight
+                  46 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                 313 <- MultiCommit2
+                 125 <- MultiCommit3
+                3235 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              157322 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              104647 <- MloadStall
+                 884 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              186935,                89301,                79033,                 8351,                    0,                    0,                    0,                    0,                    0,                51493,                   67,                    0,                    0,                    0,                 3316,                  438,                 3142,                  129,                  126,                    4,                    2,                   65,                   46,                    0,                  313,                  125,                 3235,                    0,                    0,                    0,                    0,                    0,               157322,                    0,                    0,               104647,                  884,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/DotProduct-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/DotProduct-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+res 113000 res0 bb800 res1 57800
+Core 0: HIT GOOD TRAP at pc = 0x8000108c
+total guest instructions = 156,449
+instrCnt = 156,449, cycleCnt = 213,126, IPC = 0.734068
+Seed=0 Guest cycle spent: 213,128 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 3,438ms
+======== PerfCnt =========
+              213126 <- Mcycle
+              156449 <- Minstret
+               78958 <- MultiCommit
+                2175 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+               51499 <- MloadInstr
+                  69 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                 217 <- MifuFlush
+               25845 <- MbpBRight
+                 142 <- MbpBWrong
+                 130 <- MbpJRight
+                  25 <- MbpJWrong
+                   4 <- MbpIRight
+                   2 <- MbpIWrong
+                  66 <- MbpRRight
+                  48 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                 325 <- MultiCommit2
+                 126 <- MultiCommit3
+               25638 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              157339 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              104604 <- MloadStall
+                 931 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              213126,               156449,                78958,                 2175,                    0,                    0,                    0,                    0,                    0,                51499,                   69,                    0,                    0,                    0,                  217,                25845,                  142,                  130,                   25,                    4,                    2,                   66,                   48,                    0,                  325,                  126,                25638,                    0,                    0,                    0,                    0,                    0,               157339,                    0,                    0,               104604,                  931,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/DotProduct32-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/DotProduct32-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+res 1f400
+Core 0: HIT GOOD TRAP at pc = 0x800010cc
+total guest instructions = 87,893
+instrCnt = 87,893, cycleCnt = 184,750, IPC = 0.475740
+Seed=0 Guest cycle spent: 184,752 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 3,127ms
+======== PerfCnt =========
+              184750 <- Mcycle
+               87893 <- Minstret
+               78077 <- MultiCommit
+                8310 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+               51306 <- MloadInstr
+                  23 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                3278 <- MifuFlush
+                 266 <- MbpBRight
+                3128 <- MbpBWrong
+                  30 <- MbpJRight
+                 126 <- MbpJWrong
+                   0 <- MbpIRight
+                   2 <- MbpIWrong
+                  17 <- MbpRRight
+                  22 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                  89 <- MultiCommit2
+                  44 <- MultiCommit3
+                3213 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              156090 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              104151 <- MloadStall
+                 518 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              184750,                87893,                78077,                 8310,                    0,                    0,                    0,                    0,                    0,                51306,                   23,                    0,                    0,                    0,                 3278,                  266,                 3128,                   30,                  126,                    0,                    2,                   17,                   22,                    0,                   89,                   44,                 3213,                    0,                    0,                    0,                    0,                    0,               156090,                    0,                    0,               104151,                  518,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/DotProduct-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/DotProduct-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+res 113000
+Core 0: HIT GOOD TRAP at pc = 0x80001080
+total guest instructions = 1,435,045
+instrCnt = 1,435,045, cycleCnt = 1,849,136, IPC = 0.776062
+Seed=0 Guest cycle spent: 1,849,138 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 31,833ms
+======== PerfCnt =========
+             1849136 <- Mcycle
+             1435045 <- Minstret
+             1025206 <- MultiCommit
+                2025 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              409713 <- MloadInstr
+                  25 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+              204800 <- MmulInstr
+                 178 <- MifuFlush
+              204872 <- MbpBRight
+                 129 <- MbpBWrong
+                  33 <- MbpJRight
+                  24 <- MbpJWrong
+                   0 <- MbpIRight
+                   2 <- MbpIWrong
+                  19 <- MbpRRight
+                  23 <- MbpRWrong
+                   0 <- Ml2cacheHit
+              409705 <- MultiCommit2
+                  46 <- MultiCommit3
+                  14 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+             1231220 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              820933 <- MloadStall
+                 452 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+             1849136,              1435045,              1025206,                 2025,                    0,                    0,                    0,                    0,                    0,               409713,                   25,                    0,                    0,               204800,                  178,               204872,                  129,                   33,                   24,                    0,                    2,                   19,                   23,                    0,               409705,                   46,                   14,                    0,                    0,                    0,                    0,                    0,              1231220,                    0,                    0,               820933,                  452,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/DotProduct16-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/DotProduct16-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+res bb800
+Core 0: HIT GOOD TRAP at pc = 0x800010f0
+total guest instructions = 449,396
+instrCnt = 449,396, cycleCnt = 823,805, IPC = 0.545513
+Seed=0 Guest cycle spent: 823,807 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 14,054ms
+======== PerfCnt =========
+              823805 <- Mcycle
+              449396 <- Minstret
+              423380 <- MultiCommit
+               27242 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              204907 <- MloadInstr
+                  23 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+              102400 <- MmulInstr
+               12779 <- MifuFlush
+                 264 <- MbpBRight
+               12730 <- MbpBWrong
+                  31 <- MbpJRight
+                  25 <- MbpJWrong
+                   0 <- MbpIRight
+                   2 <- MbpIWrong
+                  17 <- MbpRRight
+                  22 <- MbpRWrong
+                   0 <- Ml2cacheHit
+               25887 <- MultiCommit2
+                  45 <- MultiCommit3
+                  13 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              616892 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              411421 <- MloadStall
+                 448 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              823805,               449396,               423380,                27242,                    0,                    0,                    0,                    0,                    0,               204907,                   23,                    0,                    0,               102400,                12779,                  264,                12730,                   31,                   25,                    0,                    2,                   17,                   22,                    0,                25887,                   45,                   13,                    0,                    0,                    0,                    0,                    0,               616892,                    0,                    0,               411421,                  448,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/DotProduct32-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/DotProduct32-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+res 1f400
+Core 0: HIT GOOD TRAP at pc = 0x80001138
+total guest instructions = 327,896
+instrCnt = 327,896, cycleCnt = 516,567, IPC = 0.634760
+Seed=0 Guest cycle spent: 516,569 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 8,713ms
+======== PerfCnt =========
+              516567 <- Mcycle
+              327896 <- Minstret
+              314682 <- MultiCommit
+               14474 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              102507 <- MloadInstr
+                  23 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+               51200 <- MmulInstr
+                6379 <- MifuFlush
+                 266 <- MbpBRight
+                6328 <- MbpBWrong
+                 129 <- MbpJRight
+                  27 <- MbpJWrong
+                   0 <- MbpIRight
+                   2 <- MbpIWrong
+                  17 <- MbpRRight
+                  22 <- MbpRWrong
+                   0 <- Ml2cacheHit
+               13087 <- MultiCommit2
+                  44 <- MultiCommit3
+                  13 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              309626 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              206562 <- MloadStall
+                 441 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              516567,               327896,               314682,                14474,                    0,                    0,                    0,                    0,                    0,               102507,                   23,                    0,                    0,                51200,                 6379,                  266,                 6328,                  129,                   27,                    0,                    2,                   17,                   22,                    0,                13087,                   44,                   13,                    0,                    0,                    0,                    0,                    0,               309626,                    0,                    0,               206562,                  441,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Matrix-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Matrix-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x800010bc
+total guest instructions = 1,965,535
+instrCnt = 1,965,535, cycleCnt = 3,501,499, IPC = 0.561341
+Seed=0 Guest cycle spent: 3,501,501 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 57,423ms
+======== PerfCnt =========
+             3501499 <- Mcycle
+             1965535 <- Minstret
+             1450330 <- MultiCommit
+              103130 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              819201 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+               51210 <- MifuFlush
+               54597 <- MbpBRight
+               51103 <- MbpBWrong
+                   0 <- MbpJRight
+                 105 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+              208001 <- MultiCommit2
+                   2 <- MultiCommit3
+              102400 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+             2767310 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+             1639251 <- MloadStall
+              206455 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+             3501499,              1965535,              1450330,               103130,                    0,                    0,                    0,                    0,                    0,               819201,                    1,                    0,                    0,                    0,                51210,                54597,                51103,                    0,                  105,                    0,                    0,                    0,                    2,                    0,               208001,                    2,               102400,                    0,                    0,                    0,                    0,                    0,              2767310,                    0,                    0,              1639251,               206455,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Matrix16-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Matrix16-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x800010ec
+total guest instructions = 3,296,734
+instrCnt = 3,296,734, cycleCnt = 6,370,248, IPC = 0.517521
+Seed=0 Guest cycle spent: 6,370,250 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 109,705ms
+======== PerfCnt =========
+             6370248 <- Mcycle
+             3296734 <- Minstret
+             2781332 <- MultiCommit
+              205338 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+             1740800 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+              102309 <- MifuFlush
+                3399 <- MbpBRight
+              102301 <- MbpBWrong
+                  99 <- MbpJRight
+                   6 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+              208198 <- MultiCommit2
+                   2 <- MultiCommit3
+              102400 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+             5534436 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+             3483168 <- MloadStall
+              208065 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+             6370248,              3296734,              2781332,               205338,                    0,                    0,                    0,                    0,                    0,              1740800,                    1,                    0,                    0,                    0,               102309,                 3399,               102301,                   99,                    6,                    0,                    0,                    0,                    2,                    0,               208198,                    2,               102400,                    0,                    0,                    0,                    0,                    0,              5534436,                    0,                    0,              3483168,               208065,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Matrix32-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Matrix32-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x80001134
+total guest instructions = 5,447,131
+instrCnt = 5,447,131, cycleCnt = 10,979,792, IPC = 0.496105
+Seed=0 Guest cycle spent: 10,979,794 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 212,363ms
+======== PerfCnt =========
+            10979792 <- Mcycle
+             5447131 <- Minstret
+             5034129 <- MultiCommit
+              205394 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+             3276800 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+              102309 <- MifuFlush
+                3399 <- MbpBRight
+              102301 <- MbpBWrong
+                  99 <- MbpJRight
+                   6 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+              105798 <- MultiCommit2
+                   2 <- MultiCommit3
+              102400 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+            10143944 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+             6556725 <- MloadStall
+              208016 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+            10979792,              5447131,              5034129,               205394,                    0,                    0,                    0,                    0,                    0,              3276800,                    1,                    0,                    0,                    0,               102309,                 3399,               102301,                   99,                    6,                    0,                    0,                    0,                    2,                    0,               105798,                    2,               102400,                    0,                    0,                    0,                    0,                    0,             10143944,                    0,                    0,              6556725,               208016,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Matrix-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Matrix-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x80001340
+total guest instructions = 11,540,253
+instrCnt = 11,540,253, cycleCnt = 17,845,933, IPC = 0.646660
+Seed=0 Guest cycle spent: 17,845,935 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 347,535ms
+======== PerfCnt =========
+            17845933 <- Mcycle
+            11540253 <- Minstret
+            11319146 <- MultiCommit
+              199826 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+             4412912 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+             3276800 <- MmulInstr
+               99409 <- MifuFlush
+                6398 <- MbpBRight
+               99302 <- MbpBWrong
+                   0 <- MbpJRight
+                 105 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                   4 <- MultiCommit2
+              105603 <- MultiCommit3
+                3299 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+            13763528 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+             8826372 <- MloadStall
+              284028 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+            17845933,             11540253,             11319146,               199826,                    0,                    0,                    0,                    0,                    0,              4412912,                    1,                    0,                    0,              3276800,                99409,                 6398,                99302,                    0,                  105,                    0,                    0,                    0,                    2,                    0,                    4,               105603,                 3299,                    0,                    0,                    0,                    0,                    0,             13763528,                    0,                    0,              8826372,               284028,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Matrix16-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Matrix16-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x80001340
+total guest instructions = 11,540,253
+instrCnt = 11,540,253, cycleCnt = 17,848,285, IPC = 0.646575
+Seed=0 Guest cycle spent: 17,848,287 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 315,028ms
+======== PerfCnt =========
+            17848285 <- Mcycle
+            11540253 <- Minstret
+            11319146 <- MultiCommit
+              199806 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+             4412912 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+             3276800 <- MmulInstr
+               99409 <- MifuFlush
+                6398 <- MbpBRight
+               99302 <- MbpBWrong
+                   0 <- MbpJRight
+                 105 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                   4 <- MultiCommit2
+              105603 <- MultiCommit3
+                3299 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+            13765868 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+             8827404 <- MloadStall
+              285336 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+            17848285,             11540253,             11319146,               199806,                    0,                    0,                    0,                    0,                    0,              4412912,                    1,                    0,                    0,              3276800,                99409,                 6398,                99302,                    0,                  105,                    0,                    0,                    0,                    2,                    0,                    4,               105603,                 3299,                    0,                    0,                    0,                    0,                    0,             13765868,                    0,                    0,              8827404,               285336,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Matrix32-Common.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Matrix32-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x80001440
+total guest instructions = 18,093,853
+instrCnt = 18,093,853, cycleCnt = 23,731,442, IPC = 0.762442
+Seed=0 Guest cycle spent: 23,731,444 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 448,766ms
+======== PerfCnt =========
+            23731442 <- Mcycle
+            18093853 <- Minstret
+            17872746 <- MultiCommit
+                7948 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+             4412912 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+             3276800 <- MmulInstr
+                3410 <- MifuFlush
+              102397 <- MbpBRight
+                3303 <- MbpBWrong
+                   0 <- MbpJRight
+                 105 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+                   4 <- MultiCommit2
+              105603 <- MultiCommit3
+                3299 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+            13671350 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+             8828243 <- MloadStall
+              285978 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+            23731442,             18093853,             17872746,                 7948,                    0,                    0,                    0,                    0,                    0,              4412912,                    1,                    0,                    0,              3276800,                 3410,               102397,                 3303,                    0,                  105,                    0,                    0,                    0,                    2,                    0,                    4,               105603,                 3299,                    0,                    0,                    0,                    0,                    0,             13671350,                    0,                    0,              8828243,               285978,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Snn-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Snn-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x8000108c
+total guest instructions = 384,832
+instrCnt = 384,832, cycleCnt = 516,361, IPC = 0.745277
+Seed=0 Guest cycle spent: 516,363 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 9,428ms
+======== PerfCnt =========
+              516361 <- Mcycle
+              384832 <- Minstret
+              282424 <- MultiCommit
+                 962 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+               76802 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                 140 <- MifuFlush
+               25566 <- MbpBRight
+                 134 <- MbpBWrong
+                   0 <- MbpJRight
+                   4 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+               51202 <- MultiCommit2
+               25603 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              309264 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              155242 <- MloadStall
+               51617 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+              516361,               384832,               282424,                  962,                    0,                    0,                    0,                    0,                    0,                76802,                    1,                    0,                    0,                    0,                  140,                25566,                  134,                    0,                    4,                    0,                    0,                    0,                    2,                    0,                51202,                25603,                    0,                    0,                    0,                    0,                    0,                    0,               309264,                    0,                    0,               155242,                51617,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Snn16-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Snn16-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x8000108c
+total guest instructions = 768,832
+instrCnt = 768,832, cycleCnt = 1,030,569, IPC = 0.746027
+Seed=0 Guest cycle spent: 1,030,571 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 18,429ms
+======== PerfCnt =========
+             1030569 <- Mcycle
+              768832 <- Minstret
+              564024 <- MultiCommit
+                1026 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              153602 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                 172 <- MifuFlush
+               51134 <- MbpBRight
+                 166 <- MbpBWrong
+                   0 <- MbpJRight
+                   4 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+              102402 <- MultiCommit2
+               51203 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+              618480 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              310442 <- MloadStall
+              103233 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+             1030569,               768832,               564024,                 1026,                    0,                    0,                    0,                    0,                    0,               153602,                    1,                    0,                    0,                    0,                  172,                51134,                  166,                    0,                    4,                    0,                    0,                    0,                    2,                    0,               102402,                51203,                    0,                    0,                    0,                    0,                    0,                    0,               618480,                    0,                    0,               310442,               103233,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Snn32-Pext.bin 
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Snn32-Pext.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x800010ac
+total guest instructions = 1,741,734
+instrCnt = 1,741,734, cycleCnt = 1,957,507, IPC = 0.889772
+Seed=0 Guest cycle spent: 1,957,509 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 37,769ms
+======== PerfCnt =========
+             1957507 <- Mcycle
+             1741734 <- Minstret
+             1332258 <- MultiCommit
+                1149 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              307200 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+                 238 <- MifuFlush
+              307070 <- MbpBRight
+                 230 <- MbpBWrong
+                  99 <- MbpJRight
+                   6 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+              204672 <- MultiCommit2
+              102402 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+             1237202 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+              620918 <- MloadStall
+              206681 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+             1957507,              1741734,              1332258,                 1149,                    0,                    0,                    0,                    0,                    0,               307200,                    1,                    0,                    0,                    0,                  238,               307070,                  230,                   99,                    6,                    0,                    0,                    0,                    2,                    0,               204672,               102402,                    0,                    0,                    0,                    0,                    0,                    0,              1237202,                    0,                    0,               620918,               206681,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Snn-Common.bin
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Snn-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x800010c0
+total guest instructions = 5,271,971
+instrCnt = 5,271,971, cycleCnt = 6,175,304, IPC = 0.853718
+Seed=0 Guest cycle spent: 6,175,306 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 121,005ms
+======== PerfCnt =========
+             6175304 <- Mcycle
+             5271971 <- Minstret
+             4250529 <- MultiCommit
+              155544 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              614400 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+               77424 <- MifuFlush
+              537086 <- MbpBRight
+               77414 <- MbpBWrong
+              178017 <- MbpJRight
+                   8 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+              611838 <- MultiCommit2
+              204802 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+             2485090 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+             1230319 <- MloadStall
+              409968 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+             6175304,              5271971,              4250529,               155544,                    0,                    0,                    0,                    0,                    0,               614400,                    1,                    0,                    0,                    0,                77424,               537086,                77414,               178017,                    8,                    0,                    0,                    0,                    2,                    0,               611838,               204802,                    0,                    0,                    0,                    0,                    0,                    0,              2485090,                    0,                    0,              1230319,               409968,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Snn16-Common.bin
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Snn16-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x800010c8
+total guest instructions = 5,425,060
+instrCnt = 5,425,060, cycleCnt = 6,100,314, IPC = 0.889308
+Seed=0 Guest cycle spent: 6,100,316 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 116,784ms
+======== PerfCnt =========
+             6100314 <- Mcycle
+             5425060 <- Minstret
+             4353960 <- MultiCommit
+              104345 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              614400 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+               51825 <- MifuFlush
+              562684 <- MbpBRight
+               51816 <- MbpBWrong
+              152162 <- MbpJRight
+                   7 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+              661496 <- MultiCommit2
+              204802 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+             2461283 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+             1231823 <- MloadStall
+              410257 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+             6100314,              5425060,              4353960,               104345,                    0,                    0,                    0,                    0,                    0,               614400,                    1,                    0,                    0,                    0,                51825,               562684,                51816,               152162,                    7,                    0,                    0,                    0,                    2,                    0,               661496,               204802,                    0,                    0,                    0,                    0,                    0,                    0,              2461283,                    0,                    0,              1231823,               410257,                    0, 
+
+
+stu@stu:~/NutShell$ ./build/emu -b 0 -e 0 --diff=/home/stu/SPIKE/difftest/build/riscv64-spike-so -i ./ready-to-run/Snn32-Common.bin
+Emu compiled at Feb  1 2023, 12:35:31
+The image is ./ready-to-run/Snn32-Common.bin
+Using simulated 8192MB RAM
+Using simulated 32768B flash
+[warning]no valid flash bin path, use preset flash instead
+NemuProxy using /home/stu/SPIKE/difftest/build/riscv64-spike-so
+<stdin>:51.14-54.5: Warning (unit_address_vs_reg): /mmc: node has a reg or ranges property, but no unit name
+The first instruction of core 0 has commited. Difftest enabled. 
+Core 0: HIT GOOD TRAP at pc = 0x800010ac
+total guest instructions = 3,890,084
+instrCnt = 3,890,084, cycleCnt = 5,221,852, IPC = 0.744963
+Seed=0 Guest cycle spent: 5,221,854 (this will be different from cycleCnt if emu loads a snapshot)
+Host time spent: 98,287ms
+======== PerfCnt =========
+             5221852 <- Mcycle
+             3890084 <- Minstret
+             3273633 <- MultiCommit
+              203631 <- MimemStall
+                   0 <- MaluInstr
+                   0 <- MbruInstr
+                   0 <- MlsuInstr
+                   0 <- MmduInstr
+                   0 <- McsrInstr
+              614400 <- MloadInstr
+                   1 <- MmmioInstr
+                   0 <- MicacheHit
+                   0 <- MdcacheHit
+                   0 <- MmulInstr
+              101487 <- MifuFlush
+              513022 <- MbpBRight
+              101478 <- MbpBWrong
+              101474 <- MbpJRight
+                   7 <- MbpJWrong
+                   0 <- MbpIRight
+                   0 <- MbpIWrong
+                   0 <- MbpRRight
+                   2 <- MbpRWrong
+                   0 <- Ml2cacheHit
+              206847 <- MultiCommit2
+              204802 <- MultiCommit3
+                   0 <- MultiCommit4
+                   0 <- CsrOps
+                   0 <- MultiCommit5
+                   0 <- MultiCommit6
+                   0 <- csrnotalone
+                   0 <- mounotalone
+             2465973 <- LsuWorking
+                   0 <- MrawStall
+                   0 <- MexuBusy
+             1235224 <- MloadStall
+              411546 <- MstoreStall
+                   0 <- ISUIssue
+======== PerfCntCSV =========
+
+Mcycle, Minstret, MultiCommit, MimemStall, MaluInstr, MbruInstr, MlsuInstr, MmduInstr, McsrInstr, MloadInstr, MmmioInstr, MicacheHit, MdcacheHit, MmulInstr, MifuFlush, MbpBRight, MbpBWrong, MbpJRight, MbpJWrong, MbpIRight, MbpIWrong, MbpRRight, MbpRWrong, Ml2cacheHit, MultiCommit2, MultiCommit3, MultiCommit4, CsrOps, MultiCommit5, MultiCommit6, csrnotalone, mounotalone, LsuWorking, MrawStall, MexuBusy, MloadStall, MstoreStall, ISUIssue, 
+
+
+             5221852,              3890084,              3273633,               203631,                    0,                    0,                    0,                    0,                    0,               614400,                    1,                    0,                    0,                    0,               101487,               513022,               101478,               101474,                    7,                    0,                    0,                    0,                    2,                    0,               206847,               204802,                    0,                    0,                    0,                    0,                    0,                    0,              2465973,                    0,                    0,              1235224,               411546,                    0, 

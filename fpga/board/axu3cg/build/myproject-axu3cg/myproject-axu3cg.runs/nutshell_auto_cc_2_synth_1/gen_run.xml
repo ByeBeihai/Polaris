@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="nutshell_auto_cc_2_synth_1" LaunchPart="xczu3cg-sfvc784-1-e" LaunchTime="1660645899">
+  <File Type="VDS-TIMING-PB" Name="nutshell_auto_cc_2_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="nutshell_auto_cc_2_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="nutshell_auto_cc_2.dcp"/>
+  <File Type="REPORTS-TCL" Name="nutshell_auto_cc_2_reports.tcl"/>
+  <File Type="PA-TCL" Name="nutshell_auto_cc_2.tcl"/>
+  <File Type="RDS-RDS" Name="nutshell_auto_cc_2.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="nutshell_auto_cc_2_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="nutshell_auto_cc_2_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="nutshell_auto_cc_2_utilization_synth.pb"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/nutshell_auto_cc_2">
+    <File Path="$PSRCDIR/sources_1/bd/nutshell/ip/nutshell_auto_cc_2/nutshell_auto_cc_2.xci">
+      <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="nutshell_auto_cc_2"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/nutshell_auto_cc_2">
+    <File Path="$PSRCDIR/sources_1/bd/nutshell/ip/nutshell_auto_cc_2/nutshell_auto_cc_2.xci">
+      <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="nutshell_auto_cc_2"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

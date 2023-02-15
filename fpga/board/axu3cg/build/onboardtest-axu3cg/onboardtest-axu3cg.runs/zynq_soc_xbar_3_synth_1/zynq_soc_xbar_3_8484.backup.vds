@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Aug 17 01:51:18 2022
+# Process ID: 8484
+# Current directory: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_xbar_3_synth_1
+# Command line: vivado -log zynq_soc_xbar_3.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_soc_xbar_3.tcl
+# Log file: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_xbar_3_synth_1/zynq_soc_xbar_3.vds
+# Journal file: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_xbar_3_synth_1/vivado.jou
+#-----------------------------------------------------------
+source zynq_soc_xbar_3.tcl -notrace
+Command: synth_design -top zynq_soc_xbar_3 -part xczu3cg-sfvc784-1-e -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu3cg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu3cg'
+INFO: [Device 21-403] Loading part xczu3cg-sfvc784-1-e
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 8710 

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Aug 16 11:47:27 2022
+# Process ID: 20941
+# Current directory: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_auto_cc_1_synth_1
+# Command line: vivado -log zynq_soc_auto_cc_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_soc_auto_cc_1.tcl
+# Log file: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_auto_cc_1_synth_1/zynq_soc_auto_cc_1.vds
+# Journal file: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_auto_cc_1_synth_1/vivado.jou
+#-----------------------------------------------------------
+source zynq_soc_auto_cc_1.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP zynq_soc_auto_cc_1, cache-ID = 3ae93b7ecb27f494.
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 16 11:48:07 2022...

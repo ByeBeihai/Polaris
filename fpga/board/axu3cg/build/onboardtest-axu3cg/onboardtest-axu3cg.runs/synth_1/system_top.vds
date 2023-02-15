@@ -1,0 +1,1162 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Aug 17 02:16:35 2022
+# Process ID: 5499
+# Current directory: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1
+# Command line: vivado -log system_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_top.tcl
+# Log file: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/system_top.vds
+# Journal file: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source system_top.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/media/stu/diska/Vivado/2019.1/data/ip'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'io_frontend' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'io_mem' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'io_mmio' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clock' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clock': Added interface parameter 'ASSOCIATED_BUSIF' with value 'io_frontend'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clock': Added interface parameter 'ASSOCIATED_RESET' with value 'reset'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+add_files: Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1392.516 ; gain = 48.035 ; free physical = 6189 ; free virtual = 9782
+INFO: [IP_Flow 19-5107] Inferred bus interface 'io_in_ctrl' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'io_in_fb' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clock' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clock': Added interface parameter 'ASSOCIATED_BUSIF' with value 'io_in_ctrl'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clock': Added interface parameter 'ASSOCIATED_RESET' with value 'reset'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+add_files: Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 1516.703 ; gain = 124.188 ; free physical = 6104 ; free virtual = 9742
+Command: synth_design -top system_top -part xczu3cg-sfvc784-1-e -flatten_hierarchy none
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu3cg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu3cg'
+INFO: [Device 21-403] Loading part xczu3cg-sfvc784-1-e
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5648 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2260.652 ; gain = 0.000 ; free physical = 5198 ; free virtual = 8970
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_top' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:5]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:6159]
+INFO: [Synth 8-6157] synthesizing module 'hier_arm_peripheral_imp_14HN6AJ' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:12]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_axi_dma_arm_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_axi_dma_arm_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_axi_dma_arm_0' (1#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_axi_dma_arm_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'axi_dma_arm' of module 'zynq_soc_axi_dma_arm_0' has 94 connections declared, but only 91 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:659]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_axi_interconnect_0_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:7108]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_1B62G5Z' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:2056]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_1B62G5Z' (2#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:2056]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_MEMYVP' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:4482]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_auto_us_3' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_us_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_auto_us_3' (3#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_us_3_stub.v:6]
+WARNING: [Synth 8-7023] instance 'auto_us' of module 'zynq_soc_auto_us_3' has 72 connections declared, but only 70 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:4761]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_MEMYVP' (4#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:4482]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_s00_mmu_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_s00_mmu_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_s00_mmu_0' (5#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_s00_mmu_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_1H5MAD0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:5144]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_auto_us_4' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_us_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_auto_us_4' (6#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_us_4_stub.v:6]
+WARNING: [Synth 8-7023] instance 'auto_us' of module 'zynq_soc_auto_us_4' has 34 connections declared, but only 33 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:5279]
+INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_1H5MAD0' (7#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:5144]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_s01_mmu_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_s01_mmu_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_s01_mmu_0' (8#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_s01_mmu_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 's02_couplers_imp_NLV82E' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:5671]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_auto_us_5' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_us_5_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_auto_us_5' (9#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_us_5_stub.v:6]
+WARNING: [Synth 8-7023] instance 'auto_us' of module 'zynq_soc_auto_us_5' has 40 connections declared, but only 39 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:5830]
+INFO: [Synth 8-6155] done synthesizing module 's02_couplers_imp_NLV82E' (10#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:5671]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_s02_mmu_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_s02_mmu_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_s02_mmu_0' (11#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_s02_mmu_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 's03_couplers_imp_1FOP2LZ' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:5872]
+INFO: [Synth 8-6155] done synthesizing module 's03_couplers_imp_1FOP2LZ' (12#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:5872]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_s03_mmu_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_s03_mmu_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_s03_mmu_0' (13#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_s03_mmu_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_xbar_2' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_xbar_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_xbar_2' (14#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_xbar_2_stub.v:6]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'zynq_soc_xbar_2' has 82 connections declared, but only 80 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:8478]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_axi_interconnect_0_0' (15#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:7108]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_axi_interconnect_1_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:8561]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_1GY9XNB' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:2342]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_1GY9XNB' (16#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:2342]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_MMAK52' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:3155]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_MMAK52' (17#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:3155]
+INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_1FW18US' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:3287]
+INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_1FW18US' (18#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:3287]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_JYANRP' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:4180]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_auto_pc_1' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_auto_pc_1' (19#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_JYANRP' (20#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:4180]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_xbar_3' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_xbar_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_xbar_3' (21#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_xbar_3_stub.v:6]
+WARNING: [Synth 8-689] width (8) of port connection 'm_axi_wstrb' does not match port width (12) of module 'zynq_soc_xbar_3' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:9199]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'zynq_soc_xbar_3' has 40 connections declared, but only 38 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:9181]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_axi_interconnect_1_0' (22#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:8561]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_axi_uartlite_0_1' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_axi_uartlite_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_axi_uartlite_0_1' (23#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_axi_uartlite_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_corerst_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_corerst_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_corerst_0' (24#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_corerst_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hier_arm_peripheral_imp_14HN6AJ' (25#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:12]
+INFO: [Synth 8-6157] synthesizing module 'hier_clkrst_imp_YBF9LJ' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:1044]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_clk50rst_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_clk50rst_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_clk50rst_0' (26#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_clk50rst_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'clk50rst' of module 'zynq_soc_clk50rst_0' has 10 connections declared, but only 7 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:1093]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_clk_wiz_0_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_clk_wiz_0_0' (27#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_uncorerst_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_uncorerst_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_uncorerst_0' (28#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_uncorerst_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'uncorerst' of module 'zynq_soc_uncorerst_0' has 10 connections declared, but only 7 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:1109]
+WARNING: [Synth 8-3848] Net peripheral_aresetn in module/entity hier_clkrst_imp_YBF9LJ does not have driver. [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:1064]
+INFO: [Synth 8-6155] done synthesizing module 'hier_clkrst_imp_YBF9LJ' (29#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:1044]
+WARNING: [Synth 8-7023] instance 'hier_clkrst' of module 'hier_clkrst_imp_YBF9LJ' has 12 connections declared, but only 10 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:6906]
+INFO: [Synth 8-6157] synthesizing module 'hier_rvcore_peripheral_imp_8D23AV' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:1119]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_AXI4VGA_0_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_AXI4VGA_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_AXI4VGA_0_0' (30#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_AXI4VGA_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_axi_dma_rvcore_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_axi_dma_rvcore_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_axi_dma_rvcore_0' (31#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_axi_dma_rvcore_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'axi_dma_rvcore' of module 'zynq_soc_axi_dma_rvcore_0' has 94 connections declared, but only 91 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:1702]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_axi_interconnect_rvcore_dma_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:9222]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_PWPM2P' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:2474]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_PWPM2P' (32#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:2474]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_19LU5HF' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:3844]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_auto_us_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_us_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_auto_us_0' (33#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_us_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'auto_us' of module 'zynq_soc_auto_us_0' has 72 connections declared, but only 70 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:4107]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_19LU5HF' (34#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:3844]
+INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_KTMPB6' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:5315]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_auto_us_1' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_us_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_auto_us_1' (35#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_us_1_stub.v:6]
+WARNING: [Synth 8-7023] instance 'auto_us' of module 'zynq_soc_auto_us_1' has 34 connections declared, but only 33 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:5442]
+INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_KTMPB6' (36#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:5315]
+INFO: [Synth 8-6157] synthesizing module 's02_couplers_imp_18TLRK0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:5478]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_auto_us_2' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_us_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_auto_us_2' (37#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_us_2_stub.v:6]
+WARNING: [Synth 8-7023] instance 'auto_us' of module 'zynq_soc_auto_us_2' has 40 connections declared, but only 39 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:5629]
+INFO: [Synth 8-6155] done synthesizing module 's02_couplers_imp_18TLRK0' (38#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:5478]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_xbar_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_xbar_0' (39#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_xbar_0_stub.v:6]
+WARNING: [Synth 8-689] width (2) of port connection 's_axi_arready' does not match port width (3) of module 'zynq_soc_xbar_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:10018]
+WARNING: [Synth 8-689] width (128) of port connection 's_axi_rdata' does not match port width (192) of module 'zynq_soc_xbar_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:10035]
+WARNING: [Synth 8-689] width (2) of port connection 's_axi_rlast' does not match port width (3) of module 'zynq_soc_xbar_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:10036]
+WARNING: [Synth 8-689] width (4) of port connection 's_axi_rresp' does not match port width (6) of module 'zynq_soc_xbar_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:10038]
+WARNING: [Synth 8-689] width (2) of port connection 's_axi_rvalid' does not match port width (3) of module 'zynq_soc_xbar_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:10039]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'zynq_soc_xbar_0' has 78 connections declared, but only 76 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:9968]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_axi_interconnect_rvcore_dma_0' (40#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:9222]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_axi_interconnect_rvcore_mmio_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:10047]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_XD3PL6' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:2760]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_auto_ds_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_ds_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_auto_ds_0' (41#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_ds_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'auto_ds' of module 'zynq_soc_auto_ds_0' has 40 connections declared, but only 38 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:2919]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_XD3PL6' (42#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:2760]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_160IRHN' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:2960]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_auto_ds_1' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_ds_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_auto_ds_1' (43#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_ds_1_stub.v:6]
+WARNING: [Synth 8-7023] instance 'auto_ds' of module 'zynq_soc_auto_ds_1' has 40 connections declared, but only 37 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:3115]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_160IRHN' (44#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:2960]
+INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_YXQT3D' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:3412]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_auto_cc_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_cc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_auto_cc_0' (45#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_cc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_YXQT3D' (46#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:3412]
+INFO: [Synth 8-6157] synthesizing module 'm03_couplers_imp_14PJEAW' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:3628]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_auto_cc_1' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_cc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_auto_cc_1' (47#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_cc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_14PJEAW' (48#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:3628]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_ZSJQIW' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:4834]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_auto_pc_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_auto_pc_0' (49#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_ZSJQIW' (50#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:4834]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_xbar_1' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_xbar_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_xbar_1' (51#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_xbar_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_axi_interconnect_rvcore_mmio_0' (52#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:10047]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_axi_uartlite_0_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_axi_uartlite_0_0' (53#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_axi_uartlite_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'axi_uartlite_0' of module 'zynq_soc_axi_uartlite_0_0' has 22 connections declared, but only 21 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:2025]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_xlconcat_0_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_xlconcat_0_0/synth/zynq_soc_xlconcat_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+	Parameter IN0_WIDTH bound to: 1 - type: integer 
+	Parameter IN1_WIDTH bound to: 1 - type: integer 
+	Parameter IN2_WIDTH bound to: 1 - type: integer 
+	Parameter IN3_WIDTH bound to: 1 - type: integer 
+	Parameter IN4_WIDTH bound to: 1 - type: integer 
+	Parameter IN5_WIDTH bound to: 1 - type: integer 
+	Parameter IN6_WIDTH bound to: 1 - type: integer 
+	Parameter IN7_WIDTH bound to: 1 - type: integer 
+	Parameter IN8_WIDTH bound to: 1 - type: integer 
+	Parameter IN9_WIDTH bound to: 1 - type: integer 
+	Parameter IN10_WIDTH bound to: 1 - type: integer 
+	Parameter IN11_WIDTH bound to: 1 - type: integer 
+	Parameter IN12_WIDTH bound to: 1 - type: integer 
+	Parameter IN13_WIDTH bound to: 1 - type: integer 
+	Parameter IN14_WIDTH bound to: 1 - type: integer 
+	Parameter IN15_WIDTH bound to: 1 - type: integer 
+	Parameter IN16_WIDTH bound to: 1 - type: integer 
+	Parameter IN17_WIDTH bound to: 1 - type: integer 
+	Parameter IN18_WIDTH bound to: 1 - type: integer 
+	Parameter IN19_WIDTH bound to: 1 - type: integer 
+	Parameter IN20_WIDTH bound to: 1 - type: integer 
+	Parameter IN21_WIDTH bound to: 1 - type: integer 
+	Parameter IN22_WIDTH bound to: 1 - type: integer 
+	Parameter IN23_WIDTH bound to: 1 - type: integer 
+	Parameter IN24_WIDTH bound to: 1 - type: integer 
+	Parameter IN25_WIDTH bound to: 1 - type: integer 
+	Parameter IN26_WIDTH bound to: 1 - type: integer 
+	Parameter IN27_WIDTH bound to: 1 - type: integer 
+	Parameter IN28_WIDTH bound to: 1 - type: integer 
+	Parameter IN29_WIDTH bound to: 1 - type: integer 
+	Parameter IN30_WIDTH bound to: 1 - type: integer 
+	Parameter IN31_WIDTH bound to: 1 - type: integer 
+	Parameter dout_width bound to: 5 - type: integer 
+	Parameter NUM_PORTS bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (54#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_xlconcat_0_0' (55#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_xlconcat_0_0/synth/zynq_soc_xlconcat_0_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'hier_rvcore_peripheral_imp_8D23AV' (56#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:1119]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_xlconcat_1_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_xlconcat_1_0/synth/zynq_soc_xlconcat_1_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+	Parameter IN0_WIDTH bound to: 1 - type: integer 
+	Parameter IN1_WIDTH bound to: 1 - type: integer 
+	Parameter IN2_WIDTH bound to: 1 - type: integer 
+	Parameter IN3_WIDTH bound to: 1 - type: integer 
+	Parameter IN4_WIDTH bound to: 1 - type: integer 
+	Parameter IN5_WIDTH bound to: 1 - type: integer 
+	Parameter IN6_WIDTH bound to: 1 - type: integer 
+	Parameter IN7_WIDTH bound to: 1 - type: integer 
+	Parameter IN8_WIDTH bound to: 1 - type: integer 
+	Parameter IN9_WIDTH bound to: 1 - type: integer 
+	Parameter IN10_WIDTH bound to: 1 - type: integer 
+	Parameter IN11_WIDTH bound to: 1 - type: integer 
+	Parameter IN12_WIDTH bound to: 1 - type: integer 
+	Parameter IN13_WIDTH bound to: 1 - type: integer 
+	Parameter IN14_WIDTH bound to: 1 - type: integer 
+	Parameter IN15_WIDTH bound to: 1 - type: integer 
+	Parameter IN16_WIDTH bound to: 1 - type: integer 
+	Parameter IN17_WIDTH bound to: 1 - type: integer 
+	Parameter IN18_WIDTH bound to: 1 - type: integer 
+	Parameter IN19_WIDTH bound to: 1 - type: integer 
+	Parameter IN20_WIDTH bound to: 1 - type: integer 
+	Parameter IN21_WIDTH bound to: 1 - type: integer 
+	Parameter IN22_WIDTH bound to: 1 - type: integer 
+	Parameter IN23_WIDTH bound to: 1 - type: integer 
+	Parameter IN24_WIDTH bound to: 1 - type: integer 
+	Parameter IN25_WIDTH bound to: 1 - type: integer 
+	Parameter IN26_WIDTH bound to: 1 - type: integer 
+	Parameter IN27_WIDTH bound to: 1 - type: integer 
+	Parameter IN28_WIDTH bound to: 1 - type: integer 
+	Parameter IN29_WIDTH bound to: 1 - type: integer 
+	Parameter IN30_WIDTH bound to: 1 - type: integer 
+	Parameter IN31_WIDTH bound to: 1 - type: integer 
+	Parameter dout_width bound to: 3 - type: integer 
+	Parameter NUM_PORTS bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' (56#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_xlconcat_1_0' (57#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_xlconcat_1_0/synth/zynq_soc_xlconcat_1_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_zynq_ultra_ps_e_0_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_zynq_ultra_ps_e_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_zynq_ultra_ps_e_0_0' (58#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/zynq_soc_zynq_ultra_ps_e_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'zynq_ultra_ps_e_0' of module 'zynq_soc_zynq_ultra_ps_e_0_0' has 83 connections declared, but only 81 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:7024]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc' (59#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/synth/zynq_soc.v:6159]
+WARNING: [Synth 8-689] width (8) of port connection 'AXI_MEM_awid' does not match port width (4) of module 'zynq_soc' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:34]
+WARNING: [Synth 8-689] width (8) of port connection 'AXI_MEM_bid' does not match port width (4) of module 'zynq_soc' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:34]
+WARNING: [Synth 8-689] width (8) of port connection 'AXI_MEM_arid' does not match port width (4) of module 'zynq_soc' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:34]
+WARNING: [Synth 8-689] width (8) of port connection 'AXI_MEM_rid' does not match port width (4) of module 'zynq_soc' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:34]
+WARNING: [Synth 8-689] width (16) of port connection 'AXI_DMA_awid' does not match port width (2) of module 'zynq_soc' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:36]
+WARNING: [Synth 8-689] width (16) of port connection 'AXI_DMA_bid' does not match port width (2) of module 'zynq_soc' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:36]
+WARNING: [Synth 8-689] width (16) of port connection 'AXI_DMA_arid' does not match port width (2) of module 'zynq_soc' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:36]
+WARNING: [Synth 8-689] width (16) of port connection 'AXI_DMA_rid' does not match port width (2) of module 'zynq_soc' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:36]
+WARNING: [Synth 8-7023] instance 'zynq_soc_i' of module 'zynq_soc' has 128 connections declared, but only 122 given [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:33]
+INFO: [Synth 8-6157] synthesizing module 'addr_mapper' [/home/stu/NutShell/fpga/board/axu3cg/rtl/addr_mapper.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'addr_mapper' (60#1) [/home/stu/NutShell/fpga/board/axu3cg/rtl/addr_mapper.v:1]
+INFO: [Synth 8-6157] synthesizing module 'nutshell' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:13]
+INFO: [Synth 8-6157] synthesizing module 'nutshell_NutShell_0_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_NutShell_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'nutshell_NutShell_0_0' (61#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_NutShell_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'NutShell_0' of module 'nutshell_NutShell_0_0' has 132 connections declared, but only 128 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:712]
+INFO: [Synth 8-6157] synthesizing module 'nutshell_axi_interconnect_0_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:1229]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_9Z0I4V' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:2947]
+INFO: [Synth 8-6157] synthesizing module 'nutshell_auto_cc_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_auto_cc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'nutshell_auto_cc_0' (62#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_auto_cc_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'auto_cc' of module 'nutshell_auto_cc_0' has 74 connections declared, but only 72 given [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:3238]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_9Z0I4V' (63#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:2947]
+INFO: [Synth 8-6155] done synthesizing module 'nutshell_axi_interconnect_0_0' (64#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:1229]
+INFO: [Synth 8-6157] synthesizing module 'nutshell_axi_interconnect_1_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:1599]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_ENW2Z3' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:3313]
+INFO: [Synth 8-6157] synthesizing module 'nutshell_auto_cc_1' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_auto_cc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'nutshell_auto_cc_1' (65#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_auto_cc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_ENW2Z3' (66#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:3313]
+INFO: [Synth 8-6155] done synthesizing module 'nutshell_axi_interconnect_1_0' (67#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:1599]
+INFO: [Synth 8-6157] synthesizing module 'nutshell_axi_interconnect_2_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:2049]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_3S65VZ' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:2499]
+INFO: [Synth 8-6157] synthesizing module 'nutshell_auto_cc_2' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_auto_cc_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'nutshell_auto_cc_2' (68#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_auto_cc_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_3S65VZ' (69#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:2499]
+INFO: [Synth 8-6155] done synthesizing module 'nutshell_axi_interconnect_2_0' (70#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:2049]
+INFO: [Synth 8-6157] synthesizing module 'nutshell_axi_protocol_convert_0_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_axi_protocol_convert_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'nutshell_axi_protocol_convert_0_0' (71#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_axi_protocol_convert_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'nutshell_axi_protocol_convert_1_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_axi_protocol_convert_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'nutshell_axi_protocol_convert_1_0' (72#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_axi_protocol_convert_1_0_stub.v:6]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:1216]
+INFO: [Synth 8-6157] synthesizing module 'nutshell_system_ila_0_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_system_ila_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'nutshell_system_ila_0_0' (73#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_system_ila_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'nutshell_util_vector_logic_0_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_util_vector_logic_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'nutshell_util_vector_logic_0_0' (74#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/.Xil/Vivado-5499-stu/realtime/nutshell_util_vector_logic_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'nutshell' (75#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/synth/nutshell.v:13]
+WARNING: [Synth 8-689] width (40) of port connection 'AXI_MEM_awaddr' does not match port width (32) of module 'nutshell' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:72]
+WARNING: [Synth 8-689] width (40) of port connection 'AXI_MEM_araddr' does not match port width (32) of module 'nutshell' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:72]
+WARNING: [Synth 8-689] width (8) of port connection 'AXI_MEM_awid' does not match port width (1) of module 'nutshell' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:72]
+WARNING: [Synth 8-689] width (8) of port connection 'AXI_MEM_bid' does not match port width (1) of module 'nutshell' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:72]
+WARNING: [Synth 8-689] width (8) of port connection 'AXI_MEM_arid' does not match port width (1) of module 'nutshell' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:72]
+WARNING: [Synth 8-689] width (8) of port connection 'AXI_MEM_rid' does not match port width (1) of module 'nutshell' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:72]
+WARNING: [Synth 8-689] width (40) of port connection 'AXI_DMA_awaddr' does not match port width (32) of module 'nutshell' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:73]
+WARNING: [Synth 8-689] width (40) of port connection 'AXI_DMA_araddr' does not match port width (32) of module 'nutshell' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:73]
+WARNING: [Synth 8-689] width (40) of port connection 'AXI_MMIO_awaddr' does not match port width (32) of module 'nutshell' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:74]
+WARNING: [Synth 8-689] width (40) of port connection 'AXI_MMIO_araddr' does not match port width (32) of module 'nutshell' [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:74]
+WARNING: [Synth 8-7023] instance 'nutshell_i' of module 'nutshell' has 130 connections declared, but only 112 given [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:71]
+INFO: [Synth 8-6157] synthesizing module 'i2c_config' [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_config.v:1]
+	Parameter S_IDLE bound to: 0 - type: integer 
+	Parameter S_WR_I2C_CHECK bound to: 1 - type: integer 
+	Parameter S_WR_I2C bound to: 2 - type: integer 
+	Parameter S_WR_I2C_DONE bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'i2c_master_top' [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_master_top.v:1]
+	Parameter S_IDLE bound to: 0 - type: integer 
+	Parameter S_WR_DEV_ADDR bound to: 1 - type: integer 
+	Parameter S_WR_REG_ADDR bound to: 2 - type: integer 
+	Parameter S_WR_DATA bound to: 3 - type: integer 
+	Parameter S_ACK bound to: 4 - type: integer 
+	Parameter S_WR_ERR_NACK bound to: 5 - type: integer 
+	Parameter S_RD_DEV_ADDR0 bound to: 6 - type: integer 
+	Parameter S_RD_REG_ADDR bound to: 7 - type: integer 
+	Parameter S_RD_DEV_ADDR1 bound to: 8 - type: integer 
+	Parameter S_RD_DATA bound to: 9 - type: integer 
+	Parameter S_RD_STOP bound to: 10 - type: integer 
+	Parameter S_WR_STOP bound to: 11 - type: integer 
+	Parameter S_WAIT bound to: 12 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'i2c_master_byte_ctrl' [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_master_byte_ctrl.v:75]
+	Parameter ST_IDLE bound to: 5'b00000 
+	Parameter ST_START bound to: 5'b00001 
+	Parameter ST_READ bound to: 5'b00010 
+	Parameter ST_WRITE bound to: 5'b00100 
+	Parameter ST_ACK bound to: 5'b01000 
+	Parameter ST_STOP bound to: 5'b10000 
+INFO: [Synth 8-6157] synthesizing module 'i2c_master_bit_ctrl' [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_master_bit_ctrl.v:143]
+	Parameter idle bound to: 18'b000000000000000000 
+	Parameter start_a bound to: 18'b000000000000000001 
+	Parameter start_b bound to: 18'b000000000000000010 
+	Parameter start_c bound to: 18'b000000000000000100 
+	Parameter start_d bound to: 18'b000000000000001000 
+	Parameter start_e bound to: 18'b000000000000010000 
+	Parameter stop_a bound to: 18'b000000000000100000 
+	Parameter stop_b bound to: 18'b000000000001000000 
+	Parameter stop_c bound to: 18'b000000000010000000 
+	Parameter stop_d bound to: 18'b000000000100000000 
+	Parameter rd_a bound to: 18'b000000001000000000 
+	Parameter rd_b bound to: 18'b000000010000000000 
+	Parameter rd_c bound to: 18'b000000100000000000 
+	Parameter rd_d bound to: 18'b000001000000000000 
+	Parameter wr_a bound to: 18'b000010000000000000 
+	Parameter wr_b bound to: 18'b000100000000000000 
+	Parameter wr_c bound to: 18'b001000000000000000 
+	Parameter wr_d bound to: 18'b010000000000000000 
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_master_bit_ctrl.v:406]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_master_bit_ctrl.v:406]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_master_bit_ctrl.v:410]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_master_bit_ctrl.v:410]
+INFO: [Synth 8-6155] done synthesizing module 'i2c_master_bit_ctrl' (76#1) [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_master_bit_ctrl.v:143]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_master_byte_ctrl.v:230]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_master_byte_ctrl.v:230]
+INFO: [Synth 8-6155] done synthesizing module 'i2c_master_byte_ctrl' (77#1) [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_master_byte_ctrl.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'i2c_master_top' (78#1) [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_master_top.v:1]
+WARNING: [Synth 8-5788] Register i2c_write_req_reg in module i2c_config is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_config.v:76]
+WARNING: [Synth 8-3848] Net i2c_read_req in module/entity i2c_config does not have driver. [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_config.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'i2c_config' (79#1) [/home/stu/NutShell/fpga/board/axu3cg/rtl/hdmi/i2c_config.v:1]
+WARNING: [Synth 8-7023] instance 'hdmi_i2c_config' of module 'i2c_config' has 6 connections declared, but only 4 given [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:85]
+WARNING: [Synth 8-3848] Net AXI_MMIO_arid in module/entity system_top does not have driver. [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:21]
+WARNING: [Synth 8-3848] Net AXI_MMIO_awid in module/entity system_top does not have driver. [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'system_top' (80#1) [/home/stu/NutShell/fpga/board/axu3cg/rtl/system_top.v:5]
+WARNING: [Synth 8-3331] design i2c_master_top has unconnected port i2c_slave_dev_addr[0]
+WARNING: [Synth 8-3331] design nutshell_axi_interconnect_2_0 has unconnected port ACLK
+WARNING: [Synth 8-3331] design nutshell_axi_interconnect_2_0 has unconnected port ARESETN
+WARNING: [Synth 8-3331] design nutshell_axi_interconnect_1_0 has unconnected port ACLK
+WARNING: [Synth 8-3331] design nutshell_axi_interconnect_1_0 has unconnected port ARESETN
+WARNING: [Synth 8-3331] design nutshell_axi_interconnect_0_0 has unconnected port ACLK
+WARNING: [Synth 8-3331] design nutshell_axi_interconnect_0_0 has unconnected port ARESETN
+WARNING: [Synth 8-3331] design nutshell has unconnected port intrs[4]
+WARNING: [Synth 8-3331] design nutshell has unconnected port intrs[3]
+WARNING: [Synth 8-3331] design nutshell has unconnected port intrs[2]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_awaddr[39]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_awaddr[38]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_awaddr[37]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_awaddr[36]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_awaddr[35]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_awaddr[34]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_awaddr[33]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_awaddr[32]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_awaddr[31]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_awaddr[30]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_araddr[39]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_araddr[38]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_araddr[37]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_araddr[36]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_araddr[35]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_araddr[34]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_araddr[33]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_araddr[32]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_araddr[31]
+WARNING: [Synth 8-3331] design addr_mapper has unconnected port s_axi_araddr[30]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In3[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In4[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In5[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In6[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In7[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In8[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In9[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In10[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In11[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In12[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In13[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In14[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In15[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In16[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In17[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In18[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In19[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In20[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In21[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In22[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In23[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In24[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In25[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In26[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In27[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In28[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In29[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In30[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In31[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In5[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In6[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In7[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In8[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In9[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In10[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In11[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In12[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In13[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In14[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In15[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In16[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In17[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In18[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In19[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In20[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In21[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In22[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In23[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In24[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In25[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In26[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In27[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In28[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In29[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In30[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In31[0]
+WARNING: [Synth 8-3331] design s00_couplers_imp_ZSJQIW has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_ZSJQIW has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m03_couplers_imp_14PJEAW has unconnected port S_AXI_araddr[39]
+WARNING: [Synth 8-3331] design m03_couplers_imp_14PJEAW has unconnected port S_AXI_araddr[38]
+WARNING: [Synth 8-3331] design m03_couplers_imp_14PJEAW has unconnected port S_AXI_araddr[37]
+WARNING: [Synth 8-3331] design m03_couplers_imp_14PJEAW has unconnected port S_AXI_araddr[36]
+WARNING: [Synth 8-3331] design m03_couplers_imp_14PJEAW has unconnected port S_AXI_araddr[35]
+WARNING: [Synth 8-3331] design m03_couplers_imp_14PJEAW has unconnected port S_AXI_araddr[34]
+WARNING: [Synth 8-3331] design m03_couplers_imp_14PJEAW has unconnected port S_AXI_araddr[33]
+WARNING: [Synth 8-3331] design m03_couplers_imp_14PJEAW has unconnected port S_AXI_araddr[32]
+WARNING: [Synth 8-3331] design m03_couplers_imp_14PJEAW has unconnected port S_AXI_awaddr[39]
+WARNING: [Synth 8-3331] design m03_couplers_imp_14PJEAW has unconnected port S_AXI_awaddr[38]
+WARNING: [Synth 8-3331] design m03_couplers_imp_14PJEAW has unconnected port S_AXI_awaddr[37]
+WARNING: [Synth 8-3331] design m03_couplers_imp_14PJEAW has unconnected port S_AXI_awaddr[36]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2260.652 ; gain = 0.000 ; free physical = 5207 ; free virtual = 8990
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 2263.621 ; gain = 2.969 ; free physical = 5211 ; free virtual = 8995
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 2263.621 ; gain = 2.969 ; free physical = 5211 ; free virtual = 8995
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_NutShell_0_0/nutshell_NutShell_0_0/nutshell_NutShell_0_0_in_context.xdc] for cell 'nutshell_i/NutShell_0'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_NutShell_0_0/nutshell_NutShell_0_0/nutshell_NutShell_0_0_in_context.xdc] for cell 'nutshell_i/NutShell_0'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_axi_protocol_convert_0_0/nutshell_axi_protocol_convert_0_0/nutshell_axi_protocol_convert_0_0_in_context.xdc] for cell 'nutshell_i/axi_protocol_convert_0'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_axi_protocol_convert_0_0/nutshell_axi_protocol_convert_0_0/nutshell_axi_protocol_convert_0_0_in_context.xdc] for cell 'nutshell_i/axi_protocol_convert_0'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_axi_protocol_convert_1_0/nutshell_axi_protocol_convert_1_0/nutshell_axi_protocol_convert_1_0_in_context.xdc] for cell 'nutshell_i/axi_protocol_convert_1'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_axi_protocol_convert_1_0/nutshell_axi_protocol_convert_1_0/nutshell_axi_protocol_convert_1_0_in_context.xdc] for cell 'nutshell_i/axi_protocol_convert_1'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_system_ila_0_0/nutshell_system_ila_0_0/nutshell_system_ila_0_0_in_context.xdc] for cell 'nutshell_i/system_ila_0'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_system_ila_0_0/nutshell_system_ila_0_0/nutshell_system_ila_0_0_in_context.xdc] for cell 'nutshell_i/system_ila_0'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_util_vector_logic_0_0/nutshell_util_vector_logic_0_0/nutshell_util_vector_logic_0_0_in_context.xdc] for cell 'nutshell_i/util_vector_logic_0'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_util_vector_logic_0_0/nutshell_util_vector_logic_0_0/nutshell_util_vector_logic_0_0_in_context.xdc] for cell 'nutshell_i/util_vector_logic_0'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_auto_cc_0/nutshell_auto_cc_0/nutshell_auto_cc_0_in_context.xdc] for cell 'nutshell_i/axi_interconnect_0/s00_couplers/auto_cc'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_auto_cc_0/nutshell_auto_cc_0/nutshell_auto_cc_0_in_context.xdc] for cell 'nutshell_i/axi_interconnect_0/s00_couplers/auto_cc'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_auto_cc_1/nutshell_auto_cc_1/nutshell_auto_cc_2_in_context.xdc] for cell 'nutshell_i/axi_interconnect_1/s00_couplers/auto_cc'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_auto_cc_1/nutshell_auto_cc_1/nutshell_auto_cc_2_in_context.xdc] for cell 'nutshell_i/axi_interconnect_1/s00_couplers/auto_cc'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_auto_cc_2/nutshell_auto_cc_2/nutshell_auto_cc_2_in_context.xdc] for cell 'nutshell_i/axi_interconnect_2/s00_couplers/auto_cc'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/nutshell/ip/nutshell_auto_cc_2/nutshell_auto_cc_2/nutshell_auto_cc_2_in_context.xdc] for cell 'nutshell_i/axi_interconnect_2/s00_couplers/auto_cc'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_clk50rst_0/zynq_soc_clk50rst_0/zynq_soc_clk50rst_0_in_context.xdc] for cell 'zynq_soc_i/hier_clkrst/clk50rst'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_clk50rst_0/zynq_soc_clk50rst_0/zynq_soc_clk50rst_0_in_context.xdc] for cell 'zynq_soc_i/hier_clkrst/clk50rst'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_clk_wiz_0_0/zynq_soc_clk_wiz_0_0/zynq_soc_clk_wiz_0_0_in_context.xdc] for cell 'zynq_soc_i/hier_clkrst/clk_wiz_0'
+create_clock: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2385.191 ; gain = 9.906 ; free physical = 5088 ; free virtual = 8873
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_clk_wiz_0_0/zynq_soc_clk_wiz_0_0/zynq_soc_clk_wiz_0_0_in_context.xdc] for cell 'zynq_soc_i/hier_clkrst/clk_wiz_0'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_uncorerst_0/zynq_soc_uncorerst_0/zynq_soc_uncorerst_0_in_context.xdc] for cell 'zynq_soc_i/hier_clkrst/uncorerst'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_uncorerst_0/zynq_soc_uncorerst_0/zynq_soc_uncorerst_0_in_context.xdc] for cell 'zynq_soc_i/hier_clkrst/uncorerst'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_AXI4VGA_0_0/zynq_soc_AXI4VGA_0_0/zynq_soc_AXI4VGA_0_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/AXI4VGA_0'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_AXI4VGA_0_0/zynq_soc_AXI4VGA_0_0/zynq_soc_AXI4VGA_0_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/AXI4VGA_0'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_axi_dma_rvcore_0/zynq_soc_axi_dma_rvcore_0/zynq_soc_axi_dma_rvcore_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_dma_rvcore'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_axi_dma_rvcore_0/zynq_soc_axi_dma_rvcore_0/zynq_soc_axi_dma_rvcore_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_dma_rvcore'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_xbar_0/zynq_soc_xbar_0/zynq_soc_xbar_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_dma/xbar'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_xbar_0/zynq_soc_xbar_0/zynq_soc_xbar_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_dma/xbar'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_us_0/zynq_soc_auto_us_0/zynq_soc_auto_us_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_dma/s00_couplers/auto_us'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_us_0/zynq_soc_auto_us_0/zynq_soc_auto_us_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_dma/s00_couplers/auto_us'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_us_1/zynq_soc_auto_us_1/zynq_soc_auto_us_1_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_dma/s01_couplers/auto_us'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_us_1/zynq_soc_auto_us_1/zynq_soc_auto_us_1_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_dma/s01_couplers/auto_us'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_us_2/zynq_soc_auto_us_2/zynq_soc_auto_us_2_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_dma/s02_couplers/auto_us'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_us_2/zynq_soc_auto_us_2/zynq_soc_auto_us_2_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_dma/s02_couplers/auto_us'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_xbar_1/zynq_soc_xbar_1/zynq_soc_xbar_1_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/xbar'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_xbar_1/zynq_soc_xbar_1/zynq_soc_xbar_1_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/xbar'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_pc_0/zynq_soc_auto_pc_0/zynq_soc_auto_pc_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/s00_couplers/auto_pc'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_pc_0/zynq_soc_auto_pc_0/zynq_soc_auto_pc_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/s00_couplers/auto_pc'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_ds_0/zynq_soc_auto_ds_0/zynq_soc_auto_ds_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/m00_couplers/auto_ds'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_ds_0/zynq_soc_auto_ds_0/zynq_soc_auto_ds_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/m00_couplers/auto_ds'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_ds_1/zynq_soc_auto_ds_1/zynq_soc_auto_ds_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/m01_couplers/auto_ds'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_ds_1/zynq_soc_auto_ds_1/zynq_soc_auto_ds_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/m01_couplers/auto_ds'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_cc_0/zynq_soc_auto_cc_0/zynq_soc_auto_cc_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/m02_couplers/auto_cc'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_cc_0/zynq_soc_auto_cc_0/zynq_soc_auto_cc_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/m02_couplers/auto_cc'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_cc_1/zynq_soc_auto_cc_1/zynq_soc_auto_cc_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/m03_couplers/auto_cc'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_cc_1/zynq_soc_auto_cc_1/zynq_soc_auto_cc_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/m03_couplers/auto_cc'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_axi_uartlite_0_0/zynq_soc_axi_uartlite_0_0/zynq_soc_axi_uartlite_0_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_uartlite_0'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_axi_uartlite_0_0/zynq_soc_axi_uartlite_0_0/zynq_soc_axi_uartlite_0_0_in_context.xdc] for cell 'zynq_soc_i/hier_rvcore_peripheral/axi_uartlite_0'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_axi_dma_arm_0/zynq_soc_axi_dma_arm_0/zynq_soc_axi_dma_arm_0_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_dma_arm'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_axi_dma_arm_0/zynq_soc_axi_dma_arm_0/zynq_soc_axi_dma_arm_0_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_dma_arm'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_xbar_2/zynq_soc_xbar_2/zynq_soc_xbar_2_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/xbar'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_xbar_2/zynq_soc_xbar_2/zynq_soc_xbar_2_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/xbar'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_us_3/zynq_soc_auto_us_3/zynq_soc_auto_us_3_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s00_couplers/auto_us'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_us_3/zynq_soc_auto_us_3/zynq_soc_auto_us_3_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s00_couplers/auto_us'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_us_4/zynq_soc_auto_us_4/zynq_soc_auto_us_4_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s01_couplers/auto_us'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_us_4/zynq_soc_auto_us_4/zynq_soc_auto_us_4_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s01_couplers/auto_us'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_us_5/zynq_soc_auto_us_5/zynq_soc_auto_us_5_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s02_couplers/auto_us'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_us_5/zynq_soc_auto_us_5/zynq_soc_auto_us_5_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s02_couplers/auto_us'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_s00_mmu_0/zynq_soc_s00_mmu_0/zynq_soc_s00_mmu_0_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s00_mmu'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_s00_mmu_0/zynq_soc_s00_mmu_0/zynq_soc_s00_mmu_0_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s00_mmu'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_s01_mmu_0/zynq_soc_s01_mmu_0/zynq_soc_s01_mmu_0_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s01_mmu'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_s01_mmu_0/zynq_soc_s01_mmu_0/zynq_soc_s01_mmu_0_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s01_mmu'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_s02_mmu_0/zynq_soc_s02_mmu_0/zynq_soc_s02_mmu_0_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s02_mmu'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_s02_mmu_0/zynq_soc_s02_mmu_0/zynq_soc_s02_mmu_0_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s02_mmu'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_s03_mmu_0/zynq_soc_s03_mmu_0/zynq_soc_s03_mmu_0_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s03_mmu'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_s03_mmu_0/zynq_soc_s03_mmu_0/zynq_soc_s03_mmu_0_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s03_mmu'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_xbar_3/zynq_soc_xbar_3/zynq_soc_xbar_3_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_1/xbar'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_xbar_3/zynq_soc_xbar_3/zynq_soc_xbar_3_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_1/xbar'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_pc_1/zynq_soc_auto_pc_1/zynq_soc_auto_pc_1_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_1/s00_couplers/auto_pc'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_pc_1/zynq_soc_auto_pc_1/zynq_soc_auto_pc_1_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_interconnect_1/s00_couplers/auto_pc'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_axi_uartlite_0_1/zynq_soc_axi_uartlite_0_1/zynq_soc_axi_uartlite_0_0_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_uartlite_0'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_axi_uartlite_0_1/zynq_soc_axi_uartlite_0_1/zynq_soc_axi_uartlite_0_0_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/axi_uartlite_0'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_corerst_0/zynq_soc_corerst_0/zynq_soc_corerst_0_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/corerst'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_corerst_0/zynq_soc_corerst_0/zynq_soc_corerst_0_in_context.xdc] for cell 'zynq_soc_i/hier_arm_peripheral/corerst'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_zynq_ultra_ps_e_0_0/zynq_soc_zynq_ultra_ps_e_0_0/zynq_soc_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'zynq_soc_i/zynq_ultra_ps_e_0'
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_zynq_ultra_ps_e_0_0/zynq_soc_zynq_ultra_ps_e_0_0/zynq_soc_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'zynq_soc_i/zynq_ultra_ps_e_0'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/constr/hdmi.xdc]
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/constr/hdmi.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/stu/NutShell/fpga/board/axu3cg/constr/hdmi.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2385.191 ; gain = 0.000 ; free physical = 5072 ; free virtual = 8858
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2385.191 ; gain = 0.000 ; free physical = 5072 ; free virtual = 8858
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'nutshell_i/system_ila_0' at clock pin 'clk' is different from the actual clock period '6.667', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'nutshell_i/axi_interconnect_0/s00_couplers/auto_cc' at clock pin 'm_axi_aclk' is different from the actual clock period '6.667', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'nutshell_i/axi_interconnect_1/s00_couplers/auto_cc' at clock pin 's_axi_aclk' is different from the actual clock period '6.667', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'nutshell_i/axi_interconnect_2/s00_couplers/auto_cc' at clock pin 's_axi_aclk' is different from the actual clock period '6.667', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 2401.035 ; gain = 140.383 ; free physical = 5177 ; free virtual = 8963
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu3cg-sfvc784-1-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 2401.035 ; gain = 140.383 ; free physical = 5177 ; free virtual = 8963
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for nutshell_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nutshell_i/NutShell_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nutshell_i/axi_interconnect_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nutshell_i/axi_interconnect_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nutshell_i/axi_interconnect_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nutshell_i/axi_protocol_convert_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nutshell_i/axi_protocol_convert_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nutshell_i/system_ila_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nutshell_i/util_vector_logic_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nutshell_i/axi_interconnect_0/s00_couplers/auto_cc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nutshell_i/axi_interconnect_1/s00_couplers/auto_cc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for nutshell_i/axi_interconnect_2/s00_couplers/auto_cc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_clkrst/clk50rst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_clkrst/clk_wiz_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_clkrst/uncorerst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/AXI4VGA_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/axi_dma_rvcore. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_dma/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_dma/s00_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_dma/s01_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_dma/s02_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_dma. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/m00_couplers/auto_ds. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/m01_couplers/auto_ds. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/m02_couplers/auto_cc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio/m03_couplers/auto_cc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/axi_interconnect_rvcore_mmio. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/axi_uartlite_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_rvcore_peripheral/xlconcat_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/axi_dma_arm. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s00_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s01_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s02_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s00_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s01_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s02_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/axi_interconnect_0/s03_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/axi_interconnect_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/axi_interconnect_1/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/axi_interconnect_1/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/axi_interconnect_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/axi_uartlite_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/hier_arm_peripheral/corerst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/xlconcat_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_soc_i/zynq_ultra_ps_e_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 2401.035 ; gain = 140.383 ; free physical = 5177 ; free virtual = 8964
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'c_state_reg' in module 'i2c_master_bit_ctrl'
+INFO: [Synth 8-5544] ROM "c_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'c_state_reg' in module 'i2c_master_byte_ctrl'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'i2c_master_top'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'i2c_config'
+INFO: [Synth 8-5546] ROM "lut_data" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                            00000 |               000000000000000000
+                 start_a |                            00001 |               000000000000000001
+                 start_b |                            00010 |               000000000000000010
+                 start_c |                            00011 |               000000000000000100
+                 start_d |                            00100 |               000000000000001000
+                 start_e |                            00101 |               000000000000010000
+                  stop_a |                            00110 |               000000000000100000
+                  stop_b |                            00111 |               000000000001000000
+                  stop_c |                            01000 |               000000000010000000
+                  stop_d |                            01001 |               000000000100000000
+                    wr_a |                            01010 |               000010000000000000
+                    wr_b |                            01011 |               000100000000000000
+                    wr_c |                            01100 |               001000000000000000
+                    wr_d |                            01101 |               010000000000000000
+                    rd_a |                            01110 |               000000001000000000
+                    rd_b |                            01111 |               000000010000000000
+                    rd_c |                            10000 |               000000100000000000
+                    rd_d |                            10001 |               000001000000000000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'c_state_reg' using encoding 'sequential' in module 'i2c_master_bit_ctrl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 ST_IDLE |                              000 |                            00000
+                ST_START |                              001 |                            00001
+                 ST_READ |                              010 |                            00010
+                ST_WRITE |                              011 |                            00100
+                  ST_ACK |                              100 |                            01000
+                 ST_STOP |                              101 |                            10000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'c_state_reg' using encoding 'sequential' in module 'i2c_master_byte_ctrl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                    0000000100000 |                             0000
+           S_WR_DEV_ADDR |                    0000010000000 |                             0001
+           S_WR_REG_ADDR |                    0000000010000 |                             0010
+               S_WR_DATA |                    0000000000001 |                             0011
+          S_RD_DEV_ADDR0 |                    0001000000000 |                             0110
+           S_WR_ERR_NACK |                    0000100000000 |                             0101
+               S_WR_STOP |                    0000000000010 |                             1011
+           S_RD_REG_ADDR |                    0100000000000 |                             0111
+          S_RD_DEV_ADDR1 |                    1000000000000 |                             1000
+               S_RD_DATA |                    0010000000000 |                             1001
+               S_RD_STOP |                    0000001000000 |                             1010
+                   S_ACK |                    0000000000100 |                             0100
+                  S_WAIT |                    0000000001000 |                             1100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'i2c_master_top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                               00 |                              000
+          S_WR_I2C_CHECK |                               01 |                              001
+                S_WR_I2C |                               10 |                              010
+           S_WR_I2C_DONE |                               11 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'i2c_config'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:36 ; elapsed = 00:00:42 . Memory (MB): peak = 2401.035 ; gain = 140.383 ; free physical = 5165 ; free virtual = 8953
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input     14 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	                8 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 33    
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 2     
+	  18 Input     18 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	  13 Input     13 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 13    
+	   2 Input      8 Bit        Muxes := 2     
+	   5 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	  24 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 6     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 5     
+	  15 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 25    
+	  18 Input      1 Bit        Muxes := 6     
+	   6 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module system_top 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module i2c_master_bit_ctrl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input     14 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 17    
++---Muxes : 
+	  18 Input     18 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	  24 Input      5 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 13    
+	  18 Input      1 Bit        Muxes := 6     
+Module i2c_master_byte_ctrl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 6     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	  15 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+	   6 Input      1 Bit        Muxes := 6     
+Module i2c_master_top 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	  13 Input     13 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 13    
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 1     
+Module i2c_config 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 360 (col length:72)
+BRAMs: 432 (col length: RAMB18 72 RAMB36 36)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_state_reg[12]) is unused and will be removed from module i2c_master_top.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_state_reg[11]) is unused and will be removed from module i2c_master_top.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_state_reg[10]) is unused and will be removed from module i2c_master_top.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_state_reg[9]) is unused and will be removed from module i2c_master_top.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_state_reg[6]) is unused and will be removed from module i2c_master_top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:45 . Memory (MB): peak = 2401.035 ; gain = 140.383 ; free physical = 5148 ; free virtual = 8943
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'zynq_soc_i/hier_clkrst/clk_wiz_0/clk_in1' to pin 'zynq_soc_i/zynq_ultra_ps_e_0/bbstub_pl_clk0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'zynq_soc_i/hier_clkrst/clk_wiz_0/clk27' to pin 'zynq_soc_i/hier_clkrst/clk_wiz_0/bbstub_clk27/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'zynq_soc_i/hier_clkrst/clk_wiz_0/clk_in1' to 'zynq_soc_i/zynq_ultra_ps_e_0/bbstub_pl_clk0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'zynq_soc_i/hier_clkrst/clk_wiz_0/clk40' to pin 'zynq_soc_i/hier_clkrst/clk_wiz_0/bbstub_clk40/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'zynq_soc_i/hier_clkrst/clk_wiz_0/clk_in1' to 'zynq_soc_i/zynq_ultra_ps_e_0/bbstub_pl_clk0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'zynq_soc_i/hier_clkrst/clk_wiz_0/coreclk' to pin 'zynq_soc_i/hier_clkrst/clk_wiz_0/bbstub_coreclk/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'zynq_soc_i/hier_clkrst/clk_wiz_0/clk_in1' to 'zynq_soc_i/zynq_ultra_ps_e_0/bbstub_pl_clk0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'zynq_soc_i/hier_clkrst/clk_wiz_0/uncoreclk' to pin 'zynq_soc_i/hier_clkrst/clk_wiz_0/bbstub_uncoreclk/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'zynq_soc_i/hier_clkrst/clk_wiz_0/clk_in1' to 'zynq_soc_i/zynq_ultra_ps_e_0/bbstub_pl_clk0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'zynq_soc_i/zynq_ultra_ps_e_0/pl_clk0' to pin 'zynq_soc_i/zynq_ultra_ps_e_0/bbstub_pl_clk0/O'
+INFO: [Synth 8-5819] Moved 6 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:08 ; elapsed = 00:01:39 . Memory (MB): peak = 2786.574 ; gain = 525.922 ; free physical = 4553 ; free virtual = 8369
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:08 ; elapsed = 00:01:39 . Memory (MB): peak = 2787.574 ; gain = 526.922 ; free physical = 4552 ; free virtual = 8367
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:10 ; elapsed = 00:01:41 . Memory (MB): peak = 2808.598 ; gain = 547.945 ; free physical = 4548 ; free virtual = 8364
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MEM_aruser[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MEM_awuser[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_arid[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_arid[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_arid[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_arid[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_arid[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_arid[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_arid[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_arid[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_arregion[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_arregion[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_arregion[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_arregion[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_awid[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_awid[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_awid[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_awid[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_awid[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_awid[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_awid[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_awid[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_awregion[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_awregion[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_awregion[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin zynq_soc_i:AXI_MMIO_awregion[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin nutshell_i:AXI_DMA_arregion[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin nutshell_i:AXI_DMA_arregion[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin nutshell_i:AXI_DMA_arregion[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin nutshell_i:AXI_DMA_arregion[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin nutshell_i:AXI_DMA_awregion[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin nutshell_i:AXI_DMA_awregion[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin nutshell_i:AXI_DMA_awregion[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin nutshell_i:AXI_DMA_awregion[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin nutshell_i:AXI_MEM_buser[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin nutshell_i:AXI_MEM_ruser[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin nutshell_i:AXI_MMIO_bid[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin nutshell_i:AXI_MMIO_buser[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin nutshell_i:AXI_MMIO_rid[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin nutshell_i:AXI_MMIO_ruser[0] to constant 0
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:12 ; elapsed = 00:01:44 . Memory (MB): peak = 2814.535 ; gain = 553.883 ; free physical = 4548 ; free virtual = 8363
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:12 ; elapsed = 00:01:44 . Memory (MB): peak = 2814.535 ; gain = 553.883 ; free physical = 4548 ; free virtual = 8363
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:13 ; elapsed = 00:01:44 . Memory (MB): peak = 2814.535 ; gain = 553.883 ; free physical = 4548 ; free virtual = 8363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+----------------------------------+----------+
+|      |BlackBox name                     |Instances |
++------+----------------------------------+----------+
+|1     |zynq_soc_auto_us_3                |         1|
+|2     |zynq_soc_auto_us_4                |         1|
+|3     |zynq_soc_auto_us_5                |         1|
+|4     |zynq_soc_s00_mmu_0                |         1|
+|5     |zynq_soc_s01_mmu_0                |         1|
+|6     |zynq_soc_s02_mmu_0                |         1|
+|7     |zynq_soc_s03_mmu_0                |         1|
+|8     |zynq_soc_xbar_2                   |         1|
+|9     |zynq_soc_auto_pc_1                |         1|
+|10    |zynq_soc_xbar_3                   |         1|
+|11    |zynq_soc_axi_dma_arm_0            |         1|
+|12    |zynq_soc_axi_uartlite_0_1         |         1|
+|13    |zynq_soc_corerst_0                |         1|
+|14    |zynq_soc_clk50rst_0               |         1|
+|15    |zynq_soc_clk_wiz_0_0              |         1|
+|16    |zynq_soc_uncorerst_0              |         1|
+|17    |zynq_soc_auto_us_0                |         1|
+|18    |zynq_soc_auto_us_1                |         1|
+|19    |zynq_soc_auto_us_2                |         1|
+|20    |zynq_soc_xbar_0                   |         1|
+|21    |zynq_soc_auto_ds_0                |         1|
+|22    |zynq_soc_auto_ds_1                |         1|
+|23    |zynq_soc_auto_cc_0                |         1|
+|24    |zynq_soc_auto_cc_1                |         1|
+|25    |zynq_soc_auto_pc_0                |         1|
+|26    |zynq_soc_xbar_1                   |         1|
+|27    |zynq_soc_AXI4VGA_0_0              |         1|
+|28    |zynq_soc_axi_dma_rvcore_0         |         1|
+|29    |zynq_soc_axi_uartlite_0_0         |         1|
+|30    |zynq_soc_zynq_ultra_ps_e_0_0      |         1|
+|31    |nutshell_auto_cc_0                |         1|
+|32    |nutshell_auto_cc_1                |         1|
+|33    |nutshell_auto_cc_2                |         1|
+|34    |nutshell_NutShell_0_0             |         1|
+|35    |nutshell_axi_protocol_convert_0_0 |         1|
+|36    |nutshell_axi_protocol_convert_1_0 |         1|
+|37    |nutshell_system_ila_0_0           |         1|
+|38    |nutshell_util_vector_logic_0_0    |         1|
++------+----------------------------------+----------+
+
+Report Cell Usage: 
++------+----------------------------------+------+
+|      |Cell                              |Count |
++------+----------------------------------+------+
+|1     |nutshell_NutShell_0_0             |     1|
+|2     |nutshell_auto_cc_0                |     1|
+|3     |nutshell_auto_cc_1                |     1|
+|4     |nutshell_auto_cc_2                |     1|
+|5     |nutshell_axi_protocol_convert_0_0 |     1|
+|6     |nutshell_axi_protocol_convert_1_0 |     1|
+|7     |nutshell_system_ila_0_0           |     1|
+|8     |nutshell_util_vector_logic_0_0    |     1|
+|9     |zynq_soc_AXI4VGA_0_0              |     1|
+|10    |zynq_soc_auto_cc_0                |     1|
+|11    |zynq_soc_auto_cc_1                |     1|
+|12    |zynq_soc_auto_ds_0                |     1|
+|13    |zynq_soc_auto_ds_1                |     1|
+|14    |zynq_soc_auto_pc_0                |     1|
+|15    |zynq_soc_auto_pc_1                |     1|
+|16    |zynq_soc_auto_us_0                |     1|
+|17    |zynq_soc_auto_us_1                |     1|
+|18    |zynq_soc_auto_us_2                |     1|
+|19    |zynq_soc_auto_us_3                |     1|
+|20    |zynq_soc_auto_us_4                |     1|
+|21    |zynq_soc_auto_us_5                |     1|
+|22    |zynq_soc_axi_dma_arm_0            |     1|
+|23    |zynq_soc_axi_dma_rvcore_0         |     1|
+|24    |zynq_soc_axi_uartlite_0_0         |     1|
+|25    |zynq_soc_axi_uartlite_0_1         |     1|
+|26    |zynq_soc_clk50rst_0               |     1|
+|27    |zynq_soc_clk_wiz_0_0              |     1|
+|28    |zynq_soc_corerst_0                |     1|
+|29    |zynq_soc_s00_mmu_0                |     1|
+|30    |zynq_soc_s01_mmu_0                |     1|
+|31    |zynq_soc_s02_mmu_0                |     1|
+|32    |zynq_soc_s03_mmu_0                |     1|
+|33    |zynq_soc_uncorerst_0              |     1|
+|34    |zynq_soc_xbar_0                   |     1|
+|35    |zynq_soc_xbar_1                   |     1|
+|36    |zynq_soc_xbar_2                   |     1|
+|37    |zynq_soc_xbar_3                   |     1|
+|38    |zynq_soc_zynq_ultra_ps_e_0_0      |     1|
+|39    |LUT1                              |     1|
+|40    |LUT2                              |    23|
+|41    |LUT3                              |    24|
+|42    |LUT4                              |    35|
+|43    |LUT5                              |    27|
+|44    |LUT6                              |    57|
+|45    |FDCE                              |    29|
+|46    |FDPE                              |     1|
+|47    |FDRE                              |    85|
+|48    |IOBUF                             |     2|
+|49    |OBUF                              |    29|
++------+----------------------------------+------+
+
+Report Instance Areas: 
++------+-----------------------------------+----------------------------------------+------+
+|      |Instance                           |Module                                  |Cells |
++------+-----------------------------------+----------------------------------------+------+
+|1     |top                                |                                        |  8975|
+|2     |  zynq_soc_i                       |zynq_soc                                |  6653|
+|3     |    hier_arm_peripheral            |hier_arm_peripheral_imp_14HN6AJ         |  2870|
+|4     |      axi_interconnect_0           |zynq_soc_axi_interconnect_0_0           |  1754|
+|5     |        s00_couplers               |s00_couplers_imp_MEMYVP                 |   242|
+|6     |        s01_couplers               |s01_couplers_imp_1H5MAD0                |   100|
+|7     |        s02_couplers               |s02_couplers_imp_NLV82E                 |   142|
+|8     |      axi_interconnect_1           |zynq_soc_axi_interconnect_1_0           |   623|
+|9     |        s00_couplers               |s00_couplers_imp_JYANRP                 |   201|
+|10    |    hier_clkrst                    |hier_clkrst_imp_YBF9LJ                  |    15|
+|11    |    hier_rvcore_peripheral         |hier_rvcore_peripheral_imp_8D23AV       |  3444|
+|12    |      axi_interconnect_rvcore_dma  |zynq_soc_axi_interconnect_rvcore_dma_0  |   970|
+|13    |        s00_couplers               |s00_couplers_imp_19LU5HF                |   258|
+|14    |        s01_couplers               |s01_couplers_imp_KTMPB6                 |   108|
+|15    |        s02_couplers               |s02_couplers_imp_18TLRK0                |   150|
+|16    |      axi_interconnect_rvcore_mmio |zynq_soc_axi_interconnect_rvcore_mmio_0 |  1818|
+|17    |        m00_couplers               |m00_couplers_imp_XD3PL6                 |   200|
+|18    |        m01_couplers               |m01_couplers_imp_160IRHN                |   200|
+|19    |        m02_couplers               |m02_couplers_imp_YXQT3D                 |   220|
+|20    |        m03_couplers               |m03_couplers_imp_14PJEAW                |   220|
+|21    |        s00_couplers               |s00_couplers_imp_ZSJQIW                 |   253|
+|22    |      xlconcat_0                   |zynq_soc_xlconcat_0_0                   |     0|
+|23    |    xlconcat_1                     |zynq_soc_xlconcat_1_0                   |     0|
+|24    |  nutshell_i                       |nutshell                                |  2009|
+|25    |    axi_interconnect_0             |nutshell_axi_interconnect_0_0           |   274|
+|26    |      s00_couplers                 |s00_couplers_imp_9Z0I4V                 |   274|
+|27    |    axi_interconnect_1             |nutshell_axi_interconnect_1_0           |   282|
+|28    |      s00_couplers                 |s00_couplers_imp_ENW2Z3                 |   282|
+|29    |    axi_interconnect_2             |nutshell_axi_interconnect_2_0           |   282|
+|30    |      s00_couplers                 |s00_couplers_imp_3S65VZ                 |   282|
+|31    |  hdmi_i2c_config                  |i2c_config                              |   280|
+|32    |    i2c_master_top_m0              |i2c_master_top                          |   246|
+|33    |      byte_controller              |i2c_master_byte_ctrl                    |   208|
+|34    |        bit_controller             |i2c_master_bit_ctrl                     |   152|
++------+-----------------------------------+----------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:13 ; elapsed = 00:01:44 . Memory (MB): peak = 2814.535 ; gain = 553.883 ; free physical = 4548 ; free virtual = 8363
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 234 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:54 ; elapsed = 00:01:23 . Memory (MB): peak = 2814.535 ; gain = 416.469 ; free physical = 4588 ; free virtual = 8404
+Synthesis Optimization Complete : Time (s): cpu = 00:01:13 ; elapsed = 00:01:44 . Memory (MB): peak = 2814.543 ; gain = 553.883 ; free physical = 4602 ; free virtual = 8418
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2863.324 ; gain = 0.000 ; free physical = 4529 ; free virtual = 8345
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  IOBUF => IOBUF (IBUFCTRL, INBUF, OBUFT): 2 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+223 Infos, 202 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:29 ; elapsed = 00:02:11 . Memory (MB): peak = 2863.324 ; gain = 1346.621 ; free physical = 4625 ; free virtual = 8441
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2863.324 ; gain = 0.000 ; free physical = 4625 ; free virtual = 8441
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/synth_1/system_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file system_top_utilization_synth.rpt -pb system_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 17 02:19:45 2022...

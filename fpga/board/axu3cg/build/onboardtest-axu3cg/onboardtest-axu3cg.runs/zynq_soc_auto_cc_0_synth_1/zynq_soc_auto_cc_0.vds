@@ -1,0 +1,1072 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Aug 16 11:43:45 2022
+# Process ID: 20032
+# Current directory: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_auto_cc_0_synth_1
+# Command line: vivado -log zynq_soc_auto_cc_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_soc_auto_cc_0.tcl
+# Log file: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_auto_cc_0_synth_1/zynq_soc_auto_cc_0.vds
+# Journal file: /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_auto_cc_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source zynq_soc_auto_cc_0.tcl -notrace
+Command: synth_design -top zynq_soc_auto_cc_0 -part xczu3cg-sfvc784-1-e -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu3cg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu3cg'
+INFO: [Device 21-403] Loading part xczu3cg-sfvc784-1-e
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 20318 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:24 . Memory (MB): peak = 2137.184 ; gain = 0.000 ; free physical = 145 ; free virtual = 2407
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'zynq_soc_auto_cc_0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_cc_0/synth/zynq_soc_auto_cc_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'axi_clock_converter_v2_1_18_axi_clock_converter' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ac9d/hdl/axi_clock_converter_v2_1_vl_rfs.v:654]
+	Parameter C_FAMILY bound to: zynquplus - type: string 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S_AXI_ACLK_RATIO bound to: 1 - type: integer 
+	Parameter C_M_AXI_ACLK_RATIO bound to: 2 - type: integer 
+	Parameter C_AXI_IS_ACLK_ASYNC bound to: 1 - type: integer 
+	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_WRITE bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_READ bound to: 1 - type: integer 
+	Parameter C_SYNCHRONIZER_STAGE bound to: 3 - type: integer 
+	Parameter P_AXI4 bound to: 0 - type: integer 
+	Parameter P_AXI3 bound to: 1 - type: integer 
+	Parameter P_AXILITE bound to: 2 - type: integer 
+	Parameter P_LIGHT_WT bound to: 0 - type: integer 
+	Parameter P_FULLY_REG bound to: 1 - type: integer 
+	Parameter P_LUTRAM_ASYNC bound to: 12 - type: integer 
+	Parameter P_SI_LT_MI bound to: 1'b1 
+	Parameter P_ROUNDING_OFFSET bound to: 0 - type: integer 
+	Parameter P_ACLK_RATIO bound to: 2 - type: integer 
+	Parameter C_AWUSER_RIGHT bound to: 0 - type: integer 
+	Parameter C_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter C_AWQOS_RIGHT bound to: 0 - type: integer 
+	Parameter C_AWQOS_WIDTH bound to: 0 - type: integer 
+	Parameter C_AWREGION_RIGHT bound to: 0 - type: integer 
+	Parameter C_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter C_AWPROT_RIGHT bound to: 0 - type: integer 
+	Parameter C_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter C_AWCACHE_RIGHT bound to: 3 - type: integer 
+	Parameter C_AWCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter C_AWLOCK_RIGHT bound to: 3 - type: integer 
+	Parameter C_AWLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter C_AWBURST_RIGHT bound to: 3 - type: integer 
+	Parameter C_AWBURST_WIDTH bound to: 0 - type: integer 
+	Parameter C_AWSIZE_RIGHT bound to: 3 - type: integer 
+	Parameter C_AWSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter C_AWLEN_RIGHT bound to: 3 - type: integer 
+	Parameter C_AWLEN_WIDTH bound to: 0 - type: integer 
+	Parameter C_AWADDR_RIGHT bound to: 3 - type: integer 
+	Parameter C_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AWID_RIGHT bound to: 35 - type: integer 
+	Parameter C_AWID_WIDTH bound to: 0 - type: integer 
+	Parameter C_AW_WIDTH bound to: 35 - type: integer 
+	Parameter C_FIFO_AW_WIDTH bound to: 35 - type: integer 
+	Parameter C_WUSER_RIGHT bound to: 0 - type: integer 
+	Parameter C_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter C_WLAST_RIGHT bound to: 0 - type: integer 
+	Parameter C_WLAST_WIDTH bound to: 0 - type: integer 
+	Parameter C_WSTRB_RIGHT bound to: 0 - type: integer 
+	Parameter C_WSTRB_WIDTH bound to: 8 - type: integer 
+	Parameter C_WDATA_RIGHT bound to: 8 - type: integer 
+	Parameter C_WDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_WID_RIGHT bound to: 72 - type: integer 
+	Parameter C_WID_WIDTH bound to: 0 - type: integer 
+	Parameter C_W_WIDTH bound to: 72 - type: integer 
+	Parameter C_FIFO_W_WIDTH bound to: 72 - type: integer 
+	Parameter C_BUSER_RIGHT bound to: 0 - type: integer 
+	Parameter C_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter C_BRESP_RIGHT bound to: 0 - type: integer 
+	Parameter C_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter C_BID_RIGHT bound to: 2 - type: integer 
+	Parameter C_BID_WIDTH bound to: 0 - type: integer 
+	Parameter C_B_WIDTH bound to: 2 - type: integer 
+	Parameter C_FIFO_B_WIDTH bound to: 2 - type: integer 
+	Parameter C_ARUSER_RIGHT bound to: 0 - type: integer 
+	Parameter C_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter C_ARQOS_RIGHT bound to: 0 - type: integer 
+	Parameter C_ARQOS_WIDTH bound to: 0 - type: integer 
+	Parameter C_ARREGION_RIGHT bound to: 0 - type: integer 
+	Parameter C_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter C_ARPROT_RIGHT bound to: 0 - type: integer 
+	Parameter C_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter C_ARCACHE_RIGHT bound to: 3 - type: integer 
+	Parameter C_ARCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter C_ARLOCK_RIGHT bound to: 3 - type: integer 
+	Parameter C_ARLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter C_ARBURST_RIGHT bound to: 3 - type: integer 
+	Parameter C_ARBURST_WIDTH bound to: 0 - type: integer 
+	Parameter C_ARSIZE_RIGHT bound to: 3 - type: integer 
+	Parameter C_ARSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter C_ARLEN_RIGHT bound to: 3 - type: integer 
+	Parameter C_ARLEN_WIDTH bound to: 0 - type: integer 
+	Parameter C_ARADDR_RIGHT bound to: 3 - type: integer 
+	Parameter C_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_ARID_RIGHT bound to: 35 - type: integer 
+	Parameter C_ARID_WIDTH bound to: 0 - type: integer 
+	Parameter C_AR_WIDTH bound to: 35 - type: integer 
+	Parameter C_FIFO_AR_WIDTH bound to: 35 - type: integer 
+	Parameter C_RUSER_RIGHT bound to: 0 - type: integer 
+	Parameter C_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter C_RLAST_RIGHT bound to: 0 - type: integer 
+	Parameter C_RLAST_WIDTH bound to: 0 - type: integer 
+	Parameter C_RRESP_RIGHT bound to: 0 - type: integer 
+	Parameter C_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter C_RDATA_RIGHT bound to: 2 - type: integer 
+	Parameter C_RDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_RID_RIGHT bound to: 66 - type: integer 
+	Parameter C_RID_WIDTH bound to: 0 - type: integer 
+	Parameter C_R_WIDTH bound to: 66 - type: integer 
+	Parameter C_FIFO_R_WIDTH bound to: 66 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ac9d/hdl/axi_clock_converter_v2_1_vl_rfs.v:690]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ac9d/hdl/axi_clock_converter_v2_1_vl_rfs.v:691]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ac9d/hdl/axi_clock_converter_v2_1_vl_rfs.v:749]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ac9d/hdl/axi_clock_converter_v2_1_vl_rfs.v:750]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 72 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 2 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 64 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 64 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 72 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 72 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 72 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 72 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 64 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 64 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 66 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (1#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_clock_converter_v2_1_18_lite_async' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ac9d/hdl/axi_clock_converter_v2_1_vl_rfs.v:517]
+	Parameter C_DEST_SYNC_FF bound to: 3 - type: integer 
+	Parameter C_SRC_SYNC_FF bound to: 3 - type: integer 
+	Parameter C_WIDTH bound to: 35 - type: integer 
+	Parameter SRC_IDLE bound to: 2'b00 
+	Parameter SRC_DRV_SEND bound to: 2'b01 
+	Parameter SRC_WAIT_RCV_DONE bound to: 2'b10 
+	Parameter DEST_IDLE bound to: 2'b00 
+	Parameter DEST_DRV_VALID bound to: 2'b01 
+	Parameter DEST_DRV_ACK bound to: 2'b10 
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_handshake' [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:469]
+	Parameter DEST_EXT_HSK bound to: 1 - type: integer 
+	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
+	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter SRC_SYNC_FF bound to: 3 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 35 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* DIRECT_ENABLE = "yes" *) [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:560]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_single' [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:153]
+	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
+	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:205]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_single' (2#1) [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:153]
+INFO: [Synth 8-4471] merging register 'dest_req_ext_ff_reg' into 'dest_req_ff_reg' [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:623]
+WARNING: [Synth 8-6014] Unused sequential element dest_req_ext_ff_reg was removed.  [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:623]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_handshake' (3#1) [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:469]
+INFO: [Synth 8-6155] done synthesizing module 'axi_clock_converter_v2_1_18_lite_async' (4#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ac9d/hdl/axi_clock_converter_v2_1_vl_rfs.v:517]
+INFO: [Synth 8-6157] synthesizing module 'axi_clock_converter_v2_1_18_lite_async__parameterized0' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ac9d/hdl/axi_clock_converter_v2_1_vl_rfs.v:517]
+	Parameter C_DEST_SYNC_FF bound to: 3 - type: integer 
+	Parameter C_SRC_SYNC_FF bound to: 3 - type: integer 
+	Parameter C_WIDTH bound to: 72 - type: integer 
+	Parameter SRC_IDLE bound to: 2'b00 
+	Parameter SRC_DRV_SEND bound to: 2'b01 
+	Parameter SRC_WAIT_RCV_DONE bound to: 2'b10 
+	Parameter DEST_IDLE bound to: 2'b00 
+	Parameter DEST_DRV_VALID bound to: 2'b01 
+	Parameter DEST_DRV_ACK bound to: 2'b10 
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_handshake__parameterized0' [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:469]
+	Parameter DEST_EXT_HSK bound to: 1 - type: integer 
+	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
+	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter SRC_SYNC_FF bound to: 3 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 72 - type: integer 
+INFO: [Synth 8-4471] merging register 'dest_req_ext_ff_reg' into 'dest_req_ff_reg' [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:623]
+WARNING: [Synth 8-6014] Unused sequential element dest_req_ext_ff_reg was removed.  [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:623]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_handshake__parameterized0' (4#1) [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:469]
+INFO: [Synth 8-6155] done synthesizing module 'axi_clock_converter_v2_1_18_lite_async__parameterized0' (4#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ac9d/hdl/axi_clock_converter_v2_1_vl_rfs.v:517]
+INFO: [Synth 8-6157] synthesizing module 'axi_clock_converter_v2_1_18_lite_async__parameterized1' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ac9d/hdl/axi_clock_converter_v2_1_vl_rfs.v:517]
+	Parameter C_DEST_SYNC_FF bound to: 3 - type: integer 
+	Parameter C_SRC_SYNC_FF bound to: 3 - type: integer 
+	Parameter C_WIDTH bound to: 2 - type: integer 
+	Parameter SRC_IDLE bound to: 2'b00 
+	Parameter SRC_DRV_SEND bound to: 2'b01 
+	Parameter SRC_WAIT_RCV_DONE bound to: 2'b10 
+	Parameter DEST_IDLE bound to: 2'b00 
+	Parameter DEST_DRV_VALID bound to: 2'b01 
+	Parameter DEST_DRV_ACK bound to: 2'b10 
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_handshake__parameterized1' [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:469]
+	Parameter DEST_EXT_HSK bound to: 1 - type: integer 
+	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
+	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter SRC_SYNC_FF bound to: 3 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-4471] merging register 'dest_req_ext_ff_reg' into 'dest_req_ff_reg' [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:623]
+WARNING: [Synth 8-6014] Unused sequential element dest_req_ext_ff_reg was removed.  [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:623]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_handshake__parameterized1' (4#1) [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:469]
+INFO: [Synth 8-6155] done synthesizing module 'axi_clock_converter_v2_1_18_lite_async__parameterized1' (4#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ac9d/hdl/axi_clock_converter_v2_1_vl_rfs.v:517]
+INFO: [Synth 8-6157] synthesizing module 'axi_clock_converter_v2_1_18_lite_async__parameterized2' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ac9d/hdl/axi_clock_converter_v2_1_vl_rfs.v:517]
+	Parameter C_DEST_SYNC_FF bound to: 3 - type: integer 
+	Parameter C_SRC_SYNC_FF bound to: 3 - type: integer 
+	Parameter C_WIDTH bound to: 66 - type: integer 
+	Parameter SRC_IDLE bound to: 2'b00 
+	Parameter SRC_DRV_SEND bound to: 2'b01 
+	Parameter SRC_WAIT_RCV_DONE bound to: 2'b10 
+	Parameter DEST_IDLE bound to: 2'b00 
+	Parameter DEST_DRV_VALID bound to: 2'b01 
+	Parameter DEST_DRV_ACK bound to: 2'b10 
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_handshake__parameterized2' [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:469]
+	Parameter DEST_EXT_HSK bound to: 1 - type: integer 
+	Parameter DEST_SYNC_FF bound to: 3 - type: integer 
+	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter SRC_SYNC_FF bound to: 3 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 66 - type: integer 
+INFO: [Synth 8-4471] merging register 'dest_req_ext_ff_reg' into 'dest_req_ff_reg' [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:623]
+WARNING: [Synth 8-6014] Unused sequential element dest_req_ext_ff_reg was removed.  [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:623]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_handshake__parameterized2' (4#1) [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:469]
+INFO: [Synth 8-6155] done synthesizing module 'axi_clock_converter_v2_1_18_lite_async__parameterized2' (4#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ac9d/hdl/axi_clock_converter_v2_1_vl_rfs.v:517]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 72 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 2 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 64 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 64 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 72 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 72 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 72 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 72 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 64 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 64 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 66 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (5#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6155] done synthesizing module 'axi_clock_converter_v2_1_18_axi_clock_converter' (6#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ipshared/ac9d/hdl/axi_clock_converter_v2_1_vl_rfs.v:654]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_soc_auto_cc_0' (7#1) [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_cc_0/synth/zynq_soc_auto_cc_0.v:58]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_vector2axi has unconnected port m_axi_bid[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_vector2axi has unconnected port m_axi_buser[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_vector2axi has unconnected port m_axi_rid[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_vector2axi has unconnected port m_axi_rlast
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_vector2axi has unconnected port m_axi_ruser[0]
+WARNING: [Synth 8-3331] design xpm_cdc_single has unconnected port src_clk
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awid[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awlen[7]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awlen[6]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awlen[5]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awlen[4]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awlen[3]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awlen[2]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awlen[1]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awlen[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awsize[2]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awsize[1]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awsize[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awburst[1]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awburst[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awlock[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awcache[3]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awcache[2]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awcache[1]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awcache[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awregion[3]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awregion[2]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awregion[1]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awregion[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awqos[3]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awqos[2]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awqos[1]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awqos[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_awuser[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_wid[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_wlast
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_wuser[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arid[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arlen[7]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arlen[6]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arlen[5]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arlen[4]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arlen[3]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arlen[2]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arlen[1]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arlen[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arsize[2]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arsize[1]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arsize[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arburst[1]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arburst[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arlock[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arcache[3]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arcache[2]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arcache[1]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arcache[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arregion[3]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arregion[2]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arregion[1]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arregion[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arqos[3]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arqos[2]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arqos[1]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_arqos[0]
+WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_aruser[0]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awid[0]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awsize[2]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awsize[1]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awsize[0]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awburst[1]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awburst[0]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awcache[3]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awcache[2]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awcache[1]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awcache[0]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awregion[3]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awregion[2]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awregion[1]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awregion[0]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awqos[3]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awqos[2]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awqos[1]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awqos[0]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_awuser[0]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_wid[0]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_wlast
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_wuser[0]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_arid[0]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_arsize[2]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_arsize[1]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_arsize[0]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_arburst[1]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_arburst[0]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_arcache[3]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_arcache[2]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_arcache[1]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_arcache[0]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_arregion[3]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_arregion[2]
+WARNING: [Synth 8-3331] design axi_clock_converter_v2_1_18_axi_clock_converter has unconnected port s_axi_arregion[1]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:29 ; elapsed = 00:00:52 . Memory (MB): peak = 2196.996 ; gain = 59.812 ; free physical = 274 ; free virtual = 2228
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:52 . Memory (MB): peak = 2199.965 ; gain = 62.781 ; free physical = 342 ; free virtual = 2297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:52 . Memory (MB): peak = 2199.965 ; gain = 62.781 ; free physical = 342 ; free virtual = 2297
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_cc_0/zynq_soc_auto_cc_0_ooc.xdc] for cell 'inst'
+create_clock: Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2341.738 ; gain = 0.000 ; free physical = 128 ; free virtual = 2117
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.srcs/sources_1/bd/zynq_soc/ip/zynq_soc_auto_cc_0/zynq_soc_auto_cc_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_auto_cc_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_auto_cc_0_synth_1/dont_touch.xdc]
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake'
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake'
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake'
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/handshake'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/handshake'
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/zynq_soc_auto_cc_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/zynq_soc_auto_cc_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/xpm_cdc_single_dest2src_inst'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/xpm_cdc_single_dest2src_inst'
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/xpm_cdc_single_src2dest_inst'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/xpm_cdc_single_src2dest_inst'
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/xpm_cdc_single_dest2src_inst'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/xpm_cdc_single_dest2src_inst'
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/xpm_cdc_single_src2dest_inst'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/xpm_cdc_single_src2dest_inst'
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/xpm_cdc_single_dest2src_inst'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/xpm_cdc_single_dest2src_inst'
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/xpm_cdc_single_src2dest_inst'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/xpm_cdc_single_src2dest_inst'
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/handshake/xpm_cdc_single_dest2src_inst'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/handshake/xpm_cdc_single_dest2src_inst'
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/handshake/xpm_cdc_single_src2dest_inst'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/handshake/xpm_cdc_single_src2dest_inst'
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/xpm_cdc_single_dest2src_inst'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/xpm_cdc_single_dest2src_inst'
+Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/xpm_cdc_single_src2dest_inst'
+Finished Sourcing Tcl File [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/xpm_cdc_single_src2dest_inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/stu/diska/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/zynq_soc_auto_cc_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/zynq_soc_auto_cc_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2341.738 ; gain = 0.000 ; free physical = 129 ; free virtual = 2108
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2341.738 ; gain = 0.000 ; free physical = 126 ; free virtual = 2105
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:51 ; elapsed = 00:01:21 . Memory (MB): peak = 2341.738 ; gain = 204.555 ; free physical = 134 ; free virtual = 2041
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu3cg-sfvc784-1-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:51 ; elapsed = 00:01:21 . Memory (MB): peak = 2341.738 ; gain = 204.555 ; free physical = 134 ; free virtual = 2041
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_auto_cc_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw /handshake. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar /handshake. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w /handshake. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b /handshake. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r /handshake. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw /handshake/xpm_cdc_single_dest2src_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar /handshake/xpm_cdc_single_dest2src_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w /handshake/xpm_cdc_single_dest2src_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b /handshake/xpm_cdc_single_dest2src_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r /handshake/xpm_cdc_single_dest2src_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw /handshake/xpm_cdc_single_src2dest_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar /handshake/xpm_cdc_single_src2dest_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w /handshake/xpm_cdc_single_src2dest_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b /handshake/xpm_cdc_single_src2dest_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/\gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r /handshake/xpm_cdc_single_src2dest_inst. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:01:21 . Memory (MB): peak = 2341.738 ; gain = 204.555 ; free physical = 135 ; free virtual = 2042
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'src_state_reg' in module 'axi_clock_converter_v2_1_18_lite_async__xdcDup__1'
+INFO: [Synth 8-802] inferred FSM for state register 'dest_state_reg' in module 'axi_clock_converter_v2_1_18_lite_async__xdcDup__1'
+INFO: [Synth 8-802] inferred FSM for state register 'src_state_reg' in module 'axi_clock_converter_v2_1_18_lite_async'
+INFO: [Synth 8-802] inferred FSM for state register 'dest_state_reg' in module 'axi_clock_converter_v2_1_18_lite_async'
+INFO: [Synth 8-802] inferred FSM for state register 'src_state_reg' in module 'axi_clock_converter_v2_1_18_lite_async__parameterized0'
+INFO: [Synth 8-802] inferred FSM for state register 'dest_state_reg' in module 'axi_clock_converter_v2_1_18_lite_async__parameterized0'
+INFO: [Synth 8-802] inferred FSM for state register 'src_state_reg' in module 'axi_clock_converter_v2_1_18_lite_async__parameterized1'
+INFO: [Synth 8-802] inferred FSM for state register 'dest_state_reg' in module 'axi_clock_converter_v2_1_18_lite_async__parameterized1'
+INFO: [Synth 8-802] inferred FSM for state register 'src_state_reg' in module 'axi_clock_converter_v2_1_18_lite_async__parameterized2'
+INFO: [Synth 8-802] inferred FSM for state register 'dest_state_reg' in module 'axi_clock_converter_v2_1_18_lite_async__parameterized2'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                SRC_IDLE |                               00 |                               00
+            SRC_DRV_SEND |                               01 |                               01
+       SRC_WAIT_RCV_DONE |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'src_state_reg' using encoding 'sequential' in module 'axi_clock_converter_v2_1_18_lite_async__xdcDup__1'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               DEST_IDLE |                               00 |                               00
+          DEST_DRV_VALID |                               01 |                               01
+            DEST_DRV_ACK |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dest_state_reg' using encoding 'sequential' in module 'axi_clock_converter_v2_1_18_lite_async__xdcDup__1'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                SRC_IDLE |                               00 |                               00
+            SRC_DRV_SEND |                               01 |                               01
+       SRC_WAIT_RCV_DONE |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'src_state_reg' using encoding 'sequential' in module 'axi_clock_converter_v2_1_18_lite_async'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               DEST_IDLE |                               00 |                               00
+          DEST_DRV_VALID |                               01 |                               01
+            DEST_DRV_ACK |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dest_state_reg' using encoding 'sequential' in module 'axi_clock_converter_v2_1_18_lite_async'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                SRC_IDLE |                               00 |                               00
+            SRC_DRV_SEND |                               01 |                               01
+       SRC_WAIT_RCV_DONE |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'src_state_reg' using encoding 'sequential' in module 'axi_clock_converter_v2_1_18_lite_async__parameterized0'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               DEST_IDLE |                               00 |                               00
+          DEST_DRV_VALID |                               01 |                               01
+            DEST_DRV_ACK |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dest_state_reg' using encoding 'sequential' in module 'axi_clock_converter_v2_1_18_lite_async__parameterized0'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                SRC_IDLE |                               00 |                               00
+            SRC_DRV_SEND |                               01 |                               01
+       SRC_WAIT_RCV_DONE |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'src_state_reg' using encoding 'sequential' in module 'axi_clock_converter_v2_1_18_lite_async__parameterized1'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               DEST_IDLE |                               00 |                               00
+          DEST_DRV_VALID |                               01 |                               01
+            DEST_DRV_ACK |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dest_state_reg' using encoding 'sequential' in module 'axi_clock_converter_v2_1_18_lite_async__parameterized1'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                SRC_IDLE |                               00 |                               00
+            SRC_DRV_SEND |                               01 |                               01
+       SRC_WAIT_RCV_DONE |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'src_state_reg' using encoding 'sequential' in module 'axi_clock_converter_v2_1_18_lite_async__parameterized2'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               DEST_IDLE |                               00 |                               00
+          DEST_DRV_VALID |                               01 |                               01
+            DEST_DRV_ACK |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dest_state_reg' using encoding 'sequential' in module 'axi_clock_converter_v2_1_18_lite_async__parameterized2'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:53 ; elapsed = 00:01:22 . Memory (MB): peak = 2341.738 ; gain = 204.555 ; free physical = 119 ; free virtual = 1992
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               72 Bit    Registers := 2     
+	               66 Bit    Registers := 2     
+	               35 Bit    Registers := 4     
+	                4 Bit    Registers := 10    
+	                3 Bit    Registers := 10    
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 30    
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 10    
+	   2 Input      2 Bit        Muxes := 15    
+	   2 Input      1 Bit        Muxes := 5     
+	   4 Input      1 Bit        Muxes := 50    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module xpm_cdc_single 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 1     
+Module xpm_cdc_handshake__xdcDup__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               35 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
+Module axi_clock_converter_v2_1_18_lite_async__xdcDup__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 10    
+Module xpm_cdc_handshake 
+Detailed RTL Component Info : 
++---Registers : 
+	               35 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
+Module axi_clock_converter_v2_1_18_lite_async 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 10    
+Module xpm_cdc_handshake__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               72 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
+Module axi_clock_converter_v2_1_18_lite_async__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 10    
+Module xpm_cdc_handshake__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
+Module axi_clock_converter_v2_1_18_lite_async__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 10    
+Module xpm_cdc_handshake__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	               66 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
+Module axi_clock_converter_v2_1_18_lite_async__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 10    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 360 (col length:72)
+BRAMs: 432 (col length: RAMB18 72 RAMB36 36)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/s_areset_dly_reg[0]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/m_areset_dly_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/m_areset_dly_reg[0]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/s_areset_dly_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/s_areset_dly_reg[0]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/m_areset_dly_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/m_areset_dly_reg[0]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/m_areset_dly_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/m_areset_dly_reg[0]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/s_areset_dly_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/s_areset_dly_reg[0]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/m_areset_dly_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/m_areset_dly_reg[0]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/s_areset_dly_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/s_areset_dly_reg[0]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/s_areset_dly_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/s_areset_dly_reg[1]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/m_areset_dly_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/m_areset_dly_reg[1]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/s_areset_dly_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/s_areset_dly_reg[1]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/m_areset_dly_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/m_areset_dly_reg[1]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/m_areset_dly_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/m_areset_dly_reg[1]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/s_areset_dly_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/s_areset_dly_reg[1]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/m_areset_dly_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/m_areset_dly_reg[1]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/s_areset_dly_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/s_areset_dly_reg[1]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/s_areset_dly_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/s_areset_dly_reg[2]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/m_areset_dly_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/m_areset_dly_reg[2]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/s_areset_dly_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/s_areset_dly_reg[2]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/m_areset_dly_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/m_areset_dly_reg[2]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/m_areset_dly_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/m_areset_dly_reg[2]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/s_areset_dly_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/s_areset_dly_reg[2]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/m_areset_dly_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/m_areset_dly_reg[2]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/s_areset_dly_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/s_areset_dly_reg[2]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/s_areset_dly_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/s_areset_dly_reg[3]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/m_areset_dly_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/m_areset_dly_reg[3]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/s_areset_dly_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/s_areset_dly_reg[3]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/m_areset_dly_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/m_areset_dly_reg[3]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/m_areset_dly_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/m_areset_dly_reg[3]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/s_areset_dly_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/s_areset_dly_reg[3]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/m_areset_dly_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b/m_areset_dly_reg[3]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/s_areset_dly_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/s_areset_dly_reg[3]' (FD) to 'inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/s_areset_dly_reg[3]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:01:24 . Memory (MB): peak = 2341.738 ; gain = 204.555 ; free physical = 124 ; free virtual = 1981
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:27 ; elapsed = 00:02:35 . Memory (MB): peak = 2675.246 ; gain = 538.062 ; free physical = 123 ; free virtual = 996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:27 ; elapsed = 00:02:35 . Memory (MB): peak = 2675.246 ; gain = 538.062 ; free physical = 121 ; free virtual = 998
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:27 ; elapsed = 00:02:36 . Memory (MB): peak = 2695.277 ; gain = 558.094 ; free physical = 145 ; free virtual = 992
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:30 ; elapsed = 00:02:39 . Memory (MB): peak = 2701.215 ; gain = 564.031 ; free physical = 218 ; free virtual = 1072
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:30 ; elapsed = 00:02:39 . Memory (MB): peak = 2701.215 ; gain = 564.031 ; free physical = 221 ; free virtual = 1075
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:30 ; elapsed = 00:02:39 . Memory (MB): peak = 2701.215 ; gain = 564.031 ; free physical = 217 ; free virtual = 1071
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:30 ; elapsed = 00:02:39 . Memory (MB): peak = 2701.215 ; gain = 564.031 ; free physical = 217 ; free virtual = 1071
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:30 ; elapsed = 00:02:39 . Memory (MB): peak = 2701.215 ; gain = 564.031 ; free physical = 206 ; free virtual = 1062
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:30 ; elapsed = 00:02:39 . Memory (MB): peak = 2701.215 ; gain = 564.031 ; free physical = 215 ; free virtual = 1070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     7|
+|2     |LUT2 |    11|
+|3     |LUT3 |    15|
+|4     |LUT4 |    15|
+|5     |LUT5 |    15|
+|6     |LUT6 |     5|
+|7     |FDRE |   508|
++------+-----+------+
+
+Report Instance Areas: 
++------+----------------------------------------------------------------+-------------------------------------------------------+------+
+|      |Instance                                                        |Module                                                 |Cells |
++------+----------------------------------------------------------------+-------------------------------------------------------+------+
+|1     |top                                                             |                                                       |   576|
+|2     |  inst                                                          |axi_clock_converter_v2_1_18_axi_clock_converter        |   576|
+|3     |    \gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar  |axi_clock_converter_v2_1_18_lite_async                 |    98|
+|4     |      handshake                                                 |xpm_cdc_handshake                                      |    80|
+|5     |        xpm_cdc_single_src2dest_inst                            |xpm_cdc_single__12                                     |     3|
+|6     |        xpm_cdc_single_dest2src_inst                            |xpm_cdc_single__13                                     |     3|
+|7     |    \gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw  |axi_clock_converter_v2_1_18_lite_async__xdcDup__1      |   114|
+|8     |      handshake                                                 |xpm_cdc_handshake__xdcDup__1                           |    80|
+|9     |        xpm_cdc_single_src2dest_inst                            |xpm_cdc_single__10                                     |     3|
+|10    |        xpm_cdc_single_dest2src_inst                            |xpm_cdc_single__11                                     |     3|
+|11    |    \gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w   |axi_clock_converter_v2_1_18_lite_async__parameterized0 |   172|
+|12    |      handshake                                                 |xpm_cdc_handshake__parameterized0                      |   154|
+|13    |        xpm_cdc_single_src2dest_inst                            |xpm_cdc_single__14                                     |     3|
+|14    |        xpm_cdc_single_dest2src_inst                            |xpm_cdc_single__15                                     |     3|
+|15    |    \gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_b  |axi_clock_converter_v2_1_18_lite_async__parameterized1 |    32|
+|16    |      handshake                                                 |xpm_cdc_handshake__parameterized1                      |    14|
+|17    |        xpm_cdc_single_src2dest_inst                            |xpm_cdc_single__16                                     |     3|
+|18    |        xpm_cdc_single_dest2src_inst                            |xpm_cdc_single__17                                     |     3|
+|19    |    \gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r  |axi_clock_converter_v2_1_18_lite_async__parameterized2 |   160|
+|20    |      handshake                                                 |xpm_cdc_handshake__parameterized2                      |   142|
+|21    |        xpm_cdc_single_src2dest_inst                            |xpm_cdc_single__18                                     |     3|
+|22    |        xpm_cdc_single_dest2src_inst                            |xpm_cdc_single                                         |     3|
++------+----------------------------------------------------------------+-------------------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:30 ; elapsed = 00:02:39 . Memory (MB): peak = 2701.215 ; gain = 564.031 ; free physical = 219 ; free virtual = 1075
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 65 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:15 ; elapsed = 00:02:19 . Memory (MB): peak = 2701.215 ; gain = 422.258 ; free physical = 255 ; free virtual = 1111
+Synthesis Optimization Complete : Time (s): cpu = 00:01:30 ; elapsed = 00:02:39 . Memory (MB): peak = 2701.223 ; gain = 564.031 ; free physical = 268 ; free virtual = 1124
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2743.973 ; gain = 0.000 ; free physical = 127 ; free virtual = 1019
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+101 Infos, 104 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:50 ; elapsed = 00:03:12 . Memory (MB): peak = 2743.973 ; gain = 1393.781 ; free physical = 236 ; free virtual = 1133
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2743.973 ; gain = 0.000 ; free physical = 236 ; free virtual = 1132
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_auto_cc_0_synth_1/zynq_soc_auto_cc_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP zynq_soc_auto_cc_0, cache-ID = 3ae93b7ecb27f494
+INFO: [Coretcl 2-1174] Renamed 21 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2767.984 ; gain = 0.000 ; free physical = 213 ; free virtual = 1134
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/stu/NutShell/fpga/board/axu3cg/build/onboardtest-axu3cg/onboardtest-axu3cg.runs/zynq_soc_auto_cc_0_synth_1/zynq_soc_auto_cc_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file zynq_soc_auto_cc_0_utilization_synth.rpt -pb zynq_soc_auto_cc_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 16 11:47:18 2022...

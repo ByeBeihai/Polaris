@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xczu3cg-sfvc784-1-e" LaunchTime="1660701840">
+  <File Type="VDS-TIMING-PB" Name="system_top_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="system_top_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="system_top.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="system_top_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="system_top_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="system_top_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="system_top.vds"/>
+  <File Type="REPORTS-TCL" Name="system_top_reports.tcl"/>
+  <File Type="PA-TCL" Name="system_top.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../../../../build/build/array_ext.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../build/DifftestRunaheadEvent.v">
+      <FileInfo SFType="SVerilog">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../build/DifftestRunaheadRedirectEvent.v">
+      <FileInfo SFType="SVerilog">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../build/TopMain.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../lib/include/axi.vh">
+      <FileInfo>
+        <Attr Name="IsGlobalInclude" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/nutshell/nutshell.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/zynq_soc/zynq_soc.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/addr_mapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/hdmi/i2c_config.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/hdmi/i2c_master_defines.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/hdmi/i2c_master_bit_ctrl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/hdmi/i2c_master_byte_ctrl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/hdmi/i2c_master_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/system_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../build/build/TopMain.v.conf"/>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="system_top"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../constr/hdmi.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+    <Step Id="synth_design">
+      <Option Id="FlattenHierarchy">1</Option>
+    </Step>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="nutshell_NutShell_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_zynq_ultra_ps_e_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_corerst_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_auto_pc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_xbar_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_s01_mmu_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_auto_us_5"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_auto_us_4"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_xbar_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_axi_dma_arm_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_auto_us_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_auto_ds_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_s00_mmu_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_auto_cc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_auto_ds_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_auto_us_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="nutshell_axi_protocol_convert_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_xbar_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="nutshell_axi_protocol_convert_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="nutshell_util_vector_logic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_clk50rst_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_s02_mmu_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_uncorerst_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_AXI4VGA_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_axi_dma_rvcore_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_clk_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="nutshell_system_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_auto_us_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_s03_mmu_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_axi_uartlite_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_auto_cc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_soc_auto_us_1"/>
+</GenRun>
