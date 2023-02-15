@@ -1,6 +1,7 @@
 # Polaris22A: RISC-V SIMD Superscalar Dual-Issue Processor
 Polaris is a sequential superscalar dual-issue RISC-V processor supporting RISC-V P instruction set extension（Packed-SIMD Instructions）
-- [Polaris22A: RISC-V SIMD Superscalar Dual-Issue Processor](#polaris22a:risc-v-simd-superscalar-dual-issue-processor)
+
+- [Polaris22A: RISC-V SIMD Superscalar Dual-Issue Processor](#polaris22a-risc-v-simd-superscalar-dual-issue-processor)
   - [0. RISC-V P instruction set extension](#0-risc-v-p-instruction-set-extension)
   - [1. Processor Features](#1-processor-features)
   - [2. Processor Architecture](#2-processor-architecture)
