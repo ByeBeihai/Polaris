@@ -6,9 +6,11 @@
 ## 0. RISC-V P instruction set extension
  RISC-V P instruction set extension (RVP for short) is a RISC-V instruction set extension in the draft stage. 
  RVP multiplexes the general-purpose registers specified by RVI and divides them into 8bit data groups, 16bit data groups or 32bit data groups. In this way, RVP allows the cpu to process multiple sets of data in one instruction, improving parallel computing performance.
+
 ![](./doc/add.drawio.png)
 
 ![](./doc/add16.png)
+
  This processor is developed according to the official manual of RVP version 0.9.11（The 32-bit version of RVP is not supported in Polaris）. The link to the official RVP manual is as follows:
  https://github.com/riscv/riscv-p-spec/blob/master/P-ext-proposal.adoc
 
@@ -24,16 +26,19 @@
 
 ## 2. Processor Structure
  Polaris is structured as a sequential Dual-Issue Processor. It adopts the variable-length back-end structure to balance the efficiency and timing of each operator. The pipeline of the entire processor can reach up to 8 stages.
+
 <img src=./doc/Polaris.png width="70%">
 <br/><br/>
 
  The backend consists of multiple operators, including two ALUs, an MDU, a BRU (optional), a CSRU, an LSU, and a PEXTU (optional and configurable) 
  Issue stage submits up to 2 instructions to exu per cycle. The number of instructions running in parallel within an exu is not limited by the number of issues.
+
 <img src=./doc/EXU.png width="40%">
 
 <br/><br/>
 
  Polaris supports RVP through a SIMD sub-component with a configurable number of issues. This component contains two-stage pipelines: Issue stage and Operation stage. The Issue stage integrates RVP decoding uint and pre-computation uint, which is responsible for sending instructions to the Operation stage. The Operation stage continues to operate on the preprocessed data and submits the final result.
+
 <img src=./doc/PEXT.png width="30%">
 
 <br/><br/>
@@ -55,6 +60,7 @@
   ```
 -  If you want to compile the RVP program for simulation and fpga, you need to use a special compilation platform: [Nexus-AM](https://github.com/ByeBeihai/nexus-am)
  Polaris has implemented the [fpga verification environment](https://github.com/ssdfghhhhhhh/NutShell_U250) on the U250 accelerator card. It can lauch linux with image: linuxshell.bin (in directory :ready-to-run) on U250.
+
 <img src=./doc/linux.png width="80%">
 
 <br/><br/>
