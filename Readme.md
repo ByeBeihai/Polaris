@@ -37,13 +37,11 @@ Polaris is a sequential superscalar dual-issue RISC-V processor supporting RISC-
  The backend consists of multiple operators, including two ALUs, an MDU, a BRU (optional), a CSRU, an LSU, and a PEXTU (optional and configurable) 
  Issue stage submits up to 2 instructions to exu per cycle. The number of instructions running in parallel within an exu is not limited by the number of issues.
 
-<img src=./doc/EXU.png width="40%">
-
-<br/><br/>
+<img src=./doc/EXU.png width="50%">
 
  Polaris supports RVP through a SIMD sub-component with a configurable number of issues. This component contains two-stage pipelines: Issue stage and Operation stage. The Issue stage integrates RVP decoding uint and pre-computation uint, which is responsible for sending instructions to the Operation stage. The Operation stage continues to operate on the preprocessed data and submits the final result.
 
-<img src=./doc/PEXT.png width="30%">
+<img src=./doc/PEXT.png width="40%">
 
 <br/><br/>
 
@@ -64,7 +62,7 @@ Polaris is a sequential superscalar dual-issue RISC-V processor supporting RISC-
   ```
 -  If you want to compile the RVP program for simulation and fpga, you need to use a special compilation platform: [Nexus-AM](https://github.com/ByeBeihai/nexus-am)
  
-Polaris has implemented the [fpga verification environment](https://github.com/ssdfghhhhhhh/NutShell_U250) on the U250 accelerator card. It can lauch linux with image: linuxshell.bin (in directory :ready-to-run) on U250.
+Polaris has implemented the [fpga verification environment](https://github.com/ssdfghhhhhhh/NutShell_U250) on the U250 accelerator card. It can launch linux with image: linuxshell.bin (in directory :ready-to-run) on U250.
 
 <img src=./doc/linux.png width="80%">
 
