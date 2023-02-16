@@ -12,7 +12,7 @@ Polaris is a sequential superscalar dual-issue RISC-V processor supporting RISC-
 
 ## 0. RISC-V P instruction set extension
  RISC-V P instruction set extension (RVP for short) is a RISC-V instruction set extension in the draft stage. 
- RVP multiplexes the general-purpose registers specified by RVI and divides them into 8bit data groups, 16bit data groups or 32bit data groups. In this way, RVP allows the cpu to process multiple sets of data in one instruction, improving parallel computing performance.
+ RVP multiplexes the general-purpose registers specified by RVI and divides them into 8bit data groups, 16bit data groups or 32bit data groups. In this way, RVP allows cpu to process multiple sets of data in one instruction, improving parallel computing performance.
 
 ![](./doc/add.drawio.png)
 
@@ -42,7 +42,7 @@ Polaris is a sequential superscalar dual-issue RISC-V processor supporting RISC-
 <br/><br/>
 
 
-The Issue stage(ISU) uses InstBoard and REGBoard to record the order of each instruction and the use of registers,completing the detection and pre-operation of data impact.
+The Issue level(ISU) uses InstBoard and RegBoard to record the order of each instruction and the use of registers, completing the detection of data conflicts and the data-forward.
 Up to 2 instructions can be sent to EXU from ISU per cycle.
 
 <img src=./doc/ISSUE.png width="60%">
