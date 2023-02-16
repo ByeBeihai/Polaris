@@ -41,8 +41,15 @@ Polaris is a sequential superscalar dual-issue RISC-V processor supporting RISC-
 <img src=./doc/Polaris.png width="70%">
 <br/><br/>
 
- The backend consists of multiple operators, including two ALUs, an MDU, a BRU (optional), a CSRU, an LSU, and a PEXTU (optional and configurable) 
- Issue stage submits up to 2 instructions to exu per cycle. The number of instructions running in parallel within an exu is not limited by the number of issues.
+
+The Issue stage(ISU) uses InstBoard and REGBoard to record the order of each instruction and the use of registers,completing the detection and pre-operation of data impact.
+Up to 2 instructions can be sent to EXU from ISU per cycle.
+
+<img src=./doc/ISSUE.png width="60%">
+
+ The EXU consists of multiple operators, including two ALUs, an MDU, a BRU (optional), a CSRU, an LSU, and a PEXTU (optional and configurable) 
+
+ The number of instructions running in parallel within an exu is not limited by the ways of issues.
 
 <img src=./doc/EXU.png width="50%">
 
@@ -76,7 +83,7 @@ Polaris has implemented the [fpga verification environment](https://github.com/s
 <br/><br/>
 
 ## 4. Configuration of Polaris
- In addition to the configurable items of the NutShell, Polaris also includes the following configurable items: 
+ In addition to the configurable items of the NutShell(while RV32 is not supported in Polaris), Polaris also includes the following configurable items: 
 -  independent BRU or BRU integrated in ALU(1 or 0)
 -  the issue-num of PEXTU: (0 or 1 or 2 and RVP is forbidden when num = 0)
 -  the issue-num of backend(1 or 2).
@@ -91,6 +98,6 @@ Polaris has implemented the [fpga verification environment](https://github.com/s
 ```
 
 ## 5. About
- Polaris is an open source RISC-V processor aiming to perform high energy efficiency. In the early stage of design, it was hoped to be the basic computing unit of an open source muulti-core chip.
+ Polaris is an open source RISC-V processor aiming to perform high energy efficiency. In the early stage of design, it was hoped to be the basic computing unit of an open source multi-core chip.
 
- The development environment of Polaris relies on the [NutShell](https://github.com/OSCPU/NutShell) project, so you can see some codes of NutShell in this project. Specifically, currently the scalar ALU for RVI, the atomic part of the pipeline LSU and the divider still multiplex the uints of the NutShell.
+ The development environment of Polaris relies on the [NutShell](https://github.com/OSCPU/NutShell) project, so you can see some codes of NutShell in this project. Currently the scalar ALU for RVI, the atomic part of the pipeline LSU and the divider still multiplex the uints of the NutShell.
