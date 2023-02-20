@@ -87,7 +87,8 @@ Polaris has implemented the [fpga verification environment](https://github.com/s
 -  independent BRU or BRU integrated in ALU(1 or 0)
 -  the issue-num of PEXTU: (0 or 1 or 2 and RVP is forbidden when num = 0)
 -  the issue-num of backend(1 or 2).
- you can configure them in this file:
+
+ You can configure these in this file:
 ```
 /src/main/scala/top/Settings.scala
 ```
