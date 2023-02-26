@@ -615,7 +615,7 @@ class SIMD_TLB(implicit val tlbConfig: TLBConfig) extends TlbModule with HasTLBI
     tlbexec_inbundle.bits.hitinstrPF := hitinstrPF
     Debug("state:%x hit %x miss %x currentlp %x currentsp %x currentipf %x\n",state,hit,miss,loadPF,storePF,hitinstrPF)
     Debug("hit:%d hitWB:%d hitVPN:%x hitFlag:%x hitPPN:%x hitRefillFlag:%x hitWBStore:%x hitCheck:%d hitExec:%d hitLoad:%d hitStore:%d\n", hit, hitWB, hitMeta.vpn, hitFlag.asUInt, hitData.ppn, hitRefillFlag, hitWBStore, hitCheck, hitExec, hitLoad, hitStore)
-    ismmio := io.out.req.fire() && AddressSpace.isMMIO(io.out.req.bits.addr)
+    ismmio := out_req.fire() && AddressSpace.isMMIO(out_req.bits.addr)
   }
   io.in.resp <> io.out.resp
   //Debug("state:%x \n",state)
