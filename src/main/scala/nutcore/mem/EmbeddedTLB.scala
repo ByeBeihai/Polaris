@@ -414,7 +414,7 @@ class EmbeddedTLB_fake(implicit val tlbConfig: TLBConfig) extends TlbModule with
   io.csrMMU.storePF := false.B
   io.csrMMU.addr := io.in.req.bits.addr
   io.ipf := false.B
-  val ismmio = io.out.req.fire() && AddressSpace.isMMIO(io.in.req.bits.addr)
+  val ismmio = io.out.req.fire() && AddressSpace.isMMIO(io.in.req.bits.addr)	
   BoringUtils.addSource(ismmio,"lsuMMIO")
 }
 
@@ -615,7 +615,7 @@ class SIMD_TLB(implicit val tlbConfig: TLBConfig) extends TlbModule with HasTLBI
     tlbexec_inbundle.bits.hitinstrPF := hitinstrPF
     Debug("state:%x hit %x miss %x currentlp %x currentsp %x currentipf %x\n",state,hit,miss,loadPF,storePF,hitinstrPF)
     Debug("hit:%d hitWB:%d hitVPN:%x hitFlag:%x hitPPN:%x hitRefillFlag:%x hitWBStore:%x hitCheck:%d hitExec:%d hitLoad:%d hitStore:%d\n", hit, hitWB, hitMeta.vpn, hitFlag.asUInt, hitData.ppn, hitRefillFlag, hitWBStore, hitCheck, hitExec, hitLoad, hitStore)
-    ismmio := out_req.fire() && AddressSpace.isMMIO(out_req.bits.addr)
+    ismmio := io.out.req.fire() && AddressSpace.isMMIO(io.out.req.bits.addr)
   }
   io.in.resp <> io.out.resp
   //Debug("state:%x \n",state)
@@ -629,7 +629,7 @@ class SIMD_TLB(implicit val tlbConfig: TLBConfig) extends TlbModule with HasTLBI
     BoringUtils.addSource(tlbFinish, "DTLBFINISH")
     BoringUtils.addSource(io.csrMMU.isPF(), "DTLBPF")
     BoringUtils.addSource(vmEnable, "DTLBENABLE")
-    BoringUtils.addSource(ismmio,"lsuMMIO") 
+    BoringUtils.addSource(ismmio,"lsuMMIO")
     }
     Debug("alreadyOutFinish %x \n",alreadyOutFinish)
   }

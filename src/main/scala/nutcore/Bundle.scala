@@ -113,7 +113,7 @@ class new_SIMD_WriteBackIO() extends NutCoreBundle with HasNutCoreParameter{
   val rfSrc3 = Vec(Issue_Num,Input(UInt(5.W)))
   val ReadData1 = Vec(Issue_Num,Output(UInt(XLEN.W)))
   val ReadData2 = Vec(Issue_Num,Output(UInt(XLEN.W)))
-  val ReadData3 = Vec(Issue_Num,Output(UInt(XLEN.W)))  
+  val ReadData3 = Vec(Issue_Num,Output(UInt(XLEN.W)))
   val valid = Vec(FuType.num,Output(Bool()))
   val InstNo = Vec(FuType.num,Output(UInt(log2Up(Queue_num).W)))
 }

@@ -665,4 +665,3 @@ class PALU extends NutCoreModule with HasInstrType{
     Debug("[PALU] MaxMinRes %x maxminOV %x \n",maxminRes,maxminOV)
     Debug("[PALU] isAdder %x isShifter %x isCompare %x isMaxMin %x\n",isAdder,isShifter,isCompare,isMaxMin)
 }
-

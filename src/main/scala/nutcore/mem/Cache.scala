@@ -562,7 +562,7 @@ class Cache_fake(implicit val cacheConfig: CacheConfig) extends CacheModule with
   val ismmio = AddressSpace.isMMIO(io.in.req.bits.addr)
   val ismmioRec = RegEnable(ismmio, io.in.req.fire())
   if (cacheConfig.name == "dcache") {
-    //BoringUtils.addSource(ismmio && io.in.req.fire(), "lsuMMIO")
+    //BoringUtils.addSource(ismmio, "lsuMMIO")
   }
 
   val needFlush = RegInit(false.B)

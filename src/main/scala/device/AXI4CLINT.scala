@@ -33,7 +33,7 @@ class AXI4CLINT(sim: Boolean = false) extends AXI4SlaveModule(new AXI4Lite, new 
   val mtimecmp = RegInit(0.U(64.W))
   val msip = RegInit(0.U(64.W))
 
-  val clk = (if (!sim) 100 /* 100MHz / 1000000 */ else 100)
+  val clk = (if (!sim) 100 /* 100MHz / 1000000 */ else 10000)
   val freq = RegInit(clk.U(16.W))
   val inc = RegInit(1.U(16.W))
 

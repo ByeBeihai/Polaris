@@ -553,23 +553,6 @@ class new_SIMD_CSR(implicit val p: NutCoreConfig) extends NutCoreModule with Has
     val s = new Priv
   }
 
-  // Atom LR/SC Control Bits
-  val setLr = WireInit(Bool(), false.B)
-  val setLrVal = WireInit(Bool(), false.B)
-  val setLrAddr = WireInit(UInt(AddrBits.W), DontCare) //TODO : need check
-  val lr = RegInit(Bool(), false.B)
-  val lrAddr = RegInit(UInt(AddrBits.W), 0.U)
-  BoringUtils.addSink(setLr, "set_lr")
-  BoringUtils.addSink(setLrVal, "set_lr_val")
-  BoringUtils.addSink(setLrAddr, "set_lr_addr")
-  BoringUtils.addSource(lr, "lr")
-  BoringUtils.addSource(lrAddr, "lr_addr")
-
-  when(setLr){
-    lr := setLrVal
-    lrAddr := setLrAddr
-  }
-
   // Machine-Level CSRs
   
   val mtvec = RegInit(UInt(XLEN.W), 0.U)
@@ -762,7 +745,7 @@ class new_SIMD_CSR(implicit val p: NutCoreConfig) extends NutCoreModule with Has
     rdata := mipWire.asUInt | mipReg
     when(RegWen){mipReg := (wdata & sipMask) | (mipReg & ~sipMask)}
   }.elsewhen(addr === Mip.U){
-    rdata := mipWire.asUInt | mipReg //when need diff on rtthread，set it to 0.U
+    rdata := mipWire.asUInt | mipReg
     when(RegWen){mipReg:= (wdata & mipFixMask) | (mipReg & ~mipFixMask)}
   }.otherwise{
     rdata := 0.U
@@ -788,7 +771,7 @@ class new_SIMD_CSR(implicit val p: NutCoreConfig) extends NutCoreModule with Has
   // Exception and Intr
   // interrupts
   val intrVecEnable = Wire(Vec(12, Bool()))
-  (0 to 12-1).map(i => intrVecEnable(i) := Mux(priviledgeMode < ModeM,  (priviledgeMode === ModeS && mstatusStruct.ie.s) || priviledgeMode < ModeS
+  (0 to 12-1).map(i => intrVecEnable(i) := Mux(priviledgeMode < ModeM,  (priviledgeMode === ModeS && mstatusStruct.ie.s) || !mideleg(i) || priviledgeMode < ModeS
                                                                         , !mideleg(i) && mstatusStruct.ie.m))
   val mipVec  = mipWire.asUInt | mipReg
   val intrVec = mie(11,0) & mipVec & intrVecEnable.asUInt
@@ -862,7 +845,6 @@ class new_SIMD_CSR(implicit val p: NutCoreConfig) extends NutCoreModule with Has
       trapTarget := mtvec(VAddrBits-1,0)
     }
     mstatus := mstatusNew.asUInt
-    lr := false.B
   }.elsewhen(isRet){//xRet
     when (isMret) {
       priviledgeMode := mstatusStruct.mpp
@@ -883,7 +865,6 @@ class new_SIMD_CSR(implicit val p: NutCoreConfig) extends NutCoreModule with Has
       retTarget := uepc(VAddrBits-1, 0)
     }
     mstatus := mstatusNew.asUInt
-    lr:=false.B
   }
 
   //connect tlb about satp
@@ -925,6 +906,23 @@ class new_SIMD_CSR(implicit val p: NutCoreConfig) extends NutCoreModule with Has
   val flushTLB = valid && (func === MOUOpType.sfence_vma) && isMou
   BoringUtils.addSource(flushTLB, "MOUFlushTLB")
   Debug(flushTLB, "Sfence.vma at %x\n", io.cfIn.pc)
+
+  // Atom LR/SC Control Bits
+  val setLr = WireInit(Bool(), false.B)
+  val setLrVal = WireInit(Bool(), false.B)
+  val setLrAddr = WireInit(UInt(AddrBits.W), DontCare) //TODO : need check
+  val lr = RegInit(Bool(), false.B)
+  val lrAddr = RegInit(UInt(AddrBits.W), 0.U)
+  BoringUtils.addSink(setLr, "set_lr")
+  BoringUtils.addSink(setLrVal, "set_lr_val")
+  BoringUtils.addSink(setLrAddr, "set_lr_addr")
+  BoringUtils.addSource(lr, "lr")
+  BoringUtils.addSource(lrAddr, "lr_addr")
+
+  when(setLr){
+    lr := setLrVal
+    lrAddr := setLrAddr
+  }
 
   if (!p.FPGAPlatform) {
 

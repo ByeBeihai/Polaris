@@ -103,7 +103,7 @@ class NutCore(implicit val p: NutCoreConfig) extends NutCoreModule {
   val io = IO(new NutCoreIO)
 
   // Frontend
-  val frontend = Module(new Frontend_inorder)
+  val frontend = Module(new Frontend_SIMD)
   
   // Backend
   /*
