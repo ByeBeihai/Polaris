@@ -606,7 +606,7 @@ class SIMD_TLB(implicit val tlbConfig: TLBConfig) extends TlbModule with HasTLBI
     when(a){cntstate := cntstate + 1.U}
 
     tlbexec_inbundle.bits.req := io.in.req.bits
-    tlbexec_inbundle.valid := io.in.req.valid && (miss || hitWB || loadPF || storePF || hitinstrPF)
+    tlbexec_inbundle.valid := state === s_idle && io.in.req.valid && (miss || hitWB || loadPF || storePF || hitinstrPF)
     tlbexec_inbundle.bits.hitVec := hitVec
     tlbexec_inbundle.bits.miss := miss
     tlbexec_inbundle.bits.hitWB := hitWB
@@ -663,7 +663,7 @@ class SIMD_TLB(implicit val tlbConfig: TLBConfig) extends TlbModule with HasTLBI
   Debug("InReq: addr:%x cmd:%d wdata:%x OutReq: addr:%x cmd:%x wdata:%x\n", io.in.req.bits.addr, io.in.req.bits.cmd, io.in.req.bits.wdata, io.out.req.bits.addr, io.out.req.bits.cmd, io.out.req.bits.wdata)
   Debug("OutResp: rdata:%x cmd:%x Inresp: rdata:%x cmd:%x\n", io.out.resp.bits.rdata, io.out.resp.bits.cmd, io.in.resp.bits.rdata, io.in.resp.bits.cmd)
   Debug("satp:%x flush:%d cacheEmpty:%d instrPF:%d loadPF:%d storePF:%d \n", satp, io.flush, io.cacheEmpty, io.ipf, io.csrMMU.loadPF, io.csrMMU.storePF)
-  Debug("tlbempty valid %x ready %x tlbexecoutvalid %x\n",tlbEmpty.io.out.valid,tlbEmpty.io.out.ready,tlbExec.io.out.valid)
+  Debug("tlbempty invalid %x inready %x outvalid %x outready %x tlbexecoutvalid %x\n",tlbEmpty.io.in.valid,tlbEmpty.io.in.ready,tlbEmpty.io.out.valid,tlbEmpty.io.out.ready,tlbExec.io.out.valid)
 }
 
 class SIMD_TLBEXEC(implicit val tlbConfig: TLBConfig) extends TlbModule{
