@@ -413,6 +413,10 @@ class new_SIMD_EXU(implicit val p: NutCoreConfig) extends NutCoreModule with Has
     difftest.io.pc       := io.in(tarpNo).bits.cf.pc
     difftest.io.cycleCnt := cycleCnt
     difftest.io.instrCnt := instrCnt
+  }else{
+    when(io.in(csridx).bits.ctrl.isNutCoreTrap){
+      io.out(csridx).valid := false.B
+    }
   }
   //Debug
   {
