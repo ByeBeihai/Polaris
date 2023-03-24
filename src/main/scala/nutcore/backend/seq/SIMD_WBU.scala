@@ -117,27 +117,27 @@ class SIMD_WBU(implicit val p: NutCoreConfig) extends NutCoreModule with HasRegF
 }
 class new_SIMD_WBU(implicit val p: NutCoreConfig) extends NutCoreModule with HasRegFileParameter{
   val io = IO(new Bundle {
-    val in = Vec(FuType.num,Flipped(Decoupled(new SIMD_CommitIO)))
+    val in = Vec(Commit_num,Flipped(Decoupled(new SIMD_CommitIO)))
     val wb = new new_SIMD_WriteBackIO
     val redirect = new RedirectIO
   })
 
   val rf = new RegFile
 
-  val redirct_index = PriorityMux(VecInit((0 to FuType.num-1).map(i => io.in(i).bits.decode.cf.redirect.valid && io.in(i).valid)).zipWithIndex.map{case(a,b)=>(a,b.U)})
+  val redirct_index = PriorityMux(VecInit((0 to Commit_num-1).map(i => io.in(i).bits.decode.cf.redirect.valid && io.in(i).valid)).zipWithIndex.map{case(a,b)=>(a,b.U)})
   io.redirect := io.in(redirct_index).bits.decode.cf.redirect
-  io.redirect.valid := VecInit((0 to FuType.num-1).map(i => io.in(i).bits.decode.cf.redirect.valid && io.in(i).valid)).reduce(_||_)
+  io.redirect.valid := VecInit((0 to Commit_num-1).map(i => io.in(i).bits.decode.cf.redirect.valid && io.in(i).valid)).reduce(_||_)
 
-  val FronthasRedirect = VecInit((0 to FuType.num-1).map(i => i.U > redirct_index))
+  val FronthasRedirect = VecInit((0 to Commit_num-1).map(i => i.U > redirct_index))
 
-  for(i <- 0 to FuType.num-1){
+  for(i <- 0 to Commit_num-1){
     io.wb.rfWen(i) := io.in(i).bits.decode.ctrl.rfWen && io.in(i).valid 
     io.wb.rfDest(i) := io.in(i).bits.decode.ctrl.rfDest
     io.wb.WriteData(i) := io.in(i).bits.commits
     io.wb.valid(i) :=io.in(i).valid
     io.wb.InstNo(i) := io.in(i).bits.decode.InstNo
   }
-  for(i<-0 to FuType.num-1){
+  for(i<-0 to Commit_num-1){
     when (io.wb.rfWen(i) && !FronthasRedirect(i)) { rf.write(io.wb.rfDest(i), io.wb.WriteData(i)) }
     when(reset.asBool){rf.write(io.wb.rfDest(i), 0.U)}
   }
@@ -149,14 +149,14 @@ class new_SIMD_WBU(implicit val p: NutCoreConfig) extends NutCoreModule with Has
       io.wb.ReadData3(i):=rf.read(io.wb.rfSrc3(i))
     }
   }
-  for(i <- 0 to FuType.num-1){
+  for(i <- 0 to Commit_num-1){
     io.in(i).ready := true.B
   }
 
   //P-EXT
   if(Polaris_SIMDU_WAY_NUM!=0){
     val bool_wire = WireInit(false.B)
-    for(i <- 0 to FuType.num-1){
+    for(i <- 0 to Commit_num-1){
       when(io.in(i).valid && io.in(i).bits.decode.pext.OV && !FronthasRedirect(i)){
         bool_wire := true.B
       }
@@ -175,7 +175,7 @@ class new_SIMD_WBU(implicit val p: NutCoreConfig) extends NutCoreModule with Has
   //   printf("DUT pc %x redirect to %x cpid %x\n", runahead_redirect.io.pc, runahead_redirect.io.target_pc, runahead_redirect.io.checkpoint_id)
   // }
 
-  val commit_num = (0 to FuType.num-1).map(i => (io.in(i).valid && !FronthasRedirect(i)).asUInt).reduce(_+&_)
+  val commit_num = (0 to Commit_num-1).map(i => (io.in(i).valid && !FronthasRedirect(i)).asUInt).reduce(_+&_)
   for(i <- 0 to 0){
   BoringUtils.addSource(io.in(i).valid, "perfCntCondMinstret")
   BoringUtils.addSource(commit_num=/=0.U, "perfCntCondMultiCommit")
@@ -186,13 +186,13 @@ class new_SIMD_WBU(implicit val p: NutCoreConfig) extends NutCoreModule with Has
   BoringUtils.addSource(commit_num===6.U, "perfCntCondMultiCommit6")
   }
 
-  for(i <- 0 to FuType.num-1){
+  for(i <- 0 to Commit_num-1){
     Debug("[SIMD_WBU] issue %x valid %x pc %x wen %x wdata %x wdest %x futype %x instno %x isMMIO %x redirectvalid %x redirecttarget %x \n",i.U,io.in(i).valid,io.in(i).bits.decode.cf.pc,io.wb.rfWen(i),io.wb.WriteData(i),io.wb.rfDest(i),io.in(i).bits.decode.ctrl.fuType,io.in(i).bits.decode.InstNo,io.in(i).bits.isMMIO,io.in(i).bits.decode.cf.redirect.valid,io.in(i).bits.decode.cf.redirect.target)
   }
   Debug("[SIMD_WBU] redirctindex %x redirctvalid %x redircttarget %x \n",redirct_index,io.redirect.valid,io.redirect.target)
   Debug("[SIMD_WBU] t0 %x \n",rf.read(5.U))
   if (!p.FPGAPlatform) {
-    for(i <- 0 to FuType.num-1){
+    for(i <- 0 to Commit_num-1){
     val difftest_commit = Module(new DifftestInstrCommit)
     difftest_commit.io.clock    := clock
     difftest_commit.io.coreid   := 0.U

@@ -828,16 +828,16 @@ class new_Backend_inorder(implicit val p: NutCoreConfig) extends NutCoreModule {
                           Mux(exu.io.out(FuType.bru).valid,
                               Mux(notafter(exu.io.out(FuType.csr).bits.decode.InstNo,exu.io.out(FuType.bru).bits.decode.InstNo,exu.io.out(FuType.csr).bits.decode.InstFlag,exu.io.out(FuType.bru).bits.decode.InstFlag),FuType.csr,FuType.bru),FuType.csr),FuType.bru)
 
-  //connect exu and wbu : FuType.num-way to FuType.num-way
-  val wbu_bits_next = Wire(Vec(FuType.num,new SIMD_CommitIO))
-  val wbu_bits      = RegInit(0.U.asTypeOf(Vec(FuType.num,new SIMD_CommitIO)))
+  //connect exu and wbu : FuType.num-way to Commit_num-way
+  val wbu_bits_next = Wire(Vec(Commit_num,new SIMD_CommitIO))
+  val wbu_bits      = RegInit(0.U.asTypeOf(Vec(Commit_num,new SIMD_CommitIO)))
   wbu_bits_next := wbu_bits
-  val wbu_valid = Reg(Vec(FuType.num,Bool()))
-  val wbu_valid_next = Wire(Vec(FuType.num,Bool()))
-  //(0 to FuType.num-1).map(i => wbu_valid_next(i) := wbu_valid(i))
-  (0 to FuType.num-1).map(i => wbu_valid_next(i) := false.B)
+  val wbu_valid = Reg(Vec(Commit_num,Bool()))
+  val wbu_valid_next = Wire(Vec(Commit_num,Bool()))
+  //(0 to Commit_num-1).map(i => wbu_valid_next(i) := wbu_valid(i))
+  (0 to Commit_num-1).map(i => wbu_valid_next(i) := false.B)
 
-  for(i <- 0 to FuType.num-1){
+  for(i <- 0 to Commit_num-1){
     wbu.io.in(i).bits := wbu_bits(i)
     wbu.io.in(i).valid := wbu_valid(i)
   } 
@@ -847,15 +847,15 @@ class new_Backend_inorder(implicit val p: NutCoreConfig) extends NutCoreModule {
 
   val TailPtr = isu.io.TailPtr
   val ptrleft = (Queue_num).U-TailPtr
-  val enoughspace = ptrleft>=(FuType.num).U
-  val space = Mux(enoughspace,(FuType.num).U,(FuType.num).U-ptrleft)
-  val continusfire = (0 to FuType.num-1).map(i => {if(i == 0){
+  val enoughspace = ptrleft>=(Commit_num).U
+  val space = Mux(enoughspace,(Commit_num).U,(Commit_num).U-ptrleft)
+  val continusfire = (0 to Commit_num-1).map(i => {if(i == 0){
                                                     true.B 
                                                   }else{
                                                     wbu_valid_next(i-1)
                                                   }})
-  val match_exuwbu = WireInit(0.U.asTypeOf(Vec(FuType.num,Vec(FuType.num,Bool()))))
-  for(i <- 0 to FuType.num-1){
+  val match_exuwbu = WireInit(0.U.asTypeOf(Vec(Commit_num,Vec(FuType.num,Bool()))))
+  for(i <- 0 to Commit_num-1){
     for(j <- 0 to FuType.num-1){
       val wbu_matched = (0 to j).map( k => {if(k == j){
                                             false.B
@@ -883,17 +883,23 @@ class new_Backend_inorder(implicit val p: NutCoreConfig) extends NutCoreModule {
   if(p.FPGAPlatform){
     val lsuoutready = WireInit(true.B)
     val lsuInstNo = Mux(exu.io.out(FuType.lsu).bits.decode.InstNo >= TailPtr, exu.io.out(FuType.lsu).bits.decode.InstNo - TailPtr,exu.io.out(FuType.lsu).bits.decode.InstNo + ptrleft)
-    for(i <- 0 to FuType.num-1){
+    for(i <- 0 to Commit_num-1){
       when(i.U < lsuInstNo && !wbu_valid_next(i)){
         lsuoutready :=false.B
       }
     }
+    if(Commit_num < FuType.num){
+      when(lsuInstNo > (Commit_num-1).U){
+        lsuoutready :=false.B
+      }
+    }
     exu.io.out(FuType.lsu).ready := lsuoutready
+    Debug("lsuready %x lsuInstNo %x wbu_valid_next(0) %x fpga %x \n",exu.io.out(FuType.lsu).ready,lsuInstNo,wbu_valid_next(0),p.FPGAPlatform.B)
   }
 
   val num_enterwbu = exu.io.out.map(i => i.fire().asUInt).reduce(_+&_)
   when(reset.asBool){
-    (0 to FuType.num-1).map(i => wbu_valid(i) := false.B)
+    (0 to Commit_num-1).map(i => wbu_valid(i) := false.B)
   }.otherwise{
     wbu_valid:= wbu_valid_next
   }
@@ -911,7 +917,7 @@ class new_Backend_inorder(implicit val p: NutCoreConfig) extends NutCoreModule {
   isu.io.flush := io.flush(0)
   exu.io.flush := io.flush(1)
 
-  for(i <- 0 to FuType.num-1){
+  for(i <- 0 to Commit_num-1){
     isu.io.wb.rfWen(i) := wbu.io.wb.rfWen(i)
     isu.io.wb.rfDest(i):= wbu.io.wb.rfDest(i)
     isu.io.wb.WriteData(i):=wbu.io.wb.WriteData(i)

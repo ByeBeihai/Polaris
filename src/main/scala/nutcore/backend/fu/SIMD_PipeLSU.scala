@@ -743,7 +743,7 @@ class pipeline_lsu_atom extends NutCoreModule with HasLSUConst {
   BoringUtils.addSource(lsu_firststage_fire,"lsu_firststage_fire")
   BoringUtils.addSource(addr,"LSUADDR")
 
-  Debug("stage1pc %x outvalid %x stage2pc %x outvalid %x\n",stage1.io.out.bits.Decode.cf.pc,stage1.io.out.valid,stage2.io.out.bits.Decode.cf.pc,stage2.io.out.valid)
+  Debug("stage1pc %x outvalid %x stage2pc %x outvalid %x outready %x \n",stage1.io.out.bits.Decode.cf.pc,stage1.io.out.valid,stage2.io.out.bits.Decode.cf.pc,stage2.io.out.valid,stage2.io.out.ready)
   Debug("stage2exp %x stageemptyexp %x\n",stage2_exp,stage_empty_exp)
   Debug("stageemptyinvalid %x stageemptyinready %x stageemptyoutvalid %x stageemptyoutready %x\n",stage_empty.io.in.valid,stage_empty.io.in.ready,stage_empty.io.out.valid,stage_empty.io.out.ready)
 }
