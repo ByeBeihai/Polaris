@@ -62,14 +62,19 @@ object SrcType {
 object FuType extends HasNutCoreConst {
   def num = 5 + Polaris_Independent_Bru + Polaris_SIMDU_WAY_NUM
   def width = 4
-  def alu = if(Polaris_Independent_Bru == 1){(Polaris_Independent_Bru + 3 + Polaris_SIMDU_WAY_NUM).U(width.W)}else{"b000".U}
-  def lsu = if(Polaris_Independent_Bru == 1){(2+Polaris_SIMDU_WAY_NUM).U(width.W)}else{(3+Polaris_SIMDU_WAY_NUM).U(width.W)}
-  def mdu = if(Polaris_Independent_Bru == 1){(3+Polaris_SIMDU_WAY_NUM).U(width.W)}else{(4+Polaris_SIMDU_WAY_NUM).U(width.W)}
-  def csr = "b001".U
+  def aluint = if(Polaris_Independent_Bru == 1){Polaris_Independent_Bru + 3 + Polaris_SIMDU_WAY_NUM}else{0}
+  def alu = aluint.U(width.W)
+  def alu1int= if(Polaris_Independent_Bru == 1){Polaris_Independent_Bru + 3 + Polaris_SIMDU_WAY_NUM + 1}else{2}
+  def alu1 = alu1int.U(width.W)
+  def lsuint = if(Polaris_Independent_Bru == 1){2+Polaris_SIMDU_WAY_NUM}else{3+Polaris_SIMDU_WAY_NUM}
+  def lsu = lsuint.U(width.W)
+  def mduint = if(Polaris_Independent_Bru == 1){3+Polaris_SIMDU_WAY_NUM}else{4+Polaris_SIMDU_WAY_NUM}
+  def mdu = mduint.U(width.W)
   def csrint = 1
+  def csr = csrint.U(width.W)
   def mou = "b1000".U
-  def alu1= if(Polaris_Independent_Bru == 1){(Polaris_Independent_Bru + 3 + Polaris_SIMDU_WAY_NUM + 1).U(width.W)}else{"b010".U}
-  def bru = if(Polaris_Independent_Bru == 1){"b000".U}else{alu1}
+  def bruint = if(Polaris_Independent_Bru == 1){0}else{alu1int}
+  def bru = bruint.U(width.W)
   def simdu = simduint.U(width.W)
   def simduint = if(Polaris_SIMDU_WAY_NUM != 0){if(Polaris_Independent_Bru == 1){2}else{3}}else{0}
   def simdu1 = simdu1int.U(width.W)

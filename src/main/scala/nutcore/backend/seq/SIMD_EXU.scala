@@ -280,7 +280,7 @@ class new_SIMD_EXU(implicit val p: NutCoreConfig) extends NutCoreModule with Has
   mdu.io.flush := io.flush
 
   //bru
-  val bruidx = FuType.bru
+  val bruidx = FuType.bruint
   if(Polaris_Independent_Bru == 1){
     val bru = Module(new ALU(hasBru = true,NO1 = true))
     val bruOut = bru.access(valid = io.in(bruidx).valid, src1 = src1(bruidx), src2 = src2(bruidx), func = fuOpType(bruidx))
@@ -377,7 +377,7 @@ class new_SIMD_EXU(implicit val p: NutCoreConfig) extends NutCoreModule with Has
   io.out(FuType.mdu).bits.commits := mduOut
   io.out(FuType.alu1).bits.commits:= alu1Out
 
-  io.in(lsuidx).ready := lsu.io.in.ready
+  io.in(lsuidx).ready := lsu.io.in.ready && !BeforeLSUhasRedirect
 
   for(i <- 0 to FuType.num-1){
     io.forward(i).valid := io.out(i).valid

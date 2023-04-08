@@ -51,9 +51,11 @@ trait HasNutCoreParameter {
   //parameter for SIMD backend
   val Issue_Num = Settings.getInt("Issue_Num")
   val Queue_num = 32
-  val Commit_num = FuType.num
   val Polaris_Independent_Bru = Settings.getInt("Polaris_Independent_Bru") //0 or 1
   val Polaris_SIMDU_WAY_NUM = Settings.getInt("Polaris_SIMDU_WAY_NUM")   //1 or 2
+  val Forward_num = 4 + Polaris_SIMDU_WAY_NUM
+  val Commit_num = 3
+  
 }
 
 trait HasNutCoreConst extends HasNutCoreParameter {

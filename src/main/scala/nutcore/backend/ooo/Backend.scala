@@ -940,9 +940,18 @@ class new_Backend_inorder(implicit val p: NutCoreConfig) extends NutCoreModule {
   redirect.valid := exu.io.out(redirct_index).bits.decode.cf.redirect.valid && exu.io.out(redirct_index).fire()
   io.redirect <> redirect
   // forward
-  for(i <- 0 to FuType.num-1){
-    isu.io.forward(i) <> exu.io.forward(i)  
+  isu.io.forward(0+Polaris_SIMDU_WAY_NUM) <> exu.io.forward(FuType.aluint)  
+  isu.io.forward(1+Polaris_SIMDU_WAY_NUM) <> exu.io.forward(FuType.alu1int)  
+  isu.io.forward(2+Polaris_SIMDU_WAY_NUM) <> exu.io.forward(FuType.lsuint)  
+  isu.io.forward(3+Polaris_SIMDU_WAY_NUM) <> exu.io.forward(FuType.mduint)
+  if(Polaris_SIMDU_WAY_NUM>0){
+    isu.io.forward(0) <> exu.io.forward(FuType.simduint)  
   }
+  if(Polaris_SIMDU_WAY_NUM == 2){
+    isu.io.forward(1) <> exu.io.forward(FuType.simdu1int)  
+  }
+  
+
 
   io.memMMU.imem <> exu.io.memMMU.imem
   io.memMMU.dmem <> exu.io.memMMU.dmem
