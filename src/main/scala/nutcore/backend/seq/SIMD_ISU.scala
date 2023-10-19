@@ -232,7 +232,7 @@ class new_SIMD_ISU(implicit val p:NutCoreConfig)extends NutCoreModule with HasRe
         (io.in(i).bits.ctrl.src1Type === SrcType.pc) -> SignExt(io.in(i).bits.cf.pc, AddrBits),
         src1DependEX(i).reduce(_||_) -> io.forward(PriorityMux(src1DependEX(i).zipWithIndex.map{case(a,b)=>(a,b.U)})).wb.rfData, //io.forward.wb.rfData,
         src1DependWB(i).reduce(_||_) -> io.wb.WriteData(PriorityMux(src1DependWB(i).zipWithIndex.map{case(a,b)=>(a,b.U)})), //io.wb.rfData,
-        (io.in(i).bits.ctrl.src2Type === SrcType.reg) -> io.wb.ReadData1(i)
+        (io.in(i).bits.ctrl.src1Type === SrcType.reg) -> io.wb.ReadData1(i)
         ))
     }
     for(i <- 0 to Issue_Num-1){
