@@ -18,11 +18,11 @@ package top
 
 object DefaultSettings {
   def apply() = Map(
-    "MemMapBase" -> 0x0000000000000000L,
+    "MemMapBase" -> 0x0000000080000000L,
     "MemMapRegionBits" -> 0,
     "MMIOBase" -> 0x0000000040000000L,
     "MMIOSize" -> 0x0000000040000000L,
-    "ResetVector" -> 0x80000000L,
+    "ResetVector" -> 0xC0000000L,
     "NrExtIntr" -> 1,
 
     "HasL2cache" -> true,
@@ -42,7 +42,7 @@ object DefaultSettings {
     "EnableRVC" -> true,
     "Issue_Num" -> 2,
     "Polaris_Independent_Bru" -> 1, //0 or 1
-    "Polaris_SIMDU_WAY_NUM" -> 2   //1 or 2
+    "Polaris_SIMDU_WAY_NUM" -> 0   //1 or 2
   )
 }
 
@@ -50,9 +50,9 @@ object PynqSettings {
   def apply() = Map(
     "FPGAPlatform" -> true,
     "NrExtIntr" -> 3,
-    "ResetVector" -> 0x80000000L,
-    "MemMapBase" -> 0x0000000080000000L,
-    "MemMapRegionBits" -> 28,
+    "ResetVector" -> 0xC0000000L,
+    "MemMapBase" -> 0x00000000C0000000L,
+    "MemMapRegionBits" -> 0,
     "MMIOBase" -> 0x0000000040600000L,
     "MMIOSize" -> 0x0000000001000000L
   )

@@ -24,7 +24,7 @@ import nutcore.HasNutCoreParameter
 import bus.axi4._
 import utils._
 
-class RAMHelper(memByte: Int) extends BlackBox with HasNutCoreParameter {
+class RAMHelper(memByte: Long) extends BlackBox with HasNutCoreParameter {
   val io = IO(new Bundle {
     val clk = Input(Clock())
     val rIdx = Input(UInt(DataBits.W))
@@ -37,7 +37,7 @@ class RAMHelper(memByte: Int) extends BlackBox with HasNutCoreParameter {
   }).suggestName("io")
 }
 
-class AXI4RAM[T <: AXI4Lite](_type: T = new AXI4, memByte: Int,
+class AXI4RAM[T <: AXI4Lite](_type: T = new AXI4, memByte: Long,
   useBlackBox: Boolean = false) extends AXI4SlaveModule(_type) with HasNutCoreParameter {
 
   val offsetBits = log2Up(memByte)
