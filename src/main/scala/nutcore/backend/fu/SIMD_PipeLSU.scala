@@ -495,7 +495,7 @@ class lsu_for_atom extends NutCoreModule with HasLSUConst {
   Debug("[LSU-AGU] state %x atomReq %x func %x outvalid %x exec_finish %x\n", state, atomReq, func,io.out.valid,exec_finish)
 
     //Set LR/SC bits
-    setLr := io.out.fire() && (lrReq || scReq)
+    setLr := io.out.fire() && (lrReq || scReq) &&!(io.loadPF || io.storePF)
     setLrVal := lrReq
     setLrAddr := src1
 
