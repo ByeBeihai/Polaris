@@ -555,9 +555,10 @@ class SIMD_TLB(implicit val tlbConfig: TLBConfig) extends TlbModule with HasTLBI
 
     // hit permission check
     val hitCheck = hit /*&& hitFlag.v */&& !(io.csrMMU.priviledgeMode === ModeU && !hitFlag.u) && !(io.csrMMU.priviledgeMode === ModeS && hitFlag.u && (!io.csrMMU.status_sum || ifecth))
-    val hitExec = hitCheck && hitFlag.x
-    val hitLoad = hitCheck && (hitFlag.r || io.csrMMU.status_mxr && hitFlag.x)
-    val hitStore = hitCheck && hitFlag.w
+    val hitADCheck = if (Settings.get("FPGAPlatform")) false.B else !hitFlag.a || !hitFlag.d && req.isWrite()
+    val hitExec = hitCheck && hitFlag.x && !hitADCheck
+    val hitLoad = hitCheck && (hitFlag.r || io.csrMMU.status_mxr && hitFlag.x) && !hitADCheck
+    val hitStore = hitCheck && hitFlag.w && !hitADCheck
 
     val isAMO = WireInit(false.B)
     if (tlbname == "dtlb") {
@@ -802,9 +803,10 @@ class SIMD_TLBEXEC(implicit val tlbConfig: TLBConfig) extends TlbModule{
           }
         }.elsewhen (level =/= 0.U) { //TODO: fix needFlush
           val permCheck = missflag.v && !(pf.priviledgeMode === ModeU && !missflag.u) && !(pf.priviledgeMode === ModeS && missflag.u && (!pf.status_sum || ifecth))
-          val permExec = permCheck && missflag.x
-          val permLoad = permCheck && (missflag.r || pf.status_mxr && missflag.x)
-          val permStore = permCheck && missflag.w
+          val permAD = if (Settings.get("FPGAPlatform")) false.B else !missflag.a || (!missflag.d && req.isWrite())
+          val permExec = permCheck && missflag.x && !permAD 
+          val permLoad = permCheck && (missflag.r || pf.status_mxr && missflag.x) && !permAD
+          val permStore = permCheck && missflag.w && !permAD
           val updateAD = !missflag.a || (!missflag.d && req.isWrite())
           val updateData = Cat( 0.U(56.W), req.isWrite(), 1.U(1.W), 0.U(6.W) )
           missRefillFlag := Cat(req.isWrite(), 1.U(1.W), 0.U(6.W)) | missflag.asUInt

@@ -369,7 +369,7 @@ class lsu_for_atom extends NutCoreModule with HasLSUConst {
     BoringUtils.addSink(lr, "lr")
     BoringUtils.addSink(lrAddr, "lr_addr")
 
-    val scInvalid = !(src1 === lrAddr) && scReq
+    val scInvalid = !(src1 === lrAddr && lr) && scReq
     Debug("setLr %x setLrVal %x setLrAddr %x lr %x lrAddr %x src1 %x\n",setLr,setLrVal,setLrAddr,lr,lrAddr,src1)
 
     // PF signal from TLB
@@ -495,7 +495,7 @@ class lsu_for_atom extends NutCoreModule with HasLSUConst {
   Debug("[LSU-AGU] state %x atomReq %x func %x outvalid %x exec_finish %x\n", state, atomReq, func,io.out.valid,exec_finish)
 
     //Set LR/SC bits
-    setLr := io.out.fire() && (lrReq || scReq)
+    setLr := io.out.fire() && (lrReq || scReq) && !(io.out.bits.storePF || io.out.bits.loadPF || io.out.bits.loadAddrMisaligned || io.out.bits.storeAddrMisaligned)
     setLrVal := lrReq
     setLrAddr := src1
 

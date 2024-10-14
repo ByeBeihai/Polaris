@@ -408,7 +408,7 @@ class multicycle_lsu_atom extends NutCoreModule with HasLSUConst {
     BoringUtils.addSink(lr, "lr")
     BoringUtils.addSink(lrAddr, "lr_addr")
 
-    val scInvalid = !(src1 === lrAddr) && scReq
+    val scInvalid = !(src1 === lrAddr && lr) && scReq
 
     // PF signal from TLB
     val dtlbFinish = WireInit(false.B)
