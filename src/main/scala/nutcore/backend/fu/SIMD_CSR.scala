@@ -238,10 +238,10 @@ class SIMD_CSR(implicit val p: NutCoreConfig) extends NutCoreModule with SIMD_Ha
     MaskedRegMap(Pmpcfg1, pmpcfg1),
     MaskedRegMap(Pmpcfg2, pmpcfg2),
     MaskedRegMap(Pmpcfg3, pmpcfg3),
-    MaskedRegMap(PmpaddrBase + 0, pmpaddr0,"h3ffffffff".U),
-    MaskedRegMap(PmpaddrBase + 1, pmpaddr1,"h3fffffc00".U),
-    MaskedRegMap(PmpaddrBase + 2, pmpaddr2,"h3fffffc00".U),
-    MaskedRegMap(PmpaddrBase + 3, pmpaddr3,"h3fffffc00".U),
+    MaskedRegMap(PmpaddrBase + 0, pmpaddr0,"h3fffffff".U),
+    MaskedRegMap(PmpaddrBase + 1, pmpaddr1,"h3fffffff".U),
+    MaskedRegMap(PmpaddrBase + 2, pmpaddr2,"h3fffffff".U),
+    MaskedRegMap(PmpaddrBase + 3, pmpaddr3,"h3fffffff".U),
 
     //p-ext
     MaskedRegMap(VXSAT,vxsat,1.U,MaskedRegMap.NoSideEffect,1.U)
@@ -648,7 +648,7 @@ class new_SIMD_CSR(implicit val p: NutCoreConfig) extends NutCoreModule with Has
     when(RegWen){mstatus := Cat(tmp.asTypeOf(new MstatusStruct).fs === "b11".U, tmp(XLEN-2,0))}
   }.elsewhen(addr === Sie.U){
     rdata := mie & sieMask
-    when(RegWen && io.cfIn.pc =/= "h80001f04".U){mie := (mie & ~sieMask)|(wdata & sieMask)}
+    when(RegWen){mie := (mie & ~sieMask)|(wdata & sieMask)}
   }.elsewhen(addr === Stvec.U){
     rdata := stvec
     when(RegWen){stvec := wdata}
@@ -723,20 +723,20 @@ class new_SIMD_CSR(implicit val p: NutCoreConfig) extends NutCoreModule with Has
     rdata := pmpcfg3
     when(RegWen){pmpcfg3 := wdata}
   }.elsewhen(addr === (PmpaddrBase + 0).U){
-    rdata := pmpaddr0
-    val pmpaddr0Mask = "h3ffffffff".U
+    rdata := Mux((pmpcfg0 & "h18".U) < "h18".U,pmpaddr0 & "hFFFFFFFFFFFFFC00".U ,pmpaddr0 | "h1FF".U)
+    val pmpaddr0Mask = "h3fffffff".U
     when(RegWen){pmpaddr0 := (wdata & pmpaddr0Mask) | (pmpaddr0 & ~pmpaddr0Mask)}
   }.elsewhen(addr === (PmpaddrBase + 1).U){
-    rdata := pmpaddr1
-    val pmpaddr1Mask = "h3fffffc00".U
+    rdata := Mux((pmpcfg1 & "h18".U) < "h18".U,pmpaddr1 & "hFFFFFFFFFFFFFC00".U ,pmpaddr1 | "h1FF".U)
+    val pmpaddr1Mask = "h3fffffff".U
     when(RegWen){pmpaddr1 := (wdata & pmpaddr1Mask) | (pmpaddr1 & ~pmpaddr1Mask)}
   }.elsewhen(addr === (PmpaddrBase + 2).U){
-    rdata := pmpaddr2
-    val pmpaddr2Mask = "h3fffffc00".U
+    rdata := Mux((pmpcfg2 & "h18".U) < "h18".U,pmpaddr2 & "hFFFFFFFFFFFFFC00".U ,pmpaddr2 | "h1FF".U)
+    val pmpaddr2Mask = "h3fffffff".U
     when(RegWen){pmpaddr2 := (wdata & pmpaddr2Mask) | (pmpaddr2 & ~pmpaddr2Mask)}
   }.elsewhen(addr === (PmpaddrBase + 3).U){
-    rdata := pmpaddr3
-    val pmpaddr3Mask = "h3fffffc00".U
+    rdata := Mux((pmpcfg3 & "h18".U) < "h18".U,pmpaddr3 & "hFFFFFFFFFFFFFC00".U ,pmpaddr3 | "h1FF".U)
+    val pmpaddr3Mask = "h3fffffff".U
     when(RegWen){pmpaddr3 := (wdata & pmpaddr3Mask) | (pmpaddr3 & ~pmpaddr3Mask)}
   }.elsewhen(addr === VXSAT.U){
     rdata := vxsat & 1.U

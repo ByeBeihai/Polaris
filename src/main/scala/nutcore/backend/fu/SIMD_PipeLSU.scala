@@ -673,7 +673,7 @@ class pipeline_lsu_atom extends NutCoreModule with HasLSUConst {
   stage1.io.in.bits.wdata := io.wdata
   stage1.io.in.bits.Decode:= io.DecodeIn
 
-  atomstage.io.in.valid := valid && atomReq && !stage2.io.in.valid
+  atomstage.io.in.valid := valid && atomReq && !stage2.io.in.valid && !stage2_exp && !stage_empty_exp
   atomstage.io.flush    := io.flush
   atomstage.io.in.bits  := 0.U.asTypeOf(new SIMD_Pipelsu_Bundle)
   atomstage.io.in.bits.src1  := src1
