@@ -265,6 +265,8 @@ class IBF_SIMD extends NutCoreModule with HasInstrType with HasIBUFConst{
   io.out(1).bits.isRVC := ExitQRVC(ExitQSize1)
   io.out(1).bits.crossPageIPFFix := !icachePFBuffer(Exit2idx) && !ExitQRVC(ExitQSize1) && icachePFBuffer(Exit2idx + 1.U)
   io.out(1).valid := ExitQValid(ExitQSize1) && (ExitQRVC(ExitQSize1) || ExitQValid(ExitQSize1 + 1.U)) && !io.flush
+  io.out(1).bits.exceptionVec.map(_ => false.B)
+  io.out(1).bits.exceptionVec(instrPageFault) := icachePFBuffer(Exit2idx) || !ExitQRVC(ExitQSize1) && icachePFBuffer(Exit2idx + 1.U)
 
   when(ExitQSize > 0.U){
     (0 until maxinstnum).map(i=>when(ExitQSize >= (i+1).U) {validBuffer(i.U + tailPtr) := false.B})
