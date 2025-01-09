@@ -1,4 +1,20 @@
-package nutcore
+/**************************************************************************************
+* Copyright (c) 2025 Institute of Computing Technology, CAS
+* Copyright (c) 2025 University of Chinese Academy of Sciences
+* 
+* Polaris is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2. 
+* You may obtain a copy of Mulan PSL v2 at:
+*             http://license.coscl.org.cn/MulanPSL2 
+* 
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER 
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR 
+* FIT FOR A PARTICULAR PURPOSE.  
+*
+* See the Mulan PSL v2 for more details.  
+***************************************************************************************/
+
+package polaris
 
 import chisel3._
 
@@ -11,7 +27,7 @@ import bus.simplebus._
 import top.Settings
 import difftest._
 
-class PALUIO extends NutCoreBundle {
+class PALUIO extends PolarisCoreBundle {
     val in = Flipped(Decoupled(new Bundle{
         val DecodeIn = new DecodeIO
         val Pctrl = new PIDUIO
@@ -22,7 +38,7 @@ class PALUIO extends NutCoreBundle {
   })
 }
 
-class PALU extends NutCoreModule with HasInstrType{
+class PALU extends PolarisCoreModule with HasInstrType{
     val io = IO(new PALUIO)
 
     val valid = io.in.valid

@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -35,7 +35,7 @@ trait HasInstrType {
   def InstrPM = "b10110".U
   def InstrPB = "b10111".U
   def InstrPRD= "b11100".U
-
+  def InstrSNN= "b11110".U
   def isrfWen(instrType : UInt): Bool = instrType(2)
 }
 
@@ -59,8 +59,9 @@ object SrcType {
   def apply() = UInt(1.W)
 }
 
-object FuType extends HasNutCoreConst {
-  def num = 5 + Polaris_Independent_Bru + Polaris_SIMDU_WAY_NUM
+object FuType extends HasPolarisCoreConst {
+  def addition = if(Polaris_SNN_WAY_NUM != 0){if(Polaris_SNN_WAY_NUM == 2){2}else{1}}else{0}
+  def num = 5 + Polaris_Independent_Bru + Polaris_SIMDU_WAY_NUM + addition
   def width = 4
   def aluint = if(Polaris_Independent_Bru == 1){Polaris_Independent_Bru + 3 + Polaris_SIMDU_WAY_NUM}else{0}
   def alu = aluint.U(width.W)
@@ -72,13 +73,17 @@ object FuType extends HasNutCoreConst {
   def mdu = mduint.U(width.W)
   def csrint = 1
   def csr = csrint.U(width.W)
-  def mou = "b1000".U
+  def mou = "b1001".U
   def bruint = if(Polaris_Independent_Bru == 1){0}else{alu1int}
   def bru = bruint.U(width.W)
   def simdu = simduint.U(width.W)
   def simduint = if(Polaris_SIMDU_WAY_NUM != 0){if(Polaris_Independent_Bru == 1){2}else{3}}else{0}
   def simdu1 = simdu1int.U(width.W)
   def simdu1int = if(Polaris_SIMDU_WAY_NUM != 0){if(Polaris_Independent_Bru == 1){3}else{4}}else{0}
+  def snnuint = if(Polaris_SNN_WAY_NUM != 0){if(Polaris_SNN_WAY_NUM == 2){num-2}else{num-1}}else{0}
+  def snnu = snnuint.U(width.W)
+  def snnu1int = if(Polaris_SNN_WAY_NUM != 0){if(Polaris_SNN_WAY_NUM == 2){num-1}else{0}}else{0}
+  def snnu1 = snnu1int.U(width.W)
   def apply() = UInt(width.W)
 }
 
@@ -86,10 +91,10 @@ object FuOpType {
   def apply() = UInt(7.W)
 }
 
-object Instructions extends HasInstrType with HasNutCoreParameter {
+object Instructions extends HasInstrType with HasPolarisCoreParameter {
   def NOP = 0x00000013.U
   val DecodeDefault = List(InstrN, FuType.csr, CSROpType.jmp)
-  def DecodeTable = RVIInstr.table ++ NutCoreTrap.table ++
+  def DecodeTable = RVIInstr.table ++ PolarsTrap.table ++
     (if (HasMExtension) RVMInstr.table else Nil) ++
     (if (HasCExtension) RVCInstr.table else Nil) ++
     Priviledged.table ++
@@ -102,10 +107,11 @@ object Instructions extends HasInstrType with HasNutCoreParameter {
     RVPMInstr.table ++
     RVPBInstr.table ++
     RVPRDInstr.table 
-    }else Nil)
+    }else Nil) ++
+    RVSNNInstr.table 
 }
 
-object CInstructions extends HasInstrType with HasNutCoreParameter{
+object CInstructions extends HasInstrType with HasPolarisCoreParameter{
   def NOP = 0x00000013.U
   val DecodeDefault = List(RVCInstr.ImmNone, RVCInstr.DtCare, RVCInstr.DtCare, RVCInstr.DtCare)
   // val DecodeDefault = List(InstrN, FuType.csr, CSROpType.jmp)

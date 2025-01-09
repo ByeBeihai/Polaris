@@ -20,10 +20,10 @@ import chisel3._
 import chisel3.util._
 import chisel3.util.experimental.loadMemoryFromFile
 
-import nutcore.HasNutCoreParameter
+import polaris.HasPolarisCoreParameter
 
 class DistributedMem(memByte: Int, dualPort: Boolean, delayCycles: Int = 0, dataFile: String = "")
-  extends Module with HasNutCoreParameter {
+  extends Module with HasPolarisCoreParameter {
   val io = IO(new Bundle {
     val rw = Flipped(new SimpleBusUC)
     val ro = Flipped(new SimpleBusUC)

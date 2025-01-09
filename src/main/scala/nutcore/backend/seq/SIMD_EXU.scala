@@ -1,4 +1,20 @@
-package nutcore
+/**************************************************************************************
+* Copyright (c) 2025 Institute of Computing Technology, CAS
+* Copyright (c) 2025 University of Chinese Academy of Sciences
+* 
+* Polaris is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2. 
+* You may obtain a copy of Mulan PSL v2 at:
+*             http://license.coscl.org.cn/MulanPSL2 
+* 
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER 
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR 
+* FIT FOR A PARTICULAR PURPOSE.  
+*
+* See the Mulan PSL v2 for more details.  
+***************************************************************************************/
+
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -9,7 +25,7 @@ import bus.simplebus._
 import top.Settings
 import difftest._
 
-class SIMD_EXU(implicit val p: NutCoreConfig) extends NutCoreModule {
+class SIMD_EXU(implicit val p: PolarisConfig) extends PolarisCoreModule {
   val io = IO(new Bundle {
     val in = Vec(Issue_Num,Flipped(Decoupled(new DecodeIO)))
     val out = Vec(Issue_Num,Decoupled(new CommitIO))
@@ -151,16 +167,16 @@ class SIMD_EXU(implicit val p: NutCoreConfig) extends NutCoreModule {
   if (!p.FPGAPlatform) {
     val cycleCnt = WireInit(0.U(64.W))
     val instrCnt = WireInit(0.U(64.W))
-    val nutcoretrap = VecInit((0 to Issue_Num-1).map(i => io.in(i).bits.ctrl.isNutCoreTrap && io.in(i).valid)).reduce(_||_)
+    val PolarsTrap = VecInit((0 to Issue_Num-1).map(i => io.in(i).bits.ctrl.isPolarisTrap && io.in(i).valid)).reduce(_||_)
 
     BoringUtils.addSink(cycleCnt, "simCycleCnt")
     BoringUtils.addSink(instrCnt, "simInstrCnt")
-    BoringUtils.addSource(nutcoretrap, "nutcoretrap")
+    BoringUtils.addSource(PolarsTrap, "PolarsTrap")
 
     val difftest = Module(new DifftestTrapEvent)
     difftest.io.clock    := clock
     difftest.io.coreid   := 0.U // TODO: nutshell does not support coreid auto config
-    difftest.io.valid    := nutcoretrap
+    difftest.io.valid    := PolarsTrap
     difftest.io.code     := io.in(0).bits.data.src1
     difftest.io.pc       := io.in(0).bits.cf.pc
     difftest.io.cycleCnt := cycleCnt
@@ -175,7 +191,7 @@ class SIMD_EXU(implicit val p: NutCoreConfig) extends NutCoreModule {
   }
 }
 
-class new_SIMD_EXU(implicit val p: NutCoreConfig) extends NutCoreModule with HasInstrType {
+class new_SIMD_EXU(implicit val p: PolarisConfig) extends PolarisCoreModule with HasInstrType {
   val io = IO(new Bundle {
     val in = Vec(FuType.num,Flipped(Decoupled(new DecodeIO)))
     val out = Vec(FuType.num,Decoupled(new SIMD_CommitIO))
@@ -224,6 +240,54 @@ class new_SIMD_EXU(implicit val p: NutCoreConfig) extends NutCoreModule with Has
   alu1.io.cfIn := io.in(alu1idx).bits.cf
   alu1.io.offset := io.in(alu1idx).bits.data.imm
   alu1.io.out.ready := io.out(alu1idx).ready
+  
+  //SNNU
+  if(Polaris_SNN_WAY_NUM == 2){
+    val snnuidx = FuType.snnu
+    val snnu1idx = FuType.snnu1
+    val snnu = Module(new SNNU_2WAY)
+    val (snnuOut,snnu1Out) = snnu.access(valid0 = io.in(snnuidx).valid, src01 = src1(snnuidx), src02 = src2(snnuidx), func0 = fuOpType(snnuidx),valid1 = io.in(snnu1idx).valid, src11 = src1(snnu1idx), src12 = src2(snnu1idx), func1 = fuOpType(snnu1idx))
+    snnu.io.dcIn(0) := io.in(snnuidx).bits
+    snnu.io.dcIn(1) := io.in(snnu1idx).bits
+    snnu.io.out(0).ready := io.out(snnuidx).ready
+    snnu.io.out(1).ready := io.out(snnu1idx).ready
+    snnu.io.flush := io.flush
+    val snnu_firststage_fire = Wire(Bool())
+    snnu_firststage_fire := snnu.io.FirstStageFire(0)
+    BoringUtils.addSource(snnu_firststage_fire, "snnu_fs_fire")
+    val snnu1_firststage_fire = Wire(Bool())
+    snnu1_firststage_fire := snnu.io.FirstStageFire(1)
+    BoringUtils.addSource(snnu1_firststage_fire, "snnu1_fs_fire")
+
+    io.out(snnuidx).bits.decode <> snnu.io.dcOut(0)
+    io.out(snnu1idx).bits.decode <> snnu.io.dcOut(1)
+    io.out(snnuidx).bits.decode.ctrl.rfWen := snnu.io.dcOut(0).ctrl.rfWen 
+    io.out(snnu1idx).bits.decode.ctrl.rfWen:= snnu.io.dcOut(1).ctrl.rfWen
+    io.out(FuType.snnu).valid := snnu.io.out(0).valid
+    io.out(FuType.snnu1).valid := snnu.io.out(1).valid
+    io.out(FuType.snnu).bits.commits := snnuOut
+    io.out(FuType.snnu1).bits.commits := snnu1Out
+    io.in(snnuidx).ready  := snnu.io.in(0).ready
+    io.in(snnu1idx).ready := snnu.io.in(1).ready
+    Debug("snnuidx %x \n",snnuidx)
+    Debug("snnu1idx %x \n",snnu1idx)
+  }else if(Polaris_SNN_WAY_NUM == 1){
+    val snnuidx = FuType.snnu
+    val snnu = Module(new SNNU)
+    val snnuOut = snnu.access(valid = io.in(snnuidx).valid, src1 = src1(snnuidx), src2 = src2(snnuidx), func = fuOpType(snnuidx))
+    snnu.io.out.ready := io.out(snnuidx).ready
+    snnu.io.dcIn := io.in(snnuidx).bits
+    snnu.io.flush := io.flush
+    val snnu_firststage_fire = Wire(Bool())
+    snnu_firststage_fire := snnu.io.FirstStageFire(0)
+    BoringUtils.addSource(snnu_firststage_fire, "snnu_fs_fire")
+    io.out(snnuidx).bits.decode <> snnu.io.dcOut
+    io.out(snnuidx).bits.decode.ctrl.rfWen := snnu.io.dcOut.ctrl.rfWen
+    io.out(FuType.snnu).valid := snnu.io.out.valid
+    io.out(FuType.snnu).bits.commits := snnuOut
+    io.in(snnuidx).ready := snnu.io.in.ready
+    Debug("snnuidx %x \n",snnuidx)
+  }
   
   //SIMDU
   if(Polaris_SIMDU_WAY_NUM == 2){
@@ -391,13 +455,13 @@ class new_SIMD_EXU(implicit val p: NutCoreConfig) extends NutCoreModule with Has
   if (!p.FPGAPlatform) {
     val cycleCnt = WireInit(0.U(64.W))
     val instrCnt = WireInit(0.U(64.W))
-    val nutcoretrap = VecInit((0 to FuType.num-1).map(i => io.in(i).bits.ctrl.isNutCoreTrap && io.in(i).valid)).reduce(_||_)
+    val PolarsTrap = VecInit((0 to FuType.num-1).map(i => io.in(i).bits.ctrl.isPolarisTrap && io.in(i).valid)).reduce(_||_)
 
-    val tarpNo = PriorityMux(io.in.map(i => i.bits.ctrl.isNutCoreTrap).zipWithIndex.map{case(a,b)=>(a,b.U)})
+    val tarpNo = PriorityMux(io.in.map(i => i.bits.ctrl.isPolarisTrap).zipWithIndex.map{case(a,b)=>(a,b.U)})
 
     BoringUtils.addSink(cycleCnt, "simCycleCnt")
     BoringUtils.addSink(instrCnt, "simInstrCnt")
-    BoringUtils.addSource(nutcoretrap, "nutcoretrap")
+    BoringUtils.addSource(PolarsTrap, "PolarsTrap")
     val csrops = io.in(csridx).valid === true.B
     BoringUtils.addSource(csrops, "csrops")
     BoringUtils.addSource(io.in(csridx).valid && io.in.map(i=>i.valid.asUInt).reduce(_+&_) =/= 1.U,"csrnotalone")
@@ -408,13 +472,13 @@ class new_SIMD_EXU(implicit val p: NutCoreConfig) extends NutCoreModule with Has
     val difftest = Module(new DifftestTrapEvent)
     difftest.io.clock    := clock
     difftest.io.coreid   := 0.U // TODO: nutshell does not support coreid auto config
-    difftest.io.valid    := nutcoretrap
+    difftest.io.valid    := PolarsTrap
     difftest.io.code     := io.in(tarpNo).bits.data.src1
     difftest.io.pc       := io.in(tarpNo).bits.cf.pc
     difftest.io.cycleCnt := cycleCnt
     difftest.io.instrCnt := instrCnt
   }else{
-    when(io.in(csridx).bits.ctrl.isNutCoreTrap){
+    when(io.in(csridx).bits.ctrl.isPolarisTrap){
       io.out(csridx).valid := false.B
     }
   }

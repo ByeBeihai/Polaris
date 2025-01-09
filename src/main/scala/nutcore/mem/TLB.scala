@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -25,7 +25,7 @@ import bus.axi4._
 import utils._
 import top.Settings
 
-sealed trait Sv39Const extends HasNutCoreParameter{
+sealed trait Sv39Const extends HasPolarisCoreParameter{
   val Level = 3
   val offLen  = 12
   val ppn0Len = 9
@@ -201,10 +201,10 @@ trait HasTlbConst extends Sv39Const{
   }
 }
 
-abstract class TlbBundle(implicit tlbConfig: TLBConfig) extends NutCoreBundle with HasNutCoreParameter with HasTlbConst with Sv39Const
-abstract class TlbModule(implicit tlbConfig: TLBConfig) extends NutCoreModule with HasNutCoreParameter with HasTlbConst with Sv39Const with HasCSRConst
+abstract class TlbBundle(implicit tlbConfig: TLBConfig) extends PolarisCoreBundle with HasPolarisCoreParameter with HasTlbConst with Sv39Const
+abstract class TlbModule(implicit tlbConfig: TLBConfig) extends PolarisCoreModule with HasPolarisCoreParameter with HasTlbConst with Sv39Const with HasCSRConst
 
-sealed class TLBMDWriteBundle (val IndexBits: Int, val Ways: Int, val tlbLen: Int) extends Bundle with HasNutCoreParameter with Sv39Const {
+sealed class TLBMDWriteBundle (val IndexBits: Int, val Ways: Int, val tlbLen: Int) extends Bundle with HasPolarisCoreParameter with Sv39Const {
   val wen = Output(Bool())
   val windex = Output(UInt(IndexBits.W))
   val waymask = Output(UInt(Ways.W))

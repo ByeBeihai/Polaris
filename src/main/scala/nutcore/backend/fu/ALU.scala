@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -79,7 +79,7 @@ class ALUIO extends FunctionUnitIO {
   val offset = Input(UInt(XLEN.W))
 }
 
-class ALU(hasBru: Boolean = false,NO1: Boolean = true) extends NutCoreModule {
+class ALU(hasBru: Boolean = false,NO1: Boolean = true) extends PolarisCoreModule {
   val io = IO(new ALUIO)
 
   val (valid, src1, src2, func) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func)

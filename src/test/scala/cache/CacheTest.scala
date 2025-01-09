@@ -16,7 +16,7 @@
 
 package top
 
-import nutcore._
+import polaris._
 import bus.simplebus._
 import device._
 import utils._

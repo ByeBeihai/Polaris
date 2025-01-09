@@ -14,12 +14,12 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
 
-class CtrlSignalIO extends NutCoreBundle {
+class CtrlSignalIO extends PolarisCoreBundle {
   val src1Type = Output(SrcType())
   val src2Type = Output(SrcType())
   val fuType = Output(FuType())
@@ -32,7 +32,7 @@ class CtrlSignalIO extends NutCoreBundle {
   val rfSrc3 = Output(UInt(5.W))
   val rfWen = Output(Bool())
   val rfDest = Output(UInt(5.W))
-  val isNutCoreTrap = Output(Bool())
+  val isPolarisTrap = Output(Bool())
   val isSrc1Forward = Output(Bool())
   val isSrc2Forward = Output(Bool())
   val noSpecExec = Output(Bool())  // This inst can not be speculated
@@ -41,29 +41,29 @@ class CtrlSignalIO extends NutCoreBundle {
   val isMou = Output(Bool())
 }
 
-class DataSrcIO extends NutCoreBundle {
+class DataSrcIO extends PolarisCoreBundle {
   val src1 = Output(UInt(XLEN.W))
   val src2 = Output(UInt(XLEN.W))
   val src3 = Output(UInt(XLEN.W))
   val imm  = Output(UInt(XLEN.W))
 }
 
-class RedirectIO extends NutCoreBundle {
+class RedirectIO extends PolarisCoreBundle {
   val target = Output(UInt(VAddrBits.W))
   val rtype = Output(UInt(1.W)) // 1: branch mispredict: only need to flush frontend  0: others: flush the whole pipeline
   val valid = Output(Bool())
 }
 
-class MisPredictionRecIO extends NutCoreBundle {
+class MisPredictionRecIO extends PolarisCoreBundle {
   val redirect = new RedirectIO
   val valid = Output(Bool())
   val checkpoint = Output(UInt(brTagWidth.W))
   val prfidx = Output(UInt(prfAddrWidth.W))
 }
-class PEXT extends NutCoreBundle {
+class PEXT extends PolarisCoreBundle {
   val OV = Output(Bool())
 }
-class CtrlFlowIO extends NutCoreBundle {
+class CtrlFlowIO extends PolarisCoreBundle {
   val instr = Output(UInt(64.W))
   val pc = Output(UInt(VAddrBits.W))
   val pnpc = Output(UInt(VAddrBits.W))
@@ -78,7 +78,7 @@ class CtrlFlowIO extends NutCoreBundle {
   val instrType = Output(UInt(5.W))
 }
 
-class DecodeIO extends NutCoreBundle with HasNutCoreParameter{
+class DecodeIO extends PolarisCoreBundle with HasPolarisCoreParameter{
   val cf = new CtrlFlowIO
   val ctrl = new CtrlSignalIO
   val data = new DataSrcIO
@@ -87,13 +87,13 @@ class DecodeIO extends NutCoreBundle with HasNutCoreParameter{
   val InstFlag = Output(UInt(1.W))
 }
 
-class WriteBackIO extends NutCoreBundle {
+class WriteBackIO extends PolarisCoreBundle {
   val rfWen = Output(Bool())
   val rfDest = Output(UInt(5.W))
   val rfData = Output(UInt(XLEN.W))
 }
 
-class SIMD_WriteBackIO() extends NutCoreBundle with HasNutCoreParameter{
+class SIMD_WriteBackIO() extends PolarisCoreBundle with HasPolarisCoreParameter{
   val rfWen = Vec(Issue_Num,Output(Bool()))
   val rfDest = Vec(Issue_Num,Output(UInt(5.W)))
   val WriteData = Vec(Issue_Num,Output(UInt(XLEN.W)))
@@ -104,7 +104,7 @@ class SIMD_WriteBackIO() extends NutCoreBundle with HasNutCoreParameter{
   val valid = Vec(Issue_Num,Output(Bool()))
   val InstNo = Vec(Issue_Num,Output(UInt(log2Up(Queue_num).W)))
 }
-class new_SIMD_WriteBackIO() extends NutCoreBundle with HasNutCoreParameter{
+class new_SIMD_WriteBackIO() extends PolarisCoreBundle with HasPolarisCoreParameter{
   val rfWen = Vec(Commit_num,Output(Bool()))
   val rfDest = Vec(Commit_num,Output(UInt(5.W)))
   val WriteData = Vec(Commit_num,Output(UInt(XLEN.W)))
@@ -118,20 +118,20 @@ class new_SIMD_WriteBackIO() extends NutCoreBundle with HasNutCoreParameter{
   val InstNo = Vec(Commit_num,Output(UInt(log2Up(Queue_num).W)))
 }
 
-class CommitIO extends NutCoreBundle {
+class CommitIO extends PolarisCoreBundle {
   val decode = new DecodeIO
   val isMMIO = Output(Bool())
   val intrNO = Output(UInt(XLEN.W))
   val commits = Output(Vec(FuType.num, UInt(XLEN.W)))
 }
-class SIMD_CommitIO extends NutCoreBundle {
+class SIMD_CommitIO extends PolarisCoreBundle {
   val decode = new DecodeIO
   val isMMIO = Output(Bool())
   val intrNO = Output(UInt(XLEN.W))
   val commits = Output(UInt(XLEN.W))
 }
 
-class OOCommitIO extends NutCoreBundle with HasBackendConst{
+class OOCommitIO extends PolarisCoreBundle with HasBackendConst{
   val decode = new DecodeIO
   val isMMIO = Output(Bool())
   val intrNO = Output(UInt(XLEN.W))
@@ -142,7 +142,7 @@ class OOCommitIO extends NutCoreBundle with HasBackendConst{
   val brMask = Output(UInt(checkpointSize.W))
 }
 
-class FunctionUnitIO extends NutCoreBundle {
+class FunctionUnitIO extends PolarisCoreBundle {
   val in = Flipped(Decoupled(new Bundle {
     val src1 = Output(UInt(XLEN.W))
     val src2 = Output(UInt(XLEN.W))
@@ -151,14 +151,14 @@ class FunctionUnitIO extends NutCoreBundle {
   val out = Decoupled(Output(UInt(XLEN.W)))
 }
 
-class ForwardIO extends NutCoreBundle {
+class ForwardIO extends PolarisCoreBundle {
   val valid = Output(Bool())
   val wb = new WriteBackIO
   val fuType = Output(FuType())
   val InstNo = Output(UInt(log2Up(Queue_num).W))
 }
 
-class MMUIO extends NutCoreBundle {
+class MMUIO extends PolarisCoreBundle {
   // val ptev = Output(Bool())
   // val pteu = Output(Bool())
   // val ptex = Output(Bool())
@@ -176,12 +176,12 @@ class MMUIO extends NutCoreBundle {
   def isPF() = loadPF || storePF
 }
 
-class MemMMUIO extends NutCoreBundle {
+class MemMMUIO extends PolarisCoreBundle {
   val imem = new MMUIO
   val dmem = new MMUIO
 }
 
-class TLBExuIO extends NutCoreBundle {
+class TLBExuIO extends PolarisCoreBundle {
   val satp = Output(UInt(XLEN.W))
   val sfence = new Bundle {
     val valid = Output(Bool())
@@ -197,7 +197,7 @@ class TLBExuIO extends NutCoreBundle {
   }
 }
 
-class InstFetchIO extends NutCoreBundle {
+class InstFetchIO extends PolarisCoreBundle {
   val pc = Output(UInt(VAddrBits.W)) // real PC will be regenerated in IBF 
   val pnpc = Output(UInt(VAddrBits.W))
   val brIdx = Output(UInt(4.W))
@@ -208,7 +208,7 @@ class InstFetchIO extends NutCoreBundle {
 }
 
 // Micro OP
-class RenamedDecodeIO extends NutCoreBundle with HasBackendConst {
+class RenamedDecodeIO extends PolarisCoreBundle with HasBackendConst {
   val decode = new DecodeIO
   val prfDest = Output(UInt(prfAddrWidth.W))
   val prfSrc1 = Output(UInt(prfAddrWidth.W))

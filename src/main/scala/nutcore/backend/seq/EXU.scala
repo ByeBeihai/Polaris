@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -25,7 +25,7 @@ import bus.simplebus._
 import top.Settings
 import difftest._
 
-class EXU(implicit val p: NutCoreConfig) extends NutCoreModule {
+class EXU(implicit val p: PolarisConfig) extends PolarisCoreModule {
   val io = IO(new Bundle {
     val in = Flipped(Decoupled(new DecodeIO))
     val out = Decoupled(new CommitIO)
@@ -132,16 +132,16 @@ class EXU(implicit val p: NutCoreConfig) extends NutCoreModule {
   if (!p.FPGAPlatform) {
     val cycleCnt = WireInit(0.U(64.W))
     val instrCnt = WireInit(0.U(64.W))
-    val nutcoretrap = io.in.bits.ctrl.isNutCoreTrap && io.in.valid
+    val PolarsTrap = io.in.bits.ctrl.isPolarisTrap && io.in.valid
 
     BoringUtils.addSink(cycleCnt, "simCycleCnt")
     BoringUtils.addSink(instrCnt, "simInstrCnt")
-    BoringUtils.addSource(nutcoretrap, "nutcoretrap")
+    BoringUtils.addSource(PolarsTrap, "PolarsTrap")
 
     val difftest = Module(new DifftestTrapEvent)
     difftest.io.clock    := clock
     difftest.io.coreid   := 0.U // TODO: nutshell does not support coreid auto config
-    difftest.io.valid    := nutcoretrap
+    difftest.io.valid    := PolarsTrap
     difftest.io.code     := io.in.bits.data.src1
     difftest.io.pc       := io.in.bits.cf.pc
     difftest.io.cycleCnt := cycleCnt

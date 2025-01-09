@@ -1,4 +1,19 @@
 /**************************************************************************************
+* Copyright (c) 2025 Institute of Computing Technology, CAS
+* Copyright (c) 2025 University of Chinese Academy of Sciences
+* 
+* Polaris is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2. 
+* You may obtain a copy of Mulan PSL v2 at:
+*             http://license.coscl.org.cn/MulanPSL2 
+* 
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER 
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR 
+* FIT FOR A PARTICULAR PURPOSE.  
+*
+* See the Mulan PSL v2 for more details.  
+***************************************************************************************/
+/**************************************************************************************
 * Copyright (c) 2020 Institute of Computing Technology, CAS
 * Copyright (c) 2020 University of Chinese Academy of Sciences
 * 
@@ -14,7 +29,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -23,7 +38,7 @@ import utils._
 import bus.simplebus._
 import chisel3.experimental.IO
 
-class FrontendIO(implicit val p: NutCoreConfig) extends Bundle with HasNutCoreConst {
+class FrontendIO(implicit val p: PolarisConfig) extends Bundle with HasPolarisCoreConst {
   val imem = new SimpleBusUC(userBits = ICacheUserBundleWidth, addrBits = VAddrBits)
   val out = Vec(2, Decoupled(new DecodeIO))
   val flushVec = Output(UInt(4.W))
@@ -34,11 +49,11 @@ class FrontendIO(implicit val p: NutCoreConfig) extends Bundle with HasNutCoreCo
 
 
 trait HasFrontendIO {
-  implicit val p: NutCoreConfig
+  implicit val p: PolarisConfig
   val io = IO(new FrontendIO)
 }
 
-class Frontend_ooo(implicit val p: NutCoreConfig) extends NutCoreModule with HasFrontendIO {
+class Frontend_ooo(implicit val p: PolarisConfig) extends PolarisCoreModule with HasFrontendIO {
   def pipelineConnect2[T <: Data](left: DecoupledIO[T], right: DecoupledIO[T],
     isFlush: Bool, entries: Int = 4, pipe: Boolean = false) = {
     // NOTE: depend on https://github.com/chipsalliance/chisel3/pull/2245
@@ -70,7 +85,7 @@ class Frontend_ooo(implicit val p: NutCoreConfig) extends NutCoreModule with Has
   //  Debug(idu.io.in(0).valid, "IDU1: pc = 0x%x, instr = 0x%x, pnpc = 0x%x\n", idu.io.in(0).bits.pc, idu.io.in(0).bits.instr, idu.io.in(0).bits.pnpc)
   //  Debug(idu.io.in(1).valid, "IDU2: pc = 0x%x, instr = 0x%x, pnpc = 0x%x\n", idu.io.in(1).bits.pc, idu.io.in(1).bits.instr, idu.io.in(1).bits.pnpc)
 }
-class Frontend_embedded(implicit val p: NutCoreConfig) extends NutCoreModule with HasFrontendIO {
+class Frontend_embedded(implicit val p: PolarisConfig) extends PolarisCoreModule with HasFrontendIO {
   val ifu  = Module(new IFU_embedded)
   val idu  = Module(new IDU)
 
@@ -92,7 +107,7 @@ class Frontend_embedded(implicit val p: NutCoreConfig) extends NutCoreModule wit
 
 
 
-class Frontend_inorder(implicit val p: NutCoreConfig) extends NutCoreModule with HasFrontendIO {
+class Frontend_inorder(implicit val p: PolarisConfig) extends PolarisCoreModule with HasFrontendIO {
   val ifu  = Module(new IFU_inorder)
   val ibf = Module(new NaiveRVCAlignBuffer)
   val idu  = Module(new IDU)
@@ -124,7 +139,7 @@ class Frontend_inorder(implicit val p: NutCoreConfig) extends NutCoreModule with
 }
 
 
-class Frontend_SIMD(implicit val p: NutCoreConfig) extends NutCoreModule with HasFrontendIO {
+class Frontend_SIMD(implicit val p: PolarisConfig) extends PolarisCoreModule with HasFrontendIO {
   val ifu  = Module(new IFU_SIMD)
   val ibf = Module(new IBF_SIMD)
   val idu  = Module(new IDU)

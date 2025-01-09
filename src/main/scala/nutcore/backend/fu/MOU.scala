@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -34,7 +34,7 @@ class MOUIO extends FunctionUnitIO {
   val redirect = new RedirectIO
 }
 
-class MOU extends NutCoreModule {
+class MOU extends PolarisCoreModule {
   val io = IO(new MOUIO)
 
   val (valid, src1, src2, func) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func)

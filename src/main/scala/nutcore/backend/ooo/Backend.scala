@@ -1,4 +1,19 @@
 /**************************************************************************************
+* Copyright (c) 2025 Institute of Computing Technology, CAS
+* Copyright (c) 2025 University of Chinese Academy of Sciences
+* 
+* Polaris is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2. 
+* You may obtain a copy of Mulan PSL v2 at:
+*             http://license.coscl.org.cn/MulanPSL2 
+* 
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER 
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR 
+* FIT FOR A PARTICULAR PURPOSE.  
+*
+* See the Mulan PSL v2 for more details.  
+***************************************************************************************/
+/**************************************************************************************
 * Copyright (c) 2020 Institute of Computing Technology, CAS
 * Copyright (c) 2020 University of Chinese Academy of Sciences
 * 
@@ -14,7 +29,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -41,7 +56,7 @@ trait HasBackendConst{
 }
 
 // NutShell/Argo Out Of Order Execution Backend
-class Backend_ooo(implicit val p: NutCoreConfig) extends NutCoreModule with HasRegFileParameter with HasBackendConst{
+class Backend_ooo(implicit val p: PolarisConfig) extends PolarisCoreModule with HasRegFileParameter with HasBackendConst{
 
   val io = IO(new Bundle {
     // EXU
@@ -649,16 +664,16 @@ class Backend_ooo(implicit val p: NutCoreConfig) extends NutCoreModule with HasR
   if (!p.FPGAPlatform) {
     val cycleCnt = WireInit(0.U(XLEN.W))
     val instrCnt = WireInit(0.U(XLEN.W))
-    val nutcoretrap = csrrs.io.out.bits.decode.ctrl.isNutCoreTrap && csrrs.io.out.valid
+    val PolarsTrap = csrrs.io.out.bits.decode.ctrl.isPolarisTrap && csrrs.io.out.valid
 
     BoringUtils.addSink(cycleCnt, "simCycleCnt")
     BoringUtils.addSink(instrCnt, "simInstrCnt")
-    BoringUtils.addSource(nutcoretrap, "nutcoretrap")
+    BoringUtils.addSource(PolarsTrap, "PolarsTrap")
 
     val difftest = Module(new DifftestTrapEvent)
     difftest.io.clock    := clock
     difftest.io.coreid   := 0.U // TODO: nutshell does not support coreid auto config
-    difftest.io.valid    := nutcoretrap
+    difftest.io.valid    := PolarsTrap
     difftest.io.code     := csrrs.io.out.bits.decode.data.src1
     difftest.io.pc       := csrrs.io.out.bits.decode.cf.pc
     difftest.io.cycleCnt := cycleCnt
@@ -667,7 +682,7 @@ class Backend_ooo(implicit val p: NutCoreConfig) extends NutCoreModule with HasR
   
 }
 
-class Backend_inorder(implicit val p: NutCoreConfig) extends NutCoreModule {
+class Backend_inorder(implicit val p: PolarisConfig) extends PolarisCoreModule {
   val io = IO(new Bundle {
     val in = Vec(2, Flipped(Decoupled(new DecodeIO)))
     val flush = Input(UInt(2.W))
@@ -711,7 +726,7 @@ class Backend_inorder(implicit val p: NutCoreConfig) extends NutCoreModule {
   io.memMMU.dmem <> exu.io.memMMU.dmem
   io.dmem <> exu.io.dmem
 }
-class new_Backend_inorder(implicit val p: NutCoreConfig) extends NutCoreModule {
+class new_Backend_inorder(implicit val p: PolarisConfig) extends PolarisCoreModule {
   val io = IO(new Bundle {
     val in = Vec(2, Flipped(Decoupled(new DecodeIO)))
     val flush = Input(UInt(2.W))
@@ -734,15 +749,13 @@ class new_Backend_inorder(implicit val p: NutCoreConfig) extends NutCoreModule {
   val exu_valid = Reg(Vec(FuType.num,Bool()))
   val exu_valid_next = Wire(Vec(FuType.num,Bool()))
   (0 to FuType.num-1).map(i => exu_valid_next(i) := exu_valid(i))
-  if(Polaris_SIMDU_WAY_NUM!=0){
-    if(Polaris_SIMDU_WAY_NUM == 2){
-      (0 to FuType.num-1).map(i => {when(exu.io.out(i).fire() && i.U =/= FuType.lsu && i.U =/= FuType.simdu && i.U =/= FuType.simdu1){exu_valid_next(i) := false.B}})
-    }else{
-      (0 to FuType.num-1).map(i => {when(exu.io.out(i).fire() && i.U =/= FuType.lsu && i.U =/= FuType.simdu){exu_valid_next(i) := false.B}})
-    }
-  }else{
-      (0 to FuType.num-1).map(i => {when(exu.io.out(i).fire() && i.U =/= FuType.lsu){exu_valid_next(i) := false.B}})
-  }
+  (0 to FuType.num-1).map(i => {when(exu.io.out(i).fire() && i.U =/= FuType.lsu 
+                                                          && (if(Polaris_SIMDU_WAY_NUM != 0){i.U =/= FuType.simdu} else{true.B}) 
+                                                          && (if(Polaris_SIMDU_WAY_NUM == 2){i.U =/= FuType.simdu1}else{true.B})
+                                                          && (if(Polaris_SNN_WAY_NUM != 0)  {i.U =/= FuType.snnu}  else{true.B}) 
+                                                          && (if(Polaris_SNN_WAY_NUM == 2)  {i.U =/= FuType.snnu1} else{true.B})){exu_valid_next(i) := false.B}})
+
+
   val lsu_firststage_fire = WireInit(false.B)
   BoringUtils.addSink(lsu_firststage_fire, "lsu_firststage_fire")
   when(lsu_firststage_fire){exu_valid_next(FuType.lsu) := false.B}
@@ -758,14 +771,20 @@ class new_Backend_inorder(implicit val p: NutCoreConfig) extends NutCoreModule {
     }
   }
 
-  def MultiOperatorMatch(futype1:UInt,futype2:UInt,isBru:Bool):Bool = if(Polaris_SIMDU_WAY_NUM == 2){
-                                                                        ((futype1 === FuType.alu) && (futype2 ===FuType.alu || futype2 === FuType.alu1) && !isBru
-                                                                        ||(futype1 === FuType.simdu) && (futype2 ===FuType.simdu || futype2 === FuType.simdu1)
-                                                                        ||(futype1 === FuType.mou) && (futype2 ===FuType.csr))
-                                                                      }else{
-                                                                        ((futype1 === FuType.alu) && (futype2 ===FuType.alu || futype2 === FuType.alu1) && !isBru
-                                                                        ||(futype1 === FuType.mou) && (futype2 ===FuType.csr))
-                                                                      }
+  if(Polaris_SNN_WAY_NUM != 0){
+    val snnu_firststage_fire = WireInit(false.B)
+    val snnu1_firststage_fire = WireInit(false.B)
+    BoringUtils.addSink(snnu_firststage_fire, "snnu_fs_fire")
+    when(snnu_firststage_fire){exu_valid_next(FuType.snnu) := false.B}
+    if(Polaris_SNN_WAY_NUM == 2){
+      BoringUtils.addSink(snnu1_firststage_fire, "snnu1_fs_fire")
+      when(snnu1_firststage_fire){exu_valid_next(FuType.snnu1) := false.B}
+    }
+  }
+  def MultiOperatorMatch(futype1:UInt,futype2:UInt,isBru:Bool):Bool =(((futype1 === FuType.alu) && (futype2 === FuType.alu1) && !isBru)
+                                                                    ||((futype1 === FuType.mou) && (futype2 ===FuType.csr))
+                                                                    ||(if(Polaris_SIMDU_WAY_NUM == 2){(futype1 === FuType.simdu) && (futype2 === FuType.simdu1)}else{false.B})
+                                                                    ||(if(Polaris_SNN_WAY_NUM   == 2){(futype1 === FuType.snnu) && (futype2 === FuType.snnu1)}else{false.B}))
   for(i <- 0 to FuType.num-1){
     exu.io.in(i).bits := exu_bits(i)
     exu.io.in(i).valid := exu_valid(i)
@@ -950,7 +969,12 @@ class new_Backend_inorder(implicit val p: NutCoreConfig) extends NutCoreModule {
   if(Polaris_SIMDU_WAY_NUM == 2){
     isu.io.forward(1) <> exu.io.forward(FuType.simdu1int)  
   }
-  
+  if(Polaris_SNN_WAY_NUM>0){
+    isu.io.forward(3+Polaris_SIMDU_WAY_NUM + 1) <> exu.io.forward(FuType.snnuint)  
+  }
+  if(Polaris_SNN_WAY_NUM == 2){
+    isu.io.forward(3+Polaris_SIMDU_WAY_NUM + 2) <> exu.io.forward(FuType.snnu1int)  
+  }
 
 
   io.memMMU.imem <> exu.io.memMMU.imem

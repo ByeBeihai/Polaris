@@ -1,4 +1,20 @@
-package nutcore
+/**************************************************************************************
+* Copyright (c) 2025 Institute of Computing Technology, CAS
+* Copyright (c) 2025 University of Chinese Academy of Sciences
+* 
+* Polaris is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2. 
+* You may obtain a copy of Mulan PSL v2 at:
+*             http://license.coscl.org.cn/MulanPSL2 
+* 
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER 
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR 
+* FIT FOR A PARTICULAR PURPOSE.  
+*
+* See the Mulan PSL v2 for more details.  
+***************************************************************************************/
+
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -6,7 +22,7 @@ import chisel3.util.experimental.BoringUtils
 import utils._
 import difftest._
 
-class SIMD_WBU(implicit val p: NutCoreConfig) extends NutCoreModule with HasRegFileParameter{
+class SIMD_WBU(implicit val p: PolarisConfig) extends PolarisCoreModule with HasRegFileParameter{
   val io = IO(new Bundle {
     val in = Vec(Issue_Num,Flipped(Decoupled(new CommitIO)))
     val wb = new SIMD_WriteBackIO
@@ -115,7 +131,7 @@ class SIMD_WBU(implicit val p: NutCoreConfig) extends NutCoreModule with HasRegF
     difftest.io.gpr    := VecInit((0 to NRReg-1).map(i => rf.read(i.U)))
   }
 }
-class new_SIMD_WBU(implicit val p: NutCoreConfig) extends NutCoreModule with HasRegFileParameter{
+class new_SIMD_WBU(implicit val p: PolarisConfig) extends PolarisCoreModule with HasRegFileParameter{
   val io = IO(new Bundle {
     val in = Vec(Commit_num,Flipped(Decoupled(new SIMD_CommitIO)))
     val wb = new new_SIMD_WriteBackIO

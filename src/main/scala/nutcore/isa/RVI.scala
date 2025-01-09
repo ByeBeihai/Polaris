@@ -14,12 +14,12 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
 
-object RV32I_ALUInstr extends HasInstrType with HasNutCoreParameter {
+object RV32I_ALUInstr extends HasInstrType with HasPolarisCoreParameter {
   def ADDI    = BitPat("b????????????_?????_000_?????_0010011")
   def SLLI    = if (XLEN == 32) BitPat("b0000000?????_?????_001_?????_0010011")
                            else BitPat("b000000??????_?????_001_?????_0010011")
@@ -165,7 +165,7 @@ object RV64IInstr extends HasInstrType {
   )
 }
 
-object RVIInstr extends HasNutCoreParameter {
+object RVIInstr extends HasPolarisCoreParameter {
   val table = RV32I_ALUInstr.table ++ RV32I_BRUInstr.table ++ RV32I_LSUInstr.table ++
     (if (XLEN == 64) RV64IInstr.table else Nil)
 }

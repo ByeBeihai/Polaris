@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -187,7 +187,7 @@ class CSRIO extends FunctionUnitIO {
   val wenFix = Output(Bool())
 }
 
-class CSR(implicit val p: NutCoreConfig) extends NutCoreModule with HasCSRConst{
+class CSR(implicit val p: PolarisConfig) extends PolarisCoreModule with HasCSRConst{
   val io = IO(new CSRIO)
 
   val (valid, src1, src2, func) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func)

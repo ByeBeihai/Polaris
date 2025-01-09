@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -23,7 +23,7 @@ import chisel3.util.experimental.BoringUtils
 import utils._
 
 // 1-width Naive Instruction Align Buffer
-class NaiveRVCAlignBuffer extends NutCoreModule with HasInstrType with HasExceptionNO {
+class NaiveRVCAlignBuffer extends PolarisCoreModule with HasInstrType with HasExceptionNO {
   val io = IO(new Bundle {
     val in = Flipped(Decoupled(new CtrlFlowIO))
     val out = Decoupled(new CtrlFlowIO)
@@ -192,7 +192,7 @@ class NaiveRVCAlignBuffer extends NutCoreModule with HasInstrType with HasExcept
   io.out.bits.crossPageIPFFix := io.in.bits.exceptionVec(instrPageFault) && (state === s_waitnext_thenj || state === s_waitnext) && !specialIPFR
 }
 
-// class IAU_idi extends NutCoreModule with HasInstrType with HasExceptionNO {
+// class IAU_idi extends PolarisCoreModule with HasInstrType with HasExceptionNO {
 //   val io = IO(new Bundle {
 //     val in = Flipped(Decoupled(new CtrlFlowIO))
 //     val out = Decoupled(new CtrlFlowIO)

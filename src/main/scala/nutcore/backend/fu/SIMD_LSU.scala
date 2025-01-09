@@ -1,4 +1,20 @@
-package nutcore
+/**************************************************************************************
+* Copyright (c) 2025 Institute of Computing Technology, CAS
+* Copyright (c) 2025 University of Chinese Academy of Sciences
+* 
+* Polaris is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2. 
+* You may obtain a copy of Mulan PSL v2 at:
+*             http://license.coscl.org.cn/MulanPSL2 
+* 
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER 
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR 
+* FIT FOR A PARTICULAR PURPOSE.  
+*
+* See the Mulan PSL v2 for more details.  
+***************************************************************************************/
+
+package polaris
 import chisel3._
 import chisel3.util._
 import chisel3.util.experimental.BoringUtils
@@ -21,7 +37,7 @@ class SIMD_LSU_IO extends FunctionUnitIO {
   val loadPF = Output(Bool())
 }
 
-class SIMD_LSU extends NutCoreModule with HasLSUConst {
+class SIMD_LSU extends PolarisCoreModule with HasLSUConst {
   val io = IO(new UnpipeLSUIO)
   val (valid, src1, src2, func) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func)
   def access(valid: Bool, src1: UInt, src2: UInt, func: UInt, dtlbPF: Bool): UInt = {
@@ -73,7 +89,7 @@ class SIMD_LSU extends NutCoreModule with HasLSUConst {
     io.isMMIO := mmioReg && io.out.valid
 }
 
-class LSU_RESP extends NutCoreModule with HasLSUConst{
+class LSU_RESP extends PolarisCoreModule with HasLSUConst{
   val io = IO(new Bundle {
       val DecodeIn = Flipped(Decoupled(new DecodeIO))
       val DecodeOut = new DecodeIO
@@ -137,7 +153,7 @@ class LSU_RESP extends NutCoreModule with HasLSUConst{
   Debug( "[LSURESP] valid %x pc %x instno %x\n outfire %x \n",io.DecodeIn.valid, io.DecodeOut.cf.pc,io.DecodeOut.InstNo,io.out.fire())
 }
 
-class pipeline_lsu extends NutCoreModule with HasLSUConst {
+class pipeline_lsu extends PolarisCoreModule with HasLSUConst {
   val io = IO(new SIMD_LSU_IO)
   val (valid, src1, src2, func) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func)
   val DecodeIn = io.DecodeIn
@@ -232,7 +248,7 @@ class pipeline_lsu extends NutCoreModule with HasLSUConst {
   lsu_resp.io.DecodeIn.valid := lsu_resp_valid
 }
 
-class multicycle_lsu extends NutCoreModule with HasLSUConst {
+class multicycle_lsu extends PolarisCoreModule with HasLSUConst {
   val io = IO(new SIMD_LSU_IO)
   val (valid, src1, src2, func) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func)
   def access(valid: Bool, src1: UInt, src2: UInt, func: UInt): UInt = {
@@ -360,7 +376,7 @@ class multicycle_lsu extends NutCoreModule with HasLSUConst {
   io.DecodeOut := io.DecodeIn
 }
 
-class multicycle_lsu_atom extends NutCoreModule with HasLSUConst {
+class multicycle_lsu_atom extends PolarisCoreModule with HasLSUConst {
   val io = IO(new SIMD_LSU_IO)
   val (valid, src1, src2, func) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func)
   def access(valid: Bool, src1: UInt, src2: UInt, func: UInt): UInt = {

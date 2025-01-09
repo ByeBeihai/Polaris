@@ -16,7 +16,7 @@
 
 package system
 
-import nutcore._
+import polaris._
 import bus.axi4.{AXI4, AXI4Lite}
 import bus.simplebus._
 import device.{AXI4CLINT, AXI4PLIC}
@@ -32,7 +32,7 @@ trait HasSoCParameter {
   val HasPrefetch = Settings.get("HasPrefetch")
 }
 
-class ILABundle extends NutCoreBundle {
+class ILABundle extends PolarisCoreBundle {
   val WBUpc = UInt(VAddrBits.W)
   val WBUvalid = UInt(1.W)
   val WBUrfWen = UInt(1.W)
@@ -41,7 +41,7 @@ class ILABundle extends NutCoreBundle {
   val InstrCnt = UInt(64.W)
 }
 
-class NutShell(implicit val p: NutCoreConfig) extends Module with HasSoCParameter {
+class Polaris(implicit val p: PolarisConfig) extends Module with HasSoCParameter {
   val io = IO(new Bundle{
     val mem = new AXI4
     val mmio = (if (p.FPGAPlatform) { new AXI4 } else { new SimpleBusUC })
@@ -50,17 +50,17 @@ class NutShell(implicit val p: NutCoreConfig) extends Module with HasSoCParamete
     val ila = if (p.FPGAPlatform && EnableILA) Some(Output(new ILABundle)) else None
   })
 
-  val nutcore = Module(new NutCore)
+  val polariscore = Module(new PolarisCore)
   val cohMg = Module(new CoherenceManager)
   val xbar = Module(new SimpleBusCrossbarNto1(2))
-  cohMg.io.in <> nutcore.io.imem.mem
-  nutcore.io.dmem.coh <> cohMg.io.out.coh
+  cohMg.io.in <> polariscore.io.imem.mem
+  polariscore.io.dmem.coh <> cohMg.io.out.coh
   xbar.io.in(0) <> cohMg.io.out.mem
-  xbar.io.in(1) <> nutcore.io.dmem.mem
+  xbar.io.in(1) <> polariscore.io.dmem.mem
 
   val axi2sb = Module(new AXI42SimpleBusConverter())
   axi2sb.io.in <> io.frontend
-  nutcore.io.frontend <> axi2sb.io.out
+  polariscore.io.frontend <> axi2sb.io.out
 
   val memport = xbar.io.out.toMemPort()
   memport.resp.bits.data := DontCare
@@ -94,9 +94,9 @@ class NutShell(implicit val p: NutCoreConfig) extends Module with HasSoCParamete
   memAddrMap.io.in <> mem
   io.mem <> memAddrMap.io.out.toAXI4(true)
   
-  nutcore.io.imem.coh.resp.ready := true.B
-  nutcore.io.imem.coh.req.valid := false.B
-  nutcore.io.imem.coh.req.bits := DontCare
+  polariscore.io.imem.coh.resp.ready := true.B
+  polariscore.io.imem.coh.req.valid := false.B
+  polariscore.io.imem.coh.req.bits := DontCare
 
   val addrSpace = List(
     (0x38000000L, 0x00010000L), // CLINT
@@ -104,7 +104,7 @@ class NutShell(implicit val p: NutCoreConfig) extends Module with HasSoCParamete
     (Settings.getLong("MMIOBase"), Settings.getLong("MMIOSize")), // external devices
   )
   val mmioXbar = Module(new SimpleBusCrossbar1toN(addrSpace))
-  mmioXbar.io.in <> nutcore.io.mmio
+  mmioXbar.io.in <> polariscore.io.mmio
 
   val extDev = mmioXbar.io.out(2)
   if (p.FPGAPlatform) { io.mmio <> extDev.toAXI4() }

@@ -1,4 +1,20 @@
-package nutcore
+/**************************************************************************************
+* Copyright (c) 2025 Institute of Computing Technology, CAS
+* Copyright (c) 2025 University of Chinese Academy of Sciences
+* 
+* Polaris is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2. 
+* You may obtain a copy of Mulan PSL v2 at:
+*             http://license.coscl.org.cn/MulanPSL2 
+* 
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER 
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR 
+* FIT FOR A PARTICULAR PURPOSE.  
+*
+* See the Mulan PSL v2 for more details.  
+***************************************************************************************/
+
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -7,7 +23,7 @@ import chisel3.util.experimental.BoringUtils
 import utils._
 import difftest._
 
-class SIMD_ISU(implicit val p:NutCoreConfig)extends NutCoreModule with HasRegFileParameter{
+class SIMD_ISU(implicit val p:PolarisConfig)extends PolarisCoreModule with HasRegFileParameter{
     val io = IO(new Bundle{
         val in = Vec(2,Flipped(Decoupled(new DecodeIO)))
         val out = Vec(Issue_Num,Decoupled(new DecodeIO))
@@ -147,7 +163,7 @@ class SIMD_ISU(implicit val p:NutCoreConfig)extends NutCoreModule with HasRegFil
     Debug("[SIMD_ISU] InstBoard.io.clear(0e) %x InstBoard.io.Rinstno(0e) %x \n", InstBoard.io.clear(14),InstBoard.io.RInstNo(14))
     Debug(io.out(0).fire(),"[SIMD_ISU] InstNo %x\n", io.out(0).bits.InstNo)
 }
-class new_SIMD_ISU(implicit val p:NutCoreConfig)extends NutCoreModule with HasRegFileParameter{
+class new_SIMD_ISU(implicit val p:PolarisConfig)extends PolarisCoreModule with HasRegFileParameter{
     val io = IO(new Bundle{
         val in = Vec(2,Flipped(Decoupled(new DecodeIO)))
         val out = Vec(Issue_Num,Decoupled(new DecodeIO))

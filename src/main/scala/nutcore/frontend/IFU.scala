@@ -1,4 +1,19 @@
 /**************************************************************************************
+* Copyright (c) 2025 Institute of Computing Technology, CAS
+* Copyright (c) 2025 University of Chinese Academy of Sciences
+* 
+* Polaris is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2. 
+* You may obtain a copy of Mulan PSL v2 at:
+*             http://license.coscl.org.cn/MulanPSL2 
+* 
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER 
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR 
+* FIT FOR A PARTICULAR PURPOSE.  
+*
+* See the Mulan PSL v2 for more details.  
+***************************************************************************************/
+/**************************************************************************************
 * Copyright (c) 2020 Institute of Computing Technology, CAS
 * Copyright (c) 2020 University of Chinese Academy of Sciences
 * 
@@ -14,7 +29,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -29,7 +44,7 @@ trait HasResetVector {
   val resetVector = Settings.getLong("ResetVector")
 }
 
-class ICacheUserBundle extends NutCoreBundle {
+class ICacheUserBundle extends PolarisCoreBundle {
     val pc = UInt(VAddrBits.W)
     val brIdx = UInt(4.W) // mark if an inst is predicted to branch
     val pnpc = UInt(VAddrBits.W)
@@ -37,7 +52,7 @@ class ICacheUserBundle extends NutCoreBundle {
 }
 
 
-class IFU_embedded extends NutCoreModule with HasResetVector {
+class IFU_embedded extends PolarisCoreModule with HasResetVector {
   val io = IO(new Bundle {
     val imem = new SimpleBusUC(userBits = 64, addrBits = VAddrBits)
     val out = Decoupled(new CtrlFlowIO)
@@ -87,7 +102,7 @@ class IFU_embedded extends NutCoreModule with HasResetVector {
   BoringUtils.addSource(io.flushVec.orR, "perfCntCondMifuFlush")
 }
 
-class IFU_inorder extends NutCoreModule with HasResetVector {
+class IFU_inorder extends PolarisCoreModule with HasResetVector {
   val io = IO(new Bundle {
 
     val imem = new SimpleBusUC(userBits = VAddrBits*2 + 4, addrBits = VAddrBits)
@@ -179,7 +194,7 @@ class IFU_inorder extends NutCoreModule with HasResetVector {
 }
 // Note: update ICacheUserBundleWidth when change ICacheUserBundle
 
-class IFU_ooo extends NutCoreModule with HasResetVector {
+class IFU_ooo extends PolarisCoreModule with HasResetVector {
   val io = IO(new Bundle {
 
     val imem = new SimpleBusUC(userBits = ICacheUserBundleWidth, addrBits = VAddrBits)
@@ -303,7 +318,7 @@ class IFU_ooo extends NutCoreModule with HasResetVector {
   mcp.io.flush := io.redirect.valid
   mcp.io.ignore := state === s_crosslineJump
 
-  class MCPResult extends NutCoreBundle{
+  class MCPResult extends PolarisCoreBundle{
     val redirect = new RedirectIO
     val brIdx = Output(Vec(4, Bool()))
   }
@@ -412,7 +427,7 @@ class IFU_ooo extends NutCoreModule with HasResetVector {
 }
 
 
-class IFU_SIMD extends NutCoreModule with HasResetVector {
+class IFU_SIMD extends PolarisCoreModule with HasResetVector {
   val io = IO(new Bundle {
     val imem = new SimpleBusUC(userBits = VAddrBits*2 + 9, addrBits = VAddrBits)
     val out = Decoupled(new InstFetchIO)

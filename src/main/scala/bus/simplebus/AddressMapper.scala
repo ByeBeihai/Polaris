@@ -20,9 +20,9 @@ import chisel3._
 import chisel3.util._
 
 import utils._
-import nutcore.HasNutCoreParameter
+import polaris.HasPolarisCoreParameter
 
-class SimpleBusAddressMapper(map: (Int, Long)) extends Module with HasNutCoreParameter {
+class SimpleBusAddressMapper(map: (Int, Long)) extends Module with HasPolarisCoreParameter {
   val io = IO(new Bundle {
     val in = Flipped(new SimpleBusUC)
     val out = new SimpleBusUC

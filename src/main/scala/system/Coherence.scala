@@ -21,9 +21,9 @@ import chisel3.util._
 
 import utils._
 import bus.simplebus._
-import nutcore.HasNutCoreParameter
+import polaris.HasPolarisCoreParameter
 
-trait HasCoherenceParameter extends HasNutCoreParameter {
+trait HasCoherenceParameter extends HasPolarisCoreParameter {
   val supportCoh = HasDcache
 }
 

@@ -1,4 +1,20 @@
-package nutcore
+/**************************************************************************************
+* Copyright (c) 2025 Institute of Computing Technology, CAS
+* Copyright (c) 2025 University of Chinese Academy of Sciences
+* 
+* Polaris is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2. 
+* You may obtain a copy of Mulan PSL v2 at:
+*             http://license.coscl.org.cn/MulanPSL2 
+* 
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER 
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR 
+* FIT FOR A PARTICULAR PURPOSE.  
+*
+* See the Mulan PSL v2 for more details.  
+***************************************************************************************/
+
+package polaris
 import chisel3._
 import chisel3.util._
 import chisel3.util.experimental.BoringUtils
@@ -7,7 +23,7 @@ import utils._
 import bus.simplebus._
 import top.Settings
 
-class SIMD_Pipelsu_Bundle extends NutCoreBundle with HasNutCoreParameter {
+class SIMD_Pipelsu_Bundle extends PolarisCoreBundle with HasPolarisCoreParameter {
   val isMMIO = Output(Bool())
   val loadAddrMisaligned = Output(Bool()) // TODO: refactor it for new backend
   val storeAddrMisaligned = Output(Bool()) // TODO: refactor it for new backend
@@ -21,13 +37,13 @@ class SIMD_Pipelsu_Bundle extends NutCoreBundle with HasNutCoreParameter {
   val func = Output(FuOpType())
   val addr = Output(UInt(XLEN.W))
 }
-class SIMD_Pipelsu_IO  extends NutCoreBundle{
+class SIMD_Pipelsu_IO  extends PolarisCoreBundle{
   val in = Flipped(Decoupled(new SIMD_Pipelsu_Bundle))
   val out= Decoupled(new SIMD_Pipelsu_Bundle)
   val dmem = new SimpleBusUC(addrBits = VAddrBits)
   val flush = Input(Bool())
 }
-class pipeline_lsu_stage1 extends NutCoreModule with HasLSUConst {
+class pipeline_lsu_stage1 extends PolarisCoreModule with HasLSUConst {
   val io = IO(new SIMD_Pipelsu_IO)
   val (valid, src1, src2, func) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func)
   
@@ -200,7 +216,7 @@ class pipeline_lsu_stage1 extends NutCoreModule with HasLSUConst {
   io.out.bits.addr := exec_addr
 }
 
-class pipeline_lsu_stage2 extends NutCoreModule with HasLSUConst {
+class pipeline_lsu_stage2 extends PolarisCoreModule with HasLSUConst {
   val io = IO(new SIMD_Pipelsu_IO)
   val (valid, src1, src2, func) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func)
   
@@ -307,7 +323,7 @@ class pipeline_lsu_stage2 extends NutCoreModule with HasLSUConst {
   BoringUtils.addSource(BoolStopWatch(dmem.isWrite(), dmem.resp.fire()), "perfCntCondMstoreStall")
   BoringUtils.addSource(io.out.bits.isMMIO && io.out.fire(), "perfCntCondMmmioInstr")
 }
-class pipeline_lsu_empty_stage extends NutCoreModule with HasLSUConst{
+class pipeline_lsu_empty_stage extends PolarisCoreModule with HasLSUConst{
   val io = IO(new SIMD_Pipelsu_IO)
   io.out.valid := io.in.valid
   io.in.ready := io.out.fire() || !io.in.valid
@@ -326,7 +342,7 @@ class new_SIMD_LSU_IO extends FunctionUnitIO {
   val loadPF = Output(Bool())
   val storePF = Output(Bool())
 }
-class lsu_for_atom extends NutCoreModule with HasLSUConst {
+class lsu_for_atom extends PolarisCoreModule with HasLSUConst {
   val io = IO(new SIMD_Pipelsu_IO)
   val (valid, src1, src2, func) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func)
 
@@ -639,7 +655,7 @@ class lsu_for_atom extends NutCoreModule with HasLSUConst {
   //BoringUtils.addSource(io.out.bits.isMMIO && io.out.fire(), "perfCntCondMmmioInstr")
 }
 
-class pipeline_lsu_atom extends NutCoreModule with HasLSUConst {
+class pipeline_lsu_atom extends PolarisCoreModule with HasLSUConst {
   val io = IO(new new_SIMD_LSU_IO)
   val (valid, src1, src2, func) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func)
   def access(valid: Bool, src1: UInt, src2: UInt, func: UInt): UInt = {

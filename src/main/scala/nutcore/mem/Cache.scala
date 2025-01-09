@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -83,8 +83,8 @@ sealed trait HasCacheConst {
   def isSetConflict(a1: UInt, a2: UInt) = (a1.asTypeOf(addrBundle).index === a2.asTypeOf(addrBundle).index)
 }
 
-sealed abstract class CacheBundle(implicit cacheConfig: CacheConfig) extends Bundle with HasNutCoreParameter with HasCacheConst
-sealed abstract class CacheModule(implicit cacheConfig: CacheConfig) extends Module with HasNutCoreParameter with HasCacheConst with HasNutCoreLog
+sealed abstract class CacheBundle(implicit cacheConfig: CacheConfig) extends Bundle with HasPolarisCoreParameter with HasCacheConst
+sealed abstract class CacheModule(implicit cacheConfig: CacheConfig) extends Module with HasPolarisCoreParameter with HasCacheConst with HasPolarisLog
 
 sealed class MetaBundle(implicit val cacheConfig: CacheConfig) extends CacheBundle {
   val tag = Output(UInt(TagBits.W))
@@ -112,7 +112,7 @@ sealed class Stage1IO(implicit val cacheConfig: CacheConfig) extends CacheBundle
   val req = new SimpleBusReqBundle(userBits = userBits, idBits = idBits)
 }
 
-class CacheIO(implicit val cacheConfig: CacheConfig) extends Bundle with HasNutCoreParameter with HasCacheConst {
+class CacheIO(implicit val cacheConfig: CacheConfig) extends Bundle with HasPolarisCoreParameter with HasCacheConst {
   val in = Flipped(new SimpleBusUC(userBits = userBits, idBits = idBits))
   val flush = Input(UInt(2.W))
   val out = new SimpleBusC

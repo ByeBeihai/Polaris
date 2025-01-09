@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -22,7 +22,7 @@ import chisel3.util.experimental.BoringUtils
 import utils._
 import difftest._
 
-class WBU(implicit val p: NutCoreConfig) extends NutCoreModule with HasRegFileParameter{
+class WBU(implicit val p: PolarisConfig) extends PolarisCoreModule with HasRegFileParameter{
   val io = IO(new Bundle {
     val in = Vec(Issue_Num,Flipped(Decoupled(new CommitIO)))
     val wb = new SIMD_WriteBackIO

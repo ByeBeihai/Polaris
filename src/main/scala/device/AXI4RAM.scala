@@ -20,11 +20,11 @@ import chisel3._
 import chisel3.util._
 import chisel3.util.experimental.loadMemoryFromFile
 
-import nutcore.HasNutCoreParameter
+import polaris.HasPolarisCoreParameter
 import bus.axi4._
 import utils._
 
-class RAMHelper(memByte: Int) extends BlackBox with HasNutCoreParameter {
+class RAMHelper(memByte: Int) extends BlackBox with HasPolarisCoreParameter {
   val io = IO(new Bundle {
     val clk = Input(Clock())
     val rIdx = Input(UInt(DataBits.W))
@@ -38,7 +38,7 @@ class RAMHelper(memByte: Int) extends BlackBox with HasNutCoreParameter {
 }
 
 class AXI4RAM[T <: AXI4Lite](_type: T = new AXI4, memByte: Int,
-  useBlackBox: Boolean = false) extends AXI4SlaveModule(_type) with HasNutCoreParameter {
+  useBlackBox: Boolean = false) extends AXI4SlaveModule(_type) with HasPolarisCoreParameter {
 
   val offsetBits = log2Up(memByte)
   val offsetMask = (1 << offsetBits) - 1

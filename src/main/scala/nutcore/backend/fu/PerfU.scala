@@ -1,4 +1,4 @@
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -8,7 +8,7 @@ import utils._
 import top.Settings
 import difftest._
 
-class PerfU(implicit val p: NutCoreConfig) extends NutCoreModule {
+class PerfU(implicit val p: PolarisConfig) extends PolarisCoreModule {
   val hasPerfCnt = EnablePerfCnt && !p.FPGAPlatform
   val nrPerfCnts = if (hasPerfCnt) 0x80 else 0x3
   val perfCnts = List.fill(nrPerfCnts)(RegInit(0.U(64.W)))
@@ -97,8 +97,8 @@ class PerfU(implicit val p: NutCoreConfig) extends NutCoreModule {
     }
   }}
 
-  val nutcoretrap = WireInit(false.B)
-  BoringUtils.addSink(nutcoretrap, "nutcoretrap")
+  val PolarsTrap = WireInit(false.B)
+  BoringUtils.addSink(PolarsTrap, "PolarsTrap")
   def readWithScala(addr: Int): UInt = mapping(addr)._1
 
   println("PerfU index %d",perfCntList("Mcycle")._1.U)
@@ -108,9 +108,9 @@ class PerfU(implicit val p: NutCoreConfig) extends NutCoreModule {
     BoringUtils.addSource(readWithScala(perfCntList("Mcycle")._1), "simCycleCnt")
     BoringUtils.addSource(readWithScala(perfCntList("Minstret")._1), "simInstrCnt")
     if (hasPerfCnt) {
-      // display all perfcnt when nutcoretrap is executed
+      // display all perfcnt when PolarsTrap is executed
       val PrintPerfCntToCSV = true
-      when (nutcoretrap) {
+      when (PolarsTrap) {
         printf("======== PerfCnt =========\n")
         perfCntList.toSeq.sortBy(_._2._1).map { case (name, (addr, boringId)) =>
           printf("%d <- " + name + "\n", readWithScala(addr)) }

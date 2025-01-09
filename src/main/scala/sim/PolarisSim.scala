@@ -17,7 +17,7 @@
 package sim
 
 import system._
-import nutcore.NutCoreConfig
+import polaris.PolarisConfig
 
 import chisel3._
 import chisel3.util._
@@ -25,7 +25,7 @@ import chisel3.util.experimental.BoringUtils
 
 import bus.axi4._
 import device.AXI4RAM
-import nutcore._
+import polaris._
 import utils.GTimer
 import difftest._
 
@@ -36,8 +36,8 @@ class SimTop extends Module {
     val uart = new UARTIO
   })
 
-  lazy val config = NutCoreConfig(FPGAPlatform = false)
-  val soc = Module(new NutShell()(config))
+  lazy val config = PolarisConfig(FPGAPlatform = false)
+  val soc = Module(new Polaris()(config))
   val mem = Module(new AXI4RAM(memByte = 128 * 1024 * 1024, useBlackBox = true))
   // Be careful with the commit checking of emu.
   // A large delay will make emu incorrectly report getting stuck.

@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -50,7 +50,7 @@ class MulDivIO(val len: Int) extends Bundle {
   val flush = Input(Bool())
 }
 
-class Multiplier(len: Int) extends NutCoreModule {
+class Multiplier(len: Int) extends PolarisCoreModule {
   val io = IO(new MulDivIO(len))
   val latency = 1
 
@@ -90,7 +90,7 @@ class Multiplier(len: Int) extends NutCoreModule {
   }
 }
 
-class Divider(len: Int = 64) extends NutCoreModule {
+class Divider(len: Int = 64) extends PolarisCoreModule {
   val io = IO(new MulDivIO(len))
 
   def abs(a: UInt, sign: Bool): (Bool, UInt) = {
@@ -160,7 +160,7 @@ class MDUIO extends FunctionUnitIO {
   val flush = Input(Bool())
 }
 
-class MDU extends NutCoreModule {
+class MDU extends PolarisCoreModule {
   val io = IO(new MDUIO)
 
   val (valid, src1, src2, func) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func)

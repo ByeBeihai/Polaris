@@ -19,12 +19,12 @@ package bus.simplebus
 import chisel3._
 import chisel3.util._
 
-import nutcore.HasNutCoreParameter
+import polaris.HasPolarisCoreParameter
 import utils._
 import bus.axi4._
 import bus.memport._
 
-sealed abstract class SimpleBusBundle extends Bundle with HasNutCoreParameter
+sealed abstract class SimpleBusBundle extends Bundle with HasPolarisCoreParameter
 
 object SimpleBusCmd {
   // req

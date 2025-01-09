@@ -1,4 +1,19 @@
-package nutcore
+/**************************************************************************************
+* Copyright (c) 2025 Institute of Computing Technology, CAS
+* Copyright (c) 2025 University of Chinese Academy of Sciences
+* 
+* Polaris is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2. 
+* You may obtain a copy of Mulan PSL v2 at:
+*             http://license.coscl.org.cn/MulanPSL2 
+* 
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER 
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR 
+* FIT FOR A PARTICULAR PURPOSE.  
+*
+* See the Mulan PSL v2 for more details.  
+***************************************************************************************/
+package polaris
 
 import chisel3._
 
@@ -55,7 +70,7 @@ object EXT {
     }
 }
 
-class MulAddIO(val len: Int = 65) extends NutCoreBundle {
+class MulAddIO(val len: Int = 65) extends PolarisCoreBundle {
     val in = Flipped(DecoupledIO(new Bundle{
         val DecodeIn = new DecodeIO
         val srcs     = Vec(3, Output(UInt(len.W)))
@@ -72,7 +87,7 @@ class MulAddIO(val len: Int = 65) extends NutCoreBundle {
     val FirstStageFire = Output(Bool())
 }
 
-class MulAdd65(len: Int = 65) extends NutCoreModule {
+class MulAdd65(len: Int = 65) extends PolarisCoreModule {
     val io = IO(new MulAddIO(len)) // TODO: len only supports 65
     /* assume signed-unsigned is hangled by MDU*/
     // val X = io.in.bits.src1
@@ -217,7 +232,7 @@ class MulAdd65(len: Int = 65) extends NutCoreModule {
     io.FirstStageFire := s1Fire
 }
 
-class MulAdd33(len: Int = 33) extends NutCoreModule {
+class MulAdd33(len: Int = 33) extends PolarisCoreModule {
     val io = IO(new MulAddIO(len)) // TODO: len only supports 65
     /* assume signed-unsigned is hangled by MDU*/
     // val X = io.in.bits.src1
@@ -353,7 +368,7 @@ class MulAdd33(len: Int = 33) extends NutCoreModule {
     io.FirstStageFire := s1Fire
 }
 
-class MulAdd17(len: Int = 17) extends NutCoreModule {
+class MulAdd17(len: Int = 17) extends PolarisCoreModule {
     val io = IO(new MulAddIO(len)) // TODO: len only supports 17
     /* assume signed-unsigned is hangled by MDU*/
     // val X = io.in.bits.src1
@@ -477,7 +492,7 @@ class MulAdd17(len: Int = 17) extends NutCoreModule {
     io.FirstStageFire := s1Fire
 }
 
-class MulAdd9(len: Int = 9) extends NutCoreModule {
+class MulAdd9(len: Int = 9) extends PolarisCoreModule {
     val io = IO(new MulAddIO(len)) // TODO: len only supports 65
     /* assume signed-unsigned is hangled by MDU*/
     // val X = io.in.bits.src1
@@ -596,7 +611,7 @@ class MulAdd9(len: Int = 9) extends NutCoreModule {
     io.FirstStageFire := s1Fire
 }
 
-class MulAdd(len: Int = 9) extends NutCoreModule {
+class MulAdd(len: Int = 9) extends PolarisCoreModule {
     val io = IO(new MulAddIO(len)) 
     val valid = io.in.valid
     val X = io.in.bits.srcs(0)
@@ -640,7 +655,7 @@ class PMDUIO extends PALUIO {
     
 }
 
-class PMDU extends NutCoreModule {
+class PMDU extends PolarisCoreModule {
     val io = IO(new PMDUIO)
 
     val valid = io.in.valid

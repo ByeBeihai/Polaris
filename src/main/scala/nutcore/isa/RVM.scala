@@ -14,12 +14,12 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
 
-object RV32MInstr extends HasInstrType with HasNutCoreParameter {
+object RV32MInstr extends HasInstrType with HasPolarisCoreParameter {
   def MUL     = BitPat("b0000001_?????_?????_000_?????_0110011")
   def MULH    = BitPat("b0000001_?????_?????_001_?????_0110011")
   def MULHSU  = BitPat("b0000001_?????_?????_010_?????_0110011")
@@ -49,7 +49,7 @@ object RV32MInstr extends HasInstrType with HasNutCoreParameter {
   val table = mulTable ++ (if (HasDiv) divTable else Nil)
 }
 
-object RV64MInstr extends HasInstrType with HasNutCoreParameter {
+object RV64MInstr extends HasInstrType with HasPolarisCoreParameter {
   def MULW    = BitPat("b0000001_?????_?????_000_?????_0111011")
   def DIVW    = BitPat("b0000001_?????_?????_100_?????_0111011")
   def DIVUW   = BitPat("b0000001_?????_?????_101_?????_0111011")
@@ -68,6 +68,6 @@ object RV64MInstr extends HasInstrType with HasNutCoreParameter {
   val table = mulTable ++ (if (HasDiv) divTable else Nil)
 }
 
-object RVMInstr extends HasNutCoreParameter {
+object RVMInstr extends HasPolarisCoreParameter {
   val table = RV32MInstr.table ++ (if (XLEN == 64) RV64MInstr.table else Nil)
 }

@@ -1,4 +1,19 @@
-package nutcore
+/**************************************************************************************
+* Copyright (c) 2025 Institute of Computing Technology, CAS
+* Copyright (c) 2025 University of Chinese Academy of Sciences
+* 
+* Polaris is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2. 
+* You may obtain a copy of Mulan PSL v2 at:
+*             http://license.coscl.org.cn/MulanPSL2 
+* 
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER 
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR 
+* FIT FOR A PARTICULAR PURPOSE.  
+*
+* See the Mulan PSL v2 for more details.  
+***************************************************************************************/
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -8,7 +23,7 @@ import utils._
 import difftest._
 import top.Settings
 
-class PIDUIO extends NutCoreBundle {
+class PIDUIO extends PolarisCoreBundle {
     val isAdd_64 = Output(Bool())
     val isAdd_32 = Output(Bool())
     val isAdd_16 = Output(Bool())
@@ -123,7 +138,7 @@ class PIDUIO extends NutCoreBundle {
     val mulres33_0 = Output(UInt(66.W))
     val mulres65_0 = Output(UInt(130.W))
 }
-class MulAdd_onestage_IO(val len: Int = 65) extends NutCoreBundle {
+class MulAdd_onestage_IO(val len: Int = 65) extends PolarisCoreBundle {
     val in = new Bundle{
         val srcs     = Vec(3, Input(UInt(len.W)))
     }
@@ -131,13 +146,13 @@ class MulAdd_onestage_IO(val len: Int = 65) extends NutCoreBundle {
         val result = Output(UInt((2*len).W))
     }
 }
-class MulAdd_onestage(len: Int = 9) extends NutCoreModule {
+class MulAdd_onestage(len: Int = 9) extends PolarisCoreModule {
     val io = IO(new MulAdd_onestage_IO(len)) 
     val X = io.in.srcs(0)
     val Y = io.in.srcs(1)
     io.out.result := (X.asSInt * Y.asSInt).asUInt
 }
-class PIDU() extends NutCoreModule with HasInstrType{
+class PIDU() extends PolarisCoreModule with HasInstrType{
     val io = IO(new Bundle{
         val DecodeIn = Flipped(new DecodeIO)
         val Pctrl = new PIDUIO

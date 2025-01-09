@@ -16,8 +16,8 @@
 
 package top
 
-import nutcore.NutCoreConfig
-import system.NutShell
+import polaris.PolarisConfig
+import system.Polaris
 import device.{AXI4VGA}
 import sim.SimTop
 
@@ -26,12 +26,12 @@ import chisel3.stage._
 
 class Top extends Module {
   val io = IO(new Bundle{})
-  val nutshell = Module(new NutShell()(NutCoreConfig()))
+  val polaris = Module(new Polaris()(PolarisConfig()))
   val vga = Module(new AXI4VGA)
 
-  nutshell.io := DontCare
+  polaris.io := DontCare
   vga.io := DontCare
-  dontTouch(nutshell.io)
+  dontTouch(polaris.io)
   dontTouch(vga.io)
 }
 

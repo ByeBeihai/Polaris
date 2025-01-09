@@ -5,10 +5,10 @@ package bus.axi4
 import chisel3._
 import chisel3.util._
 
-import nutcore.HasNutCoreParameter
+import polaris.HasPolarisCoreParameter
 import utils._
 
-object AXI4Parameters extends HasNutCoreParameter {
+object AXI4Parameters extends HasPolarisCoreParameter {
   // These are all fixed by the AXI4 standard:
   val lenBits   = 8
   val sizeBits  = 3

@@ -19,7 +19,7 @@ package bus.memport
 import chisel3._
 import chisel3.util._
 
-import nutcore.HasNutCoreParameter
+import polaris.HasPolarisCoreParameter
 
 trait MemoryOpConstants
 {

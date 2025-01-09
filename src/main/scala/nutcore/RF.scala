@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -25,9 +25,10 @@ import difftest._
 
 trait HasRegFileParameter {
   val NRReg = 32
+  val NSReg = 4
 }
 
-class RegFile extends HasRegFileParameter with HasNutCoreParameter {
+class RegFile extends HasRegFileParameter with HasPolarisCoreParameter {
   val rf = Mem(NRReg, UInt(XLEN.W))
   def read(addr: UInt) : UInt = Mux(addr === 0.U, 0.U, rf(addr))
   def write(addr: UInt, data: UInt) = { rf(addr) := data(XLEN-1,0) }
@@ -46,7 +47,7 @@ class ScoreBoard extends HasRegFileParameter {
   }
 }
 
-class InstQueue extends NutCoreModule with HasRegFileParameter{
+class InstQueue extends PolarisCoreModule with HasRegFileParameter{
   val io = IO(new Bundle{
         val setnum     = Input(UInt(log2Up(Queue_num).W))
         val clearnum   = Input(UInt(log2Up(Queue_num).W))
@@ -122,7 +123,7 @@ class InstQueue extends NutCoreModule with HasRegFileParameter{
   Debug("[Inst_Q] Headptr %x TailPtr %x FlagNow %x set_num %x flush %x\n", HeadPtr,TailPtr, FlagNow,io.setnum,io.flush)
 }
 
-class InstBoard extends NutCoreModule with HasRegFileParameter{
+class InstBoard extends PolarisCoreModule with HasRegFileParameter{
   val io = IO(new Bundle{
       val Wen        = Vec(NRReg, Input(Bool()))
       val clear      = Vec(NRReg, Input(Bool()))
@@ -159,4 +160,8 @@ class InstBoard extends NutCoreModule with HasRegFileParameter{
   io.valid  := validBoard
   io.RInstNo:= InstBoard
 }
-
+class SRegFile extends HasRegFileParameter with HasPolarisCoreParameter {
+  val srf = Mem(NSReg, UInt(XLEN.W))
+  def read(addr: UInt) : UInt = srf(addr)
+  def write(addr: UInt, data: UInt) = { srf(addr) := data(XLEN-1,0) }
+} 

@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -23,7 +23,7 @@ import chisel3.util.experimental.BoringUtils
 import utils._
 import difftest._
 
-class Decoder(implicit val p: NutCoreConfig) extends NutCoreModule with HasInstrType {
+class Decoder(implicit val p: PolarisConfig) extends PolarisCoreModule with HasInstrType {
   val io = IO(new Bundle {
     val in = Flipped(Decoupled(new CtrlFlowIO))
     val out = Decoupled(new DecodeIO)
@@ -64,7 +64,8 @@ class Decoder(implicit val p: NutCoreConfig) extends NutCoreModule with HasInstr
     InstrPB-> (SrcType.reg, SrcType.imm),
     InstrPM-> (SrcType.reg, SrcType.reg),
     InstrPRD->(SrcType.reg, SrcType.reg),
-    InstrIZ-> (SrcType.reg, SrcType.imm)
+    InstrIZ-> (SrcType.reg, SrcType.imm),
+    InstrSNN->(SrcType.reg, SrcType.reg)
   )
   val src1Type = LookupTree(instrType, SrcTypeTable.map(p => (p._1, p._2._1)))
   val src2Type = LookupTree(instrType, SrcTypeTable.map(p => (p._1, p._2._2)))
@@ -168,7 +169,7 @@ class Decoder(implicit val p: NutCoreConfig) extends NutCoreModule with HasInstr
     FuType.mou
   )
 
-  io.out.bits.ctrl.isNutCoreTrap := (instr(31,0) === NutCoreTrap.TRAP) && io.in.valid
+  io.out.bits.ctrl.isPolarisTrap := (instr(31,0) === PolarsTrap.TRAP) && io.in.valid
   io.out.bits.ctrl.noSpecExec := NoSpecList.map(j => io.out.bits.ctrl.fuType === j).reduce(_ || _)
   io.out.bits.ctrl.isBlocked :=
   (
@@ -204,13 +205,13 @@ class Decoder(implicit val p: NutCoreConfig) extends NutCoreModule with HasInstr
 
   io.out.bits.cf.instrType := instrType
   io.out.bits.ctrl.isMou := fuType === FuType.mou
-  io.out.bits.ctrl.isNutCoreTrap := (instr === NutCoreTrap.TRAP) && io.in.valid
+  io.out.bits.ctrl.isPolarisTrap := (instr === PolarsTrap.TRAP) && io.in.valid
   io.isWFI := (instr === Priviledged.WFI) && io.in.valid
   io.isBranch := VecInit(RV32I_BRUInstr.table.map(i => i._2.tail(1) === fuOpType)).asUInt.orR && fuType === FuType.bru
   Debug("!!!!IDU!!!! inst %x fuType %x fuOpType %x isBranch %x \n",instr,fuType,fuOpType,io.isBranch)
 }
 
-class IDU(implicit val p: NutCoreConfig) extends NutCoreModule with HasInstrType {
+class IDU(implicit val p: PolarisConfig) extends PolarisCoreModule with HasInstrType {
   val io = IO(new Bundle {
     val in = Vec(2, Flipped(Decoupled(new CtrlFlowIO)))
     val out = Vec(2, Decoupled(new DecodeIO))

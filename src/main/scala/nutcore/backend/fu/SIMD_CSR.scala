@@ -1,4 +1,20 @@
-package nutcore
+/**************************************************************************************
+* Copyright (c) 2025 Institute of Computing Technology, CAS
+* Copyright (c) 2025 University of Chinese Academy of Sciences
+* 
+* Polaris is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2. 
+* You may obtain a copy of Mulan PSL v2 at:
+*             http://license.coscl.org.cn/MulanPSL2 
+* 
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER 
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR 
+* FIT FOR A PARTICULAR PURPOSE.  
+*
+* See the Mulan PSL v2 for more details.  
+***************************************************************************************/
+
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -93,7 +109,7 @@ class SIMD_CSRIO extends FunctionUnitIO {
   val wenFix = Output(Bool())
 }
 
-class SIMD_CSR(implicit val p: NutCoreConfig) extends NutCoreModule with SIMD_HasCSRConst{
+class SIMD_CSR(implicit val p: PolarisConfig) extends PolarisCoreModule with SIMD_HasCSRConst{
   val io = IO(new SIMD_CSRIO)
 
   val (valid, src1, src2, func) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func)
@@ -496,7 +512,7 @@ class new_CSRIO extends FunctionUnitIO {
   val wenFix = Output(Bool())
 }
 
-class new_SIMD_CSR(implicit val p: NutCoreConfig) extends NutCoreModule with HasCSRConst{
+class new_SIMD_CSR(implicit val p: PolarisConfig) extends PolarisCoreModule with HasCSRConst{
   val io = IO(new new_CSRIO)
 
   val (valid, src1, src2, func, isMou) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func,io.ctrlIn.isMou)

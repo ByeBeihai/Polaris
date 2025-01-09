@@ -1,4 +1,4 @@
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -8,14 +8,14 @@ import utils._
 
 // Out of Order Execution Pipeline for NutShell/Argo
 
-class ExecutionPipelineIO extends NutCoreBundle {
+class ExecutionPipelineIO extends PolarisCoreBundle {
   val in = Flipped(Decoupled(new RenamedDecodeIO))
   val out = Decoupled(new OOCommitIO)
   val mispredictRec = Input(new MisPredictionRecIO)
   val flush = Input(Bool())
 }
 
-class ExecutionPipeline extends NutCoreModule {
+class ExecutionPipeline extends PolarisCoreModule {
   val io = IO(new ExecutionPipelineIO)
   def access(uop: Data): Data = {
     this.io.in := uop

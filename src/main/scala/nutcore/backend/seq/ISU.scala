@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -24,7 +24,7 @@ import utils._
 import difftest._
 
 // Sequential Inst Issue Unit 
-class ISU(implicit val p: NutCoreConfig) extends NutCoreModule with HasRegFileParameter {
+class ISU(implicit val p: PolarisConfig) extends PolarisCoreModule with HasRegFileParameter {
   val io = IO(new Bundle {
     val in = Vec(2, Flipped(Decoupled(new DecodeIO))) // make in-order backend compatible with high performance frontend 
     val out = Vec(Issue_Num,Decoupled(new DecodeIO))

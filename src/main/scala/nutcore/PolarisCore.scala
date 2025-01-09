@@ -1,4 +1,20 @@
 /**************************************************************************************
+* Copyright (c) 2025 Institute of Computing Technology, CAS
+* Copyright (c) 2025 University of Chinese Academy of Sciences
+* 
+* polaris is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2. 
+* You may obtain a copy of Mulan PSL v2 at:
+*             http://license.coscl.org.cn/MulanPSL2 
+* 
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER 
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR 
+* FIT FOR A PARTICULAR PURPOSE.  
+*
+* See the Mulan PSL v2 for more details.  
+***************************************************************************************/
+
+/**************************************************************************************
 * Copyright (c) 2020 Institute of Computing Technology, CAS
 * Copyright (c) 2020 University of Chinese Academy of Sciences
 * 
@@ -14,7 +30,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -25,7 +41,7 @@ import bus.axi4._
 import utils._
 import top.Settings
 
-trait HasNutCoreParameter {
+trait HasPolarisCoreParameter {
   // General Parameter for NutShell
   val XLEN = if (Settings.get("IsRV32")) 32 else 64
   val HasMExtension = true
@@ -53,26 +69,27 @@ trait HasNutCoreParameter {
   val Queue_num = 32
   val Polaris_Independent_Bru = Settings.getInt("Polaris_Independent_Bru") //0 or 1
   val Polaris_SIMDU_WAY_NUM = Settings.getInt("Polaris_SIMDU_WAY_NUM")   //1 or 2
-  val Forward_num = 4 + Polaris_SIMDU_WAY_NUM
+  val Polaris_SNN_WAY_NUM = Settings.getInt("Polaris_SNN_WAY_NUM")// 1 or 2
+  val Forward_num = 4 + Polaris_SIMDU_WAY_NUM + Polaris_SNN_WAY_NUM
   val Commit_num = 3
   
 }
 
-trait HasNutCoreConst extends HasNutCoreParameter {
+trait HasPolarisCoreConst extends HasPolarisCoreParameter {
   val CacheReadWidth = 8
   val ICacheUserBundleWidth = VAddrBits*2 + 9
   val DCacheUserBundleWidth = 16
   val IndependentBru = if (Settings.get("EnableOutOfOrderExec")) true else false
 }
 
-trait HasNutCoreLog { this: RawModule =>
+trait HasPolarisLog { this: RawModule =>
   implicit val moduleName: String = this.name
 }
 
-abstract class NutCoreModule extends Module with HasNutCoreParameter with HasNutCoreConst with HasExceptionNO with HasBackendConst with HasNutCoreLog
-abstract class NutCoreBundle extends Bundle with HasNutCoreParameter with HasNutCoreConst with HasBackendConst
+abstract class PolarisCoreModule extends Module with HasPolarisCoreParameter with HasPolarisCoreConst with HasExceptionNO with HasBackendConst with HasPolarisLog
+abstract class PolarisCoreBundle extends Bundle with HasPolarisCoreParameter with HasPolarisCoreConst with HasBackendConst
 
-case class NutCoreConfig (
+case class PolarisConfig (
   FPGAPlatform: Boolean = true,
   EnableDebug: Boolean = Settings.get("EnableDebug"),
   EnhancedLog: Boolean = true 
@@ -80,7 +97,7 @@ case class NutCoreConfig (
 // Enable EnhancedLog will slow down simulation, 
 // but make it possible to control debug log using emu parameter
 
-object AddressSpace extends HasNutCoreParameter {
+object AddressSpace extends HasPolarisCoreParameter {
   // (start, size)
   // address out of MMIO will be considered as DRAM
   def mmio = List(
@@ -96,14 +113,14 @@ object AddressSpace extends HasNutCoreParameter {
   }).reduce(_ || _)
 }
 
-class NutCore(implicit val p: NutCoreConfig) extends NutCoreModule {
-  class NutCoreIO extends Bundle {
+class PolarisCore(implicit val p: PolarisConfig) extends PolarisCoreModule {
+  class PolarisIO extends Bundle {
     val imem = new SimpleBusC
     val dmem = new SimpleBusC
     val mmio = new SimpleBusUC
     val frontend = Flipped(new SimpleBusUC())
   }
-  val io = IO(new NutCoreIO)
+  val io = IO(new PolarisIO)
 
   // Frontend
   val frontend = Module(new Frontend_SIMD)

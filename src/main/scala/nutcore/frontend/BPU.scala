@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -23,7 +23,7 @@ import chisel3.util.experimental.BoringUtils
 import utils._
 import top.Settings
 
-class TableAddr(val idxBits: Int) extends NutCoreBundle {
+class TableAddr(val idxBits: Int) extends PolarisCoreBundle {
   val padLen = if (Settings.get("IsRV32") || !Settings.get("EnableOutOfOrderExec")) 2 else 3
   def tagBits = VAddrBits - padLen - idxBits
 
@@ -37,7 +37,7 @@ class TableAddr(val idxBits: Int) extends NutCoreBundle {
   def getIdx(x: UInt) = fromUInt(x).idx
 }
 
-class TableAddr_SIMD(val idxBits: Int) extends NutCoreBundle {
+class TableAddr_SIMD(val idxBits: Int) extends PolarisCoreBundle {
   val padLen = 3
   def tagBits = VAddrBits - padLen - idxBits
   val tag = UInt(tagBits.W)
@@ -58,7 +58,7 @@ object BTBtype {
   def apply() = UInt(2.W)
 }
 
-class BPUUpdateReq extends NutCoreBundle {
+class BPUUpdateReq extends PolarisCoreBundle {
   val valid = Output(Bool())
   val pc = Output(UInt(VAddrBits.W))
   val isMissPredict = Output(Bool())
@@ -70,7 +70,7 @@ class BPUUpdateReq extends NutCoreBundle {
 }
 
 // nextline predicter generates NPC from current NPC in 1 cycle
-class BPU_ooo extends NutCoreModule {
+class BPU_ooo extends PolarisCoreModule {
   val io = IO(new Bundle {
     val in = new Bundle { val pc = Flipped(Valid((UInt(VAddrBits.W)))) }
     val out = new RedirectIO 
@@ -223,7 +223,7 @@ class BPU_ooo extends NutCoreModule {
   // by using `instline`, we mean a 64 bit instfetch result from imem
   // ROCKET uses a 32 bit instline, and its IDU logic is more simple than this implentation.
 }
-class BPU_embedded extends NutCoreModule {
+class BPU_embedded extends PolarisCoreModule {
   val io = IO(new Bundle {
     val in = new Bundle { val pc = Flipped(Valid((UInt(32.W)))) }
     val out = new RedirectIO
@@ -310,7 +310,7 @@ class BPU_embedded extends NutCoreModule {
   io.out.rtype := 0.U
 }
 
-class BPU_inorder extends NutCoreModule {
+class BPU_inorder extends PolarisCoreModule {
   val io = IO(new Bundle {
     val in = new Bundle { val pc = Flipped(Valid((UInt(VAddrBits.W)))) }
     val out = new RedirectIO
@@ -467,7 +467,7 @@ class BPU_inorder extends NutCoreModule {
   // ROCKET uses a 32 bit instline, and its IDU logic is more simple than this implentation.
 }
 
-class BPU_SIMD extends NutCoreModule {
+class BPU_SIMD extends PolarisCoreModule {
   val io = IO(new Bundle {
     val in = new Bundle { val pc = Flipped(Valid((UInt(VAddrBits.W)))) }
     val out = new RedirectIO
@@ -584,7 +584,7 @@ class BPU_SIMD extends NutCoreModule {
 
 }
 
-class DummyPredicter extends NutCoreModule {
+class DummyPredicter extends PolarisCoreModule {
   val io = IO(new Bundle {
     val in = new Bundle { val pc = Flipped(Valid((UInt(VAddrBits.W)))) }
     val out = new RedirectIO
@@ -604,7 +604,7 @@ class DummyPredicter extends NutCoreModule {
 
 //---- Legacy BPUs ----
 /*
-class BPU_nodelay extends NutCoreModule {
+class BPU_nodelay extends PolarisCoreModule {
   val io = IO(new Bundle {
     val in = Flipped(Valid(new CtrlFlowIO))
     val out = new RedirectIO

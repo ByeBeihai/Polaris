@@ -1,4 +1,20 @@
-package nutcore
+/**************************************************************************************
+* Copyright (c) 2025 Institute of Computing Technology, CAS
+* Copyright (c) 2025 University of Chinese Academy of Sciences
+* 
+* Polaris is licensed under Mulan PSL v2.
+* You can use this software according to the terms and conditions of the Mulan PSL v2. 
+* You may obtain a copy of Mulan PSL v2 at:
+*             http://license.coscl.org.cn/MulanPSL2 
+* 
+* THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER 
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR 
+* FIT FOR A PARTICULAR PURPOSE.  
+*
+* See the Mulan PSL v2 for more details.  
+***************************************************************************************/
+
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -346,7 +362,7 @@ class SIMDU_IO extends FunctionUnitIO {
   val paluready = Output(Bool()) 
   val pmduready = Output(Bool()) 
 }
-class SIMDU(hasBru: Boolean = false,NO1: Boolean = true) extends NutCoreModule with HasInstrType{
+class SIMDU(hasBru: Boolean = false,NO1: Boolean = true) extends PolarisCoreModule with HasInstrType{
   val io = IO(new SIMDU_IO)
   val (valid, src1, src2, func) = (io.in.valid, io.in.bits.src1, io.in.bits.src2, io.in.bits.func)
   def access(valid: Bool, src1: UInt, src2: UInt, func: UInt): UInt = {
@@ -420,7 +436,7 @@ class SIMDU(hasBru: Boolean = false,NO1: Boolean = true) extends NutCoreModule w
 
   Debug("[SIMDU] PALUVALID %x PMDUVALID %x PALUPC %x PMDUPC %x PALUInstNo %x PMDUInstNo %x \n",PALU_valid,PMDU_valid,PALU.io.out.bits.DecodeOut.cf.pc,PMDU.io.out.bits.DecodeOut.cf.pc,PALU.io.out.bits.DecodeOut.InstNo,PMDU.io.out.bits.DecodeOut.InstNo)
 }
-class SIMDU_IO_2way extends NutCoreBundle {
+class SIMDU_IO_2way extends PolarisCoreBundle {
   val flush = Input(Bool())
   val DecodeOut = Vec(2,new DecodeIO)
   val DecodeIn = Vec(2,Flipped(new DecodeIO))
@@ -432,7 +448,7 @@ class SIMDU_IO_2way extends NutCoreBundle {
   })))
   val out = Vec(2,Decoupled(Output(UInt(XLEN.W))))
 }
-class SIMDU_2way extends NutCoreModule with HasInstrType{
+class SIMDU_2way extends PolarisCoreModule with HasInstrType{
   val io = IO(new SIMDU_IO_2way)
   val (valid0, src01, src02, func0) = (io.in(0).valid, io.in(0).bits.src1, io.in(0).bits.src2, io.in(0).bits.func)
   val (valid1, src11, src12, func1) = (io.in(1).valid, io.in(1).bits.src1, io.in(1).bits.src2, io.in(1).bits.func)

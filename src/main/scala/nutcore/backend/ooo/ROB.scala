@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
 
-package nutcore
+package polaris
 
 import chisel3._
 import chisel3.util._
@@ -30,7 +30,7 @@ object physicalRFTools{
 }
 
 // Reorder Buffer & Scheduler for Out Of Order Execution Backend
-class ROB(implicit val p: NutCoreConfig) extends NutCoreModule with HasInstrType with HasBackendConst with HasRegFileParameter{
+class ROB(implicit val p: PolarisConfig) extends PolarisCoreModule with HasInstrType with HasBackendConst with HasRegFileParameter{
   val io = IO(new Bundle {
     val in = Vec(robWidth, Flipped(Decoupled(new DecodeIO)))
     val brMaskIn = Input(Vec(robWidth, UInt(checkpointSize.W)))
@@ -110,7 +110,7 @@ class ROB(implicit val p: NutCoreConfig) extends NutCoreModule with HasInstrType
   val rmtMap = Reg(Vec(NRReg, UInt(prfAddrWidth.W)))
   val rmtValid = RegInit(VecInit(Seq.fill(NRReg)(false.B)))
 
-  sealed class Checkpoint extends NutCoreBundle {
+  sealed class Checkpoint extends PolarisCoreBundle {
     val map = Vec(NRReg, UInt(prfAddrWidth.W))
     val valid = Vec(NRReg, Bool())
   }
