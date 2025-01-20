@@ -37,7 +37,7 @@ class SimTop extends Module {
   })
 
   lazy val config = PolarisConfig(FPGAPlatform = false)
-  val soc = Module(new Polaris()(config))
+  val soc = Module(new NutShell()(config))
   val mem = Module(new AXI4RAM(memByte = 128 * 1024 * 1024, useBlackBox = true))
   // Be careful with the commit checking of emu.
   // A large delay will make emu incorrectly report getting stuck.

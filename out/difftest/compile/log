@@ -1,6 +1,0 @@
-[0m[[0m[0minfo[0m] [0m[0mCompiling 2 Scala sources to /home/stu/Polaris/out/difftest/compile/dest/classes ...[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/stu/Polaris/difftest/src/main/scala/Difftest.scala:236:19: non-variable type argument chisel3.Data in type pattern chisel3.Vec[chisel3.Data] is unchecked since it is eliminated by erasure[0m
-[0m[[0m[33mwarn[0m] [0m[0m        case vec: Vec[Data] => vec.zipWithIndex.map{ case (v, i) => (s"io_${name}_$i", v) }[0m
-[0m[[0m[33mwarn[0m] [0m[0m                  ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
-[0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m

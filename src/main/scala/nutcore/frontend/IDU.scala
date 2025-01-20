@@ -143,7 +143,7 @@ class Decoder(implicit val p: PolarisConfig) extends PolarisCoreModule with HasI
     RVCInstr.ImmADDI  -> SignExt(Cat(instr(12), instr(6,2)), XLEN),
     RVCInstr.ImmADDI16SP-> SignExt(Cat(instr(12), instr(4,3), instr(5), instr(2), instr(6), 0.U(4.W)), XLEN),
     RVCInstr.ImmADD4SPN-> ZeroExt(Cat(instr(10,7), instr(12,11), instr(5), instr(6), 0.U(2.W)), XLEN),
-    RVCInstr.ImmCBREAK -> 1.U(XLEN.W)
+    RVCInstr.ImmCBREAK -> (1.U(XLEN.W) << 5)
     // ImmFLWSP  -> 
     // ImmFLDSP  -> 
   ))
