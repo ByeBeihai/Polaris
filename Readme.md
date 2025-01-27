@@ -1,4 +1,8 @@
 # Polaris22A: RISC-V SIMD Superscalar Dual-Issue Processor
+
+This work has been published in [Polaris 23: a high throughput neuromorphic processing element by RISC-V customized instruction extension for spiking neural network (RV-SNN 2.0) and SIMD style implementation of LIF model with backpropagation STDP, Jixiang Zong, Jiulong Wang, Guirun Li, Ruopu Wu & Di Zhao.]( https://link.springer.com/article/10.1007/s11227-024-06826-y)
+
+
 Polaris is a sequential superscalar dual-issue RISC-V processor supporting RISC-V P instruction set extension（Packed-SIMD Instructions）
 
 - [Polaris22A: RISC-V SIMD Superscalar Dual-Issue Processor](#polaris22a-risc-v-simd-superscalar-dual-issue-processor)
