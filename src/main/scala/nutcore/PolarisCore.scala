@@ -29,6 +29,10 @@
 *
 * See the Mulan PSL v2 for more details.  
 ***************************************************************************************/
+/**************************************************************************************
+* Reference:
+* Zong, J., Wang, J., Li, G., Wu, R., Zhao D.*, Polaris 23: a high throughput neuromorphic processing element by RISC-V customized instruction extension for spiking neural network (RV-SNN 2.0) and SIMD-style implementation of LIF model with backpropagation STDP. J Supercomput 81, 398 (2025)
+***************************************************************************************/
 
 package polaris
 
