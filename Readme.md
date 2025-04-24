@@ -10,7 +10,6 @@ Polaris is a sequential superscalar dual-issue RISC-V processor supporting RISC-
   - [1. Processor Features](#1-processor-features)
   - [2. Processor Architecture](#2-processor-architecture)
   - [3. Simulation and FPGA Implement](#3-simulation-and-fpga-implement)
-  - [4. Configuration of Polaris](#4-configuration-of-polaris)
   - [5. About](#5-about)
 <br/><br/>
 
@@ -106,3 +105,8 @@ Polaris has implemented the [fpga verification environment](https://github.com/s
  Polaris is an open source RISC-V processor aiming to perform high energy efficiency. In the early stage of design, it was hoped to be the basic computing unit of an open source multi-core chip.
 
  The development environment of Polaris relies on the [NutShell](https://github.com/OSCPU/NutShell) project, so you can see some codes of NutShell in this project. Currently the scalar ALU for RVI, the atomic part of the pipeline LSU and the divider still multiplex the uints of the NutShell.
+ 
+ Polaris' open source code has applied for and obtained the computer software copyright of the People's Republic of China. 
+ 
+ <img src=./doc/softright.png width="70%">
+ <br/><br/>
